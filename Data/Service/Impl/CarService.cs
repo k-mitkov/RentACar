@@ -1,4 +1,5 @@
-﻿using Data.Models;
+﻿using Data.Enums;
+using Data.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -19,14 +20,14 @@ namespace Data.Service.Impl
         #endregion
 
         #region Methods
-        public IEnumerable<Car> GetCars(Period period)
+        public IEnumerable<Car> GetCarsByPeriod(Period period)
         {
             return data.CarsByPeriod(period);
         }
 
-        public bool ReserveCar(Car car, Period period, Client client)
+        public bool ReserveCar(Car car, Period period, Client client, Locations location)
         {
-            return data.MakeReservation(car, period, client);
+            return data.MakeReservation(car, period, client, location);
         }
         #endregion
     }

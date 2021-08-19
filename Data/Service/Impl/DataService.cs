@@ -1,4 +1,5 @@
-﻿using Data.Models;
+﻿using Data.Enums;
+using Data.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -123,25 +124,28 @@ namespace Data.Service.Impl
             }
         }
 
-        public bool MakeReservation(Car car, Period period, Client client)
+        public bool MakeReservation(Car car, Period period, Client client, Locations location)
         {
             try
             {
                 using (context = new DataContext()) using (var transaction = context.Database.BeginTransaction())
                 {
-                    if (context.Clients.FirstOrDefault(c => c.Mail.Equals(client.Mail)) == null)
+                    if (context.Clients.FirstOrDefault(c => c.Mail.Equals(client.Mail)) != null)
                     {
                         client = context.Clients.FirstOrDefault(c => c.Mail.Equals(client.Mail));
+                    }
+                    else
+                    {
+                        context.Clients.Add(client);
                     }
 
                     car = context.Cars.FirstOrDefault(c => c.Id == car.Id);
 
-                    period.Location = Enums.Locations.OnTrip;
+                    var oldPeriod = context.Periods.FirstOrDefault((p) => p.From < period.From && p.To > period.To && p.Location == period.Location);
+
+                    period.Location = Locations.OnTrip;
                     period.Car = car;
                     period.CarId = car.Id;
-
-
-                    var oldPeriod = context.Periods.FirstOrDefault((p) => p.From < period.From && p.To > period.To && p.Location == period.Location);
 
                     var prevPeriod = new Period()
                     {
@@ -152,7 +156,7 @@ namespace Data.Service.Impl
                     prevPeriod.Car = car;
                     prevPeriod.CarId = car.Id;
 
-                    period.Location = Enums.Locations.OnTrip;
+                    period.Location = Locations.OnTrip;
                     period.Car = car;
                     period.CarId = car.Id;
 
@@ -160,7 +164,7 @@ namespace Data.Service.Impl
                     {
                         From = period.To,
                         To = oldPeriod.To,
-                        Location = Enums.Locations.Burgas
+                        Location = location
                     };
                     aftarPeriod.Car = car;
                     aftarPeriod.CarId = car.Id;
@@ -176,6 +180,9 @@ namespace Data.Service.Impl
                         Period = period,
                         Client = client
                     };
+                    //List<Reservation> reservations = new List<Reservation>();
+                    //reservations.Add(reservation);
+                    //client.Reservations = reservations;
 
                     context.Reservations.Add(reservation);
 
@@ -188,7 +195,6 @@ namespace Data.Service.Impl
             catch (Exception ex)
             {
                 return false;
-
             }
         }
         #endregion

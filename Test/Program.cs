@@ -13,6 +13,27 @@ namespace Test
         static void Main(string[] args)
         {
             IDataService service = new DataService();
+            ICarService carService = new CarService();
+
+            var period = new Period()
+            {
+                From = new DateTime(2021, 8, 25, 12, 0, 0),
+                To = new DateTime(2021, 9, 1, 12, 0, 0),
+                Location = Locations.Sofia
+            };
+
+            var client = new Client()
+            {
+                Mail = "krasi0m0@gmail.com",
+                FirstName = "Krasimir",
+                LastName = "Mitkov",
+                Phone = "0893458999",
+                DateOfBirth = new DateTime(2000, 02, 27)
+            };
+
+            Console.WriteLine(client.FirstName);
+
+            carService.ReserveCar(service.GetCars().FirstOrDefault(), period, client, Locations.Sofia);
 
             //var period1 = new Period()
             //{
@@ -40,57 +61,58 @@ namespace Test
 
             //service.AddNewCar(car);
 
-            var period = new Period()
-            {
-                From = new DateTime(2021, 8, 25, 12, 0, 0),
-                To = new DateTime(2021, 9, 1, 12, 0, 0),
-                Location = Locations.Sofia
-            };
-
-            Console.WriteLine(period.To - period.From);
-
-            IEnumerable<Car> cars = service.CarsByPeriod(period);
-
-            Car car = service.FindCar(cars.First().Id);
-            Period period1 = car.Periods.FirstOrDefault();
-            period1.Car = car;
-
-            service.DeletePeriod(period1);
-            //period1.To = period.From;
-
-            var period2 = new Period()
-            {
-                From = period.To,
-                To = DateTime.MaxValue,
-                Location = Locations.Plovdiv
-            };
-
-            period.Location = Locations.OnTrip;
-
-            //IEnumerable<Car> cars2 = service.CarsByPeriod(period);
-
-            //Car car2 = service.FindCar(cars.First().Id);
-
-            //Period period3 = new Period()
+            //var period = new Period()
             //{
-            //    From = period1.From,
-            //    To = period1.To,
-            //    Location = period1.Location
+            //    From = new DateTime(2021, 8, 25, 12, 0, 0),
+            //    To = new DateTime(2021, 9, 1, 12, 0, 0),
+            //    Location = Locations.Sofia
             //};
 
-            //period3.Car = car2;
-            //period.Car = car2;
-            //period2.Car = car2;
+            //Console.WriteLine(period.To - period.From);
 
-            //car.Periods.Add(period1);
-            //car.Periods.Add(period1);
-            //car.Periods.Add(period1);
+            //IEnumerable<Car> cars = service.CarsByPeriod(period);
 
-            //service.UpdateCar(car);
+            //Car car = service.FindCar(cars.First().Id);
+            //Period period1 = car.Periods.FirstOrDefault();
+            //period1.Car = car;
+
+            //service.DeletePeriod(period1);
+            ////period1.To = period.From;
+
+            //var period2 = new Period()
+            //{
+            //    From = period.To,
+            //    To = DateTime.MaxValue,
+            //    Location = Locations.Plovdiv
+            //};
+
+            //period.Location = Locations.OnTrip;
+
+            ////IEnumerable<Car> cars2 = service.CarsByPeriod(period);
+
+            ////Car car2 = service.FindCar(cars.First().Id);
+
+            ////Period period3 = new Period()
+            ////{
+            ////    From = period1.From,
+            ////    To = period1.To,
+            ////    Location = period1.Location
+            ////};
+
+            ////period3.Car = car2;
+            ////period.Car = car2;
+            ////period2.Car = car2;
+
+            ////car.Periods.Add(period1);
+            ////car.Periods.Add(period1);
+            ////car.Periods.Add(period1);
+
+            ////service.UpdateCar(car);
 
             //service.AddNewPeriod(period1);
-            //service.AddNewPeriod(period);
-            service.AddNewPeriod(period2);
+            ////service.AddNewPeriod(period);
+            ////service.AddNewPeriod(period2);
+
 
         }
     }

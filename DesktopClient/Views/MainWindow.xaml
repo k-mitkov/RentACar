@@ -1,0 +1,34 @@
+﻿<Window x:Class="DesktopClient.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DesktopClient"
+        mc:Ignorable="d"
+        Icon="\Resources\Images\icon.png"
+        MinHeight="768"
+        MinWidth="1366"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="8*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Background="#03a5fc">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.5*"/>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Button Grid.Column="0" Margin="20" BorderThickness="0" Background="#03a5fc">
+                <Image Source="\Resources\Images\logo.png"/>
+            </Button>
+
+            <ComboBox Grid.Column="2" Margin="20" ItemsSource="{Binding Path= ListOfLanguages}" SelectedItem="{Binding Path=Slanguage}" FontSize="30"/>
+        </Grid>
+        <ContentControl Grid.Row="1"  Content="{Binding SelectedViewModel}"/>
+
+    </Grid>
+</Window>

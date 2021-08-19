@@ -1,4 +1,5 @@
-﻿using Data.Models;
+﻿using Data.Enums;
+using Data.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -19,7 +20,7 @@ namespace Data.Service
         Period FindPeriod(Period period);
         IEnumerable<Car> GetCars();
 
-        bool MakeReservation(Car car, Period period, Client client);
+        bool MakeReservation(Car car, Period period, Client client, Locations location);
 
     }
 }

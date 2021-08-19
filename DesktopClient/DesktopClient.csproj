@@ -8,12 +8,52 @@
 
   <ItemGroup>
     <None Remove="Resources\Images\Alfa_Romeo_159.jpg" />
+    <None Remove="Resources\Images\car_search_icon.png" />
+    <None Remove="Resources\Images\car_search_icon_blue.png" />
+    <None Remove="Resources\Images\date-icon.png" />
+    <None Remove="Resources\Images\e-car_search_icon.png" />
+    <None Remove="Resources\Images\e-car_search_icon_blue.png" />
+    <None Remove="Resources\Images\icon.png" />
+    <None Remove="Resources\Images\logo.png" />
+    <None Remove="Resources\Images\truck_search_icon.png" />
+    <None Remove="Resources\Images\truck_search_icon_dark.png" />
   </ItemGroup>
 
   <ItemGroup>
     <Content Include="Resources\Images\Alfa_Romeo_159.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Resources\Images\car_search_icon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Images\car_search_icon_blue.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Images\date-icon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Images\e-car_search_icon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Images\e-car_search_icon_blue.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Images\icon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Images\logo.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Images\truck_search_icon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Images\truck_search_icon_dark.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Data\Data.csproj" />
   </ItemGroup>
 
 </Project>
