@@ -10,12 +10,23 @@
     <Compile Update="Views\SearchView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\SelectView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Update="Resources\Localizations\Resources.bg-BG.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Page Update="Views\MainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\SearchView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\SelectView.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

@@ -61,6 +61,23 @@ namespace Data.Service.Impl
             }
         }
 
+        public void AddNewLenguage(Language language)
+        {
+            using (context = new DataContext())
+            {
+                context.Languages.Add(language);
+                context.SaveChanges();
+            }
+        }
+
+        public IEnumerable<Language> GetLanguages()
+        {
+            using (context = new DataContext())
+            {
+                return context.Languages.Select(l => l).AsQueryable().ToList();
+            }
+        }
+
         public IEnumerable<Car> CarsByPeriod(Period period)
         {
             using (context = new DataContext())
@@ -180,9 +197,6 @@ namespace Data.Service.Impl
                         Period = period,
                         Client = client
                     };
-                    //List<Reservation> reservations = new List<Reservation>();
-                    //reservations.Add(reservation);
-                    //client.Reservations = reservations;
 
                     context.Reservations.Add(reservation);
 

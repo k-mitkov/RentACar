@@ -14,11 +14,14 @@ namespace Data.Service
         void AddNewPeriod(Period period);
         void AddNewClient(Client client);
         void AddNewReservations(Reservation reservation);
+        void AddNewLenguage(Language language);
         bool DeletePeriod(Period period);
         Client FindClientByMail(string mail);
         Car FindCar(int id);
         Period FindPeriod(Period period);
         IEnumerable<Car> GetCars();
+
+        IEnumerable<Language> GetLanguages();
 
         bool MakeReservation(Car car, Period period, Client client, Locations location);
 

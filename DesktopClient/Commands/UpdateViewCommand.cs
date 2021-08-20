@@ -1,4 +1,6 @@
-﻿using DesktopClient.ViewModels;
+﻿using Data.Enums;
+using Data.Models;
+using DesktopClient.ViewModels;
 using DesktopClient.Views;
 using System;
 using System.Collections.Generic;
@@ -9,17 +11,23 @@ namespace DesktopClient.Commands
 {
     public class UpdateViewCommand : ICommand
     {
+        #region Declarations
         MainViewModel viewModel;
+        public event EventHandler CanExecuteChanged;
+        #endregion
+
+        #region Constructor
         public UpdateViewCommand(MainViewModel viewModel)
         {
             this.viewModel = viewModel;
 
             SearchViewModel searchViewModel = new SearchViewModel();
             this.viewModel.SelectedViewModel = searchViewModel;
-            //searchViewModel.SelectEvent += SearchHandler();
+            searchViewModel.SearchEvent += SearchHandler;
         }
+        #endregion
 
-        public event EventHandler CanExecuteChanged;
+        #region Methods
         public bool CanExecute(object parameter)
         {
             return true;
@@ -27,31 +35,21 @@ namespace DesktopClient.Commands
 
         public void Execute(object parameter)
         {
-            /* viewModel.SelectedViewModel = home;*/
-
-            //if (parameter.ToString() == "Home")
-            //{
-            //    viewModel.SelectedViewModel = new HomeViewModel();
-            //}
-            //else if (parameter.ToString() == "Menu Books")
-            //{
-            //    viewModel.SelectedViewModel = new BooksMenuViewModel();
-            //}
-            //else if (parameter.ToString() == "Menu Authors")
-            //{
-            //    viewModel.SelectedViewModel = new AuthorsMenuViewModel();
-            //}
+            SearchViewModel searchViewModel = new SearchViewModel();
+            viewModel.SelectedViewModel = searchViewModel;
+            searchViewModel.SearchEvent += SearchHandler;
         }
 
-        /* public void SearchHandler()
-         {
-             BooksMenuViewModel books = new BooksMenuViewModel();
-             viewModel.SelectedViewModel = books;
-             books.Event += SelectHandler();
-         }
-         public void SelectHandler()
-         {
-             viewModel.SelectedViewModel = new AuthorsMenuViewModel();
-         }*/
+        public void SearchHandler(Period period, Locations location)
+        {
+            SelectViewModel selectViewModel = new SelectViewModel();
+            viewModel.SelectedViewModel = selectViewModel;
+        }
+
+        public void SelectHandler()
+        {
+           
+        }
+        #endregion
     }
 }

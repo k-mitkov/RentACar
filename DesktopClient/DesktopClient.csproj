@@ -13,6 +13,8 @@
     <None Remove="Resources\Images\date-icon.png" />
     <None Remove="Resources\Images\e-car_search_icon.png" />
     <None Remove="Resources\Images\e-car_search_icon_blue.png" />
+    <None Remove="Resources\Images\flag-bg.jpg" />
+    <None Remove="Resources\Images\flag-en.jpg" />
     <None Remove="Resources\Images\icon.png" />
     <None Remove="Resources\Images\logo.png" />
     <None Remove="Resources\Images\truck_search_icon.png" />
@@ -38,6 +40,12 @@
     <Content Include="Resources\Images\e-car_search_icon_blue.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Resources\Images\flag-bg.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Images\flag-en.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resources\Images\icon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -53,7 +61,29 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="WPFLocalizeExtension" Version="3.8.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Data\Data.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Resources\Localizations\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Resources\Localizations\Resources.bg-BG.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Localizations\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
 
 </Project>

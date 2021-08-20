@@ -11,6 +11,7 @@ namespace DesktopClient.ViewModels
     {
         #region Declarations
         protected ICarService carService = new CarService();
+        protected ILanguageService languageService = new LanguageService();
         public event PropertyChangedEventHandler PropertyChanged;
         #endregion
 

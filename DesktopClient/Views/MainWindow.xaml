@@ -3,12 +3,13 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:util="clr-namespace:DesktopClient.Util"
         xmlns:local="clr-namespace:DesktopClient"
         mc:Ignorable="d"
         Icon="\Resources\Images\icon.png"
         MinHeight="768"
         MinWidth="1366"
-        Title="MainWindow" Height="450" Width="800">
+        Title="{util:Localization strRentACar}" Height="450" Width="800">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
@@ -19,14 +20,24 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="0.5*"/>
                 <ColumnDefinition Width="3*"/>
-                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="0.7*"/>
             </Grid.ColumnDefinitions>
 
-            <Button Grid.Column="0" Margin="20" BorderThickness="0" Background="#03a5fc">
+            <Button Grid.Column="0" Margin="20" BorderThickness="0" Background="#03a5fc" Command="{Binding UpdateViewCommand}">
                 <Image Source="\Resources\Images\logo.png"/>
             </Button>
 
-            <ComboBox Grid.Column="2" Margin="20" ItemsSource="{Binding Path= ListOfLanguages}" SelectedItem="{Binding Path=Slanguage}" FontSize="30"/>
+            <!--<ComboBox Grid.Column="2" Margin="20" ItemsSource="{Binding Path= ListOfLanguages}" SelectedItem="{Binding Path=Slanguage}" FontSize="30"/>-->
+            <ComboBox  Grid.Column="2" Margin="20" ItemsSource="{Binding Languages}"  SelectedValue="{Binding SelectedLanguage}">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <Image VerticalAlignment="Center" Grid.Column="0" Height="20"  Source="{Binding IconPath}"></Image>
+                            <TextBlock Margin="10,0,0,0" VerticalAlignment="Center"  Text="{Binding Lenguage}"  FontSize="20"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
         </Grid>
         <ContentControl Grid.Row="1"  Content="{Binding SelectedViewModel}"/>
 

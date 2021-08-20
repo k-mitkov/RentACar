@@ -15,25 +15,40 @@ namespace Test
             IDataService service = new DataService();
             ICarService carService = new CarService();
 
-            var period = new Period()
+            Language language = new Language()
             {
-                From = new DateTime(2021, 8, 25, 12, 0, 0),
-                To = new DateTime(2021, 9, 1, 12, 0, 0),
-                Location = Locations.Sofia
+                Lenguage = LenguageEnum.English,
+                IconPath = @"\Resources\Images\flag-en.jpg"
             };
 
-            var client = new Client()
+            Language language2 = new Language()
             {
-                Mail = "krasi0m0@gmail.com",
-                FirstName = "Krasimir",
-                LastName = "Mitkov",
-                Phone = "0893458999",
-                DateOfBirth = new DateTime(2000, 02, 27)
+                Lenguage = LenguageEnum.Български,
+                IconPath = @"\Resources\Images\flag-bg.jpg"
             };
 
-            Console.WriteLine(client.FirstName);
+            service.AddNewLenguage(language);
+            service.AddNewLenguage(language2);
 
-            carService.ReserveCar(service.GetCars().FirstOrDefault(), period, client, Locations.Sofia);
+            //var period = new Period()
+            //{
+            //    From = new DateTime(2021, 8, 25, 12, 0, 0),
+            //    To = new DateTime(2021, 9, 1, 12, 0, 0),
+            //    Location = Locations.Sofia
+            //};
+
+            //var client = new Client()
+            //{
+            //    Mail = "krasi0m0@gmail.com",
+            //    FirstName = "Krasimir",
+            //    LastName = "Mitkov",
+            //    Phone = "0893458999",
+            //    DateOfBirth = new DateTime(2000, 02, 27)
+            //};
+
+            //Console.WriteLine(client.FirstName);
+
+            //carService.ReserveCar(service.GetCars().FirstOrDefault(), period, client, Locations.Sofia);
 
             //var period1 = new Period()
             //{
