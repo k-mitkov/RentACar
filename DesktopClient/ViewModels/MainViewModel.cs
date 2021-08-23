@@ -3,7 +3,9 @@ using Data.Models;
 using DesktopClient.Commands;
 using DesktopClient.Util;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
+using System.Reflection;
 using System.Windows.Input;
 
 namespace DesktopClient.ViewModels
@@ -61,18 +63,17 @@ namespace DesktopClient.ViewModels
             set
             {
                 currentLanguage = value;
-                if (currentLanguage.Lenguage.Equals(LenguageEnum.English))
+                var field = currentLanguage.Lenguage.GetType().GetField(currentLanguage.Lenguage.ToString());
+                var attributes = field.GetCustomAttributes(false);
+
+                DescriptionAttribute displayAttribute = null;
+
+                if (attributes.Any())
                 {
-                    TranslationSource.Instance.CurrentCulture = new System.Globalization.CultureInfo("en");
+                    displayAttribute = (DescriptionAttribute) attributes.ElementAt(0);
                 }
-                else if(currentLanguage.Lenguage.Equals(LenguageEnum.Български))
-                {
-                    TranslationSource.Instance.CurrentCulture = new System.Globalization.CultureInfo("bg-BG");
-                }
-                else
-                {
-                    TranslationSource.Instance.CurrentCulture = new System.Globalization.CultureInfo("en");
-                }
+
+                TranslationSource.Instance.CurrentCulture = new System.Globalization.CultureInfo(displayAttribute.Description);
             }
         }
         #endregion

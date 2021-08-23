@@ -129,4 +129,34 @@
   <data name="strCargo" xml:space="preserve">
     <value>Товарни</value>
   </data>
+  <data name="strBulgarian" xml:space="preserve">
+    <value>Български</value>
+  </data>
+  <data name="strBurgas" xml:space="preserve">
+    <value>Бургас</value>
+  </data>
+  <data name="strDropOff" xml:space="preserve">
+    <value>Място на връщане</value>
+  </data>
+  <data name="strPickUp" xml:space="preserve">
+    <value>Място на наемане</value>
+  </data>
+  <data name="strEnglish" xml:space="preserve">
+    <value>English</value>
+  </data>
+  <data name="strPlovdiv" xml:space="preserve">
+    <value>Пловдив</value>
+  </data>
+  <data name="strSearchNow" xml:space="preserve">
+    <value>Търси сега</value>
+  </data>
+  <data name="strSelectDate" xml:space="preserve">
+    <value>Избери Дата</value>
+  </data>
+  <data name="strSofia" xml:space="preserve">
+    <value>София</value>
+  </data>
+  <data name="strVarna" xml:space="preserve">
+    <value>Варна</value>
+  </data>
 </root>

@@ -16,7 +16,9 @@
     <None Remove="Resources\Images\flag-bg.jpg" />
     <None Remove="Resources\Images\flag-en.jpg" />
     <None Remove="Resources\Images\icon.png" />
+    <None Remove="Resources\Images\location-icon.png" />
     <None Remove="Resources\Images\logo.png" />
+    <None Remove="Resources\Images\time-icon.png" />
     <None Remove="Resources\Images\truck_search_icon.png" />
     <None Remove="Resources\Images\truck_search_icon_dark.png" />
   </ItemGroup>
@@ -49,7 +51,13 @@
     <Content Include="Resources\Images\icon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Resources\Images\location-icon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resources\Images\logo.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Images\time-icon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Images\truck_search_icon.png">

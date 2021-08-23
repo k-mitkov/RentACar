@@ -15,20 +15,20 @@ namespace Test
             IDataService service = new DataService();
             ICarService carService = new CarService();
 
-            Language language = new Language()
-            {
-                Lenguage = LenguageEnum.English,
-                IconPath = @"\Resources\Images\flag-en.jpg"
-            };
+            //Language language = new Language()
+            //{
+            //    Lenguage = LenguageEnum.English,
+            //    IconPath = @"\Resources\Images\flag-en.jpg"
+            //};
 
-            Language language2 = new Language()
-            {
-                Lenguage = LenguageEnum.Български,
-                IconPath = @"\Resources\Images\flag-bg.jpg"
-            };
+            //Language language2 = new Language()
+            //{
+            //    Lenguage = LenguageEnum.Български,
+            //    IconPath = @"\Resources\Images\flag-bg.jpg"
+            //};
 
-            service.AddNewLenguage(language);
-            service.AddNewLenguage(language2);
+            //service.AddNewLenguage(language);
+            //service.AddNewLenguage(language2);
 
             //var period = new Period()
             //{

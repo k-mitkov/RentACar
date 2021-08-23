@@ -27,8 +27,7 @@
                 <Image Source="\Resources\Images\logo.png"/>
             </Button>
 
-            <!--<ComboBox Grid.Column="2" Margin="20" ItemsSource="{Binding Path= ListOfLanguages}" SelectedItem="{Binding Path=Slanguage}" FontSize="30"/>-->
-            <ComboBox  Grid.Column="2" Margin="20" ItemsSource="{Binding Languages}"  SelectedValue="{Binding SelectedLanguage}">
+            <ComboBox  Grid.Column="2" Margin="20" VerticalContentAlignment="Center" ItemsSource="{Binding Languages}"  SelectedValue="{Binding SelectedLanguage}">
                 <ComboBox.ItemTemplate>
                     <DataTemplate>
                         <StackPanel Orientation="Horizontal">

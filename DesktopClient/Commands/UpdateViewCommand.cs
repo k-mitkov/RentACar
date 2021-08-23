@@ -1,10 +1,9 @@
 ﻿using Data.Enums;
 using Data.Models;
 using DesktopClient.ViewModels;
-using DesktopClient.Views;
 using System;
 using System.Collections.Generic;
-using System.Text;
+using System.Linq;
 using System.Windows.Input;
 
 namespace DesktopClient.Commands
@@ -40,10 +39,21 @@ namespace DesktopClient.Commands
             searchViewModel.SearchEvent += SearchHandler;
         }
 
-        public void SearchHandler(Period period, Locations location)
+        public void SearchHandler(IEnumerable<Car> cars, Locations locationTo)
         {
-            SelectViewModel selectViewModel = new SelectViewModel();
-            viewModel.SelectedViewModel = selectViewModel;
+
+            if (cars != null && cars.ToList().Count>0)
+            {
+                SelectViewModel selectViewModel = new SelectViewModel(cars);
+                viewModel.SelectedViewModel = selectViewModel;
+            }
+            else
+            {
+                SearchViewModel searchViewModel = new SearchViewModel();
+                viewModel.SelectedViewModel = searchViewModel;
+                searchViewModel.SearchEvent += SearchHandler;
+            }
+            
         }
 
         public void SelectHandler()

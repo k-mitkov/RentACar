@@ -147,4 +147,16 @@
   <data name="strSelectDate" xml:space="preserve">
     <value>Select A Date</value>
   </data>
+  <data name="strSofia" xml:space="preserve">
+    <value>Sofia</value>
+  </data>
+  <data name="strPlovdiv" xml:space="preserve">
+    <value>Plovdiv</value>
+  </data>
+  <data name="strVarna" xml:space="preserve">
+    <value>Varna</value>
+  </data>
+  <data name="strBurgas" xml:space="preserve">
+    <value>Burgas</value>
+  </data>
 </root>
