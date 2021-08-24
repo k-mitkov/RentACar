@@ -8,7 +8,7 @@ namespace Data.Service
 {
     public interface ICarService
     {
-        IEnumerable<Car> GetCarsByPeriod(Period period);
+        IEnumerable<Car> GetCarsByPeriodAndType(Period period, TypeVehicle type);
 
         bool ReserveCar(Car car, Period period, Client client, Locations location);
     }

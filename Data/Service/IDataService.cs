@@ -8,7 +8,7 @@ namespace Data.Service
 {
     public interface IDataService
     {
-        IEnumerable<Car> CarsByPeriod(Period period);
+        IEnumerable<Car> CarsByPeriodAndType(Period period, TypeVehicle type);
         void UpdateCar(Car car);
         void AddNewCar(Car car);
         void AddNewPeriod(Period period);

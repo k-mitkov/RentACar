@@ -1,5 +1,6 @@
 ﻿using Data.Enums;
 using Data.Models;
+using DesktopClient.BussinesModels;
 using DesktopClient.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -39,12 +40,12 @@ namespace DesktopClient.Commands
             searchViewModel.SearchEvent += SearchHandler;
         }
 
-        public void SearchHandler(IEnumerable<Car> cars, Locations locationTo)
+        public void SearchHandler(IEnumerable<CarPeriodRapper> rappers)
         {
 
-            if (cars != null && cars.ToList().Count>0)
+            if (rappers != null && rappers.ToList().Count>0)
             {
-                SelectViewModel selectViewModel = new SelectViewModel(cars);
+                SelectViewModel selectViewModel = new SelectViewModel(rappers);
                 viewModel.SelectedViewModel = selectViewModel;
             }
             else

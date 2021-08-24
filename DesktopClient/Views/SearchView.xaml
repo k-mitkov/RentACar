@@ -31,33 +31,49 @@
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
 
+            
+            
+            <!--<ItemsControl ItemsSource="{Binding Buttons}" Grid.Row="0">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Grid.Row="0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Button
+                                Grid.Column="{Binding Id}"
+                                Command="{Binding ButtonCommand}"
+                                Style="{DynamicResource Button}" />
+                        </Grid>
+                    </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>-->
             <Grid Grid.Row="0">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
-                <!--<ItemsControl>
-                    <ItemsControl.ItemTemplate>
-                        <DataTemplate>
-
-                        </DataTemplate>
-                    </ItemsControl.ItemTemplate>
-                </ItemsControl>-->
 
                 <Button
-                    Grid.Column="0"
-                    Command="{Binding CarCommand}"
-                    Style="{DynamicResource CarButton}" />
+                Grid.Column="0" 
+                DataContext="{Binding CarButton}"
+                Command="{Binding CarCommand}"
+                Style="{DynamicResource Button}" />
                 <Button
-                    Grid.Column="1"
-                    Command="{Binding ECarCommand}"
-                    Style="{DynamicResource ElCarButton}" />
+                Grid.Column="1"
+                DataContext="{Binding ECarButton}"
+                Command="{Binding ECarCommand}"
+                Style="{DynamicResource Button}" />
                 <Button
-                    Grid.Column="2"
-                    Command="{Binding TruckCommand}"
-                    Style="{DynamicResource FreightButton}" />
+                Grid.Column="2"
+                DataContext="{Binding TruckButton}"
+                Command="{Binding TruckCommand}"
+                Style="{DynamicResource Button}" />
             </Grid>
+
 
             <Grid Grid.Row="1" Margin="10">
                 <Grid.RowDefinitions>
@@ -227,7 +243,7 @@
                 Margin="10"
                 Background="#03a5fc"
                 BorderThickness="0"
-                Command="{Binding Path=SearchCommand}"
+                Command="{Binding SearchCommand}"
                 Content="{util:Localization strSearchNow}"
                 FontSize="20"
                 FontWeight="ExtraBold"

@@ -159,4 +159,10 @@
   <data name="strBurgas" xml:space="preserve">
     <value>Burgas</value>
   </data>
+  <data name="strDays" xml:space="preserve">
+    <value> days:</value>
+  </data>
+  <data name="strPricefor" xml:space="preserve">
+    <value>Price for </value>
+  </data>
 </root>

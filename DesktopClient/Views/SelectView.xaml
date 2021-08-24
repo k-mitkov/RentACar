@@ -4,9 +4,59 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:DesktopClient.Views"
+             xmlns:util="clr-namespace:DesktopClient.Util"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-            
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.95*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid x:Name="RowGribName" Grid.Row="0"/>
+        <Grid x:Name="ColGribName" Grid.Column="0"/>
+
+        <ListBox Grid.RowSpan="4" Grid.ColumnSpan="3" ItemsSource="{Binding Cars}" ItemContainerStyle="{DynamicResource BorderStyle}">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal" Margin="5" Background="White">
+                        <Grid Grid.Column="0" Width="{Binding ElementName=ColGribName, Path=ActualWidth}">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="3*"/>
+                            </Grid.RowDefinitions>
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                <TextBlock HorizontalAlignment="Center" Text="{Binding Brand}" FontSize="20"/>
+                                <TextBlock HorizontalAlignment="Center" Text=" " FontSize="20"/>
+                                <TextBlock HorizontalAlignment="Center" Text="{Binding Model}" FontSize="20"/>
+                            </StackPanel>
+                            <Image Grid.Row="1" Source="{Binding Path}" Height="{Binding ElementName=RowGribName, Path=ActualHeight}"/>
+                        </Grid>
+                        <StackPanel Width="{Binding ElementName=ColGribName, Path=ActualWidth}">
+                            <TextBlock Margin="20" VerticalAlignment="Top" HorizontalAlignment="Right" Foreground="White" Background="#03a5fc" FontSize="15" FontWeight="Heavy"  Text="{Binding Year}" />
+                        </StackPanel>
+                        <StackPanel Background="#e3e3e3" Orientation="Vertical" Width="{Binding ElementName=ColGribName, Path=ActualWidth}">
+                            <StackPanel VerticalAlignment="Center">
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                    <TextBlock   FontSize="20" Text="{util:Localization strPricefor}"/>
+                                    <TextBlock  FontSize="20" Text="{Binding Days}"/>
+                                    <TextBlock  FontSize="20" Text="{util:Localization strDays}"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal"  HorizontalAlignment="Center" >
+                                    <TextBlock FontSize="20" FontWeight="Heavy" Text="{Binding TotalPrice}"/>
+                                    <TextBlock  FontSize="20"  FontWeight="Heavy" Text="$"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </StackPanel>
+                    </StackPanel>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ListBox>
     </Grid>
 </UserControl>

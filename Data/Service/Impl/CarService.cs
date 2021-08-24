@@ -20,9 +20,9 @@ namespace Data.Service.Impl
         #endregion
 
         #region Methods
-        public IEnumerable<Car> GetCarsByPeriod(Period period)
+        public IEnumerable<Car> GetCarsByPeriodAndType(Period period, TypeVehicle type)
         {
-            return data.CarsByPeriod(period);
+            return data.CarsByPeriodAndType(period, type);
         }
 
         public bool ReserveCar(Car car, Period period, Client client, Locations location)

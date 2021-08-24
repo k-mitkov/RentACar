@@ -70,6 +70,15 @@ namespace DesktopClient.Resources.Localizations {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Burgas.
+        /// </summary>
+        public static string strBurgas {
+            get {
+                return ResourceManager.GetString("strBurgas", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Cargo.
         /// </summary>
         public static string strCargo {
@@ -84,6 +93,15 @@ namespace DesktopClient.Resources.Localizations {
         public static string strCars {
             get {
                 return ResourceManager.GetString("strCars", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to  days:.
+        /// </summary>
+        public static string strDays {
+            get {
+                return ResourceManager.GetString("strDays", resourceCulture);
             }
         }
         
@@ -124,6 +142,24 @@ namespace DesktopClient.Resources.Localizations {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Plovdiv.
+        /// </summary>
+        public static string strPlovdiv {
+            get {
+                return ResourceManager.GetString("strPlovdiv", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Price for .
+        /// </summary>
+        public static string strPricefor {
+            get {
+                return ResourceManager.GetString("strPricefor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Rent a car.
         /// </summary>
         public static string strRentACar {
@@ -147,6 +183,24 @@ namespace DesktopClient.Resources.Localizations {
         public static string strSelectDate {
             get {
                 return ResourceManager.GetString("strSelectDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sofia.
+        /// </summary>
+        public static string strSofia {
+            get {
+                return ResourceManager.GetString("strSofia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Varna.
+        /// </summary>
+        public static string strVarna {
+            get {
+                return ResourceManager.GetString("strVarna", resourceCulture);
             }
         }
     }

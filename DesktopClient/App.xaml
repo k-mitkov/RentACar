@@ -21,7 +21,7 @@
                 <views:SelectView/>
             </DataTemplate>
 
-            <Style x:Key="CarButton" TargetType="{x:Type Button}">
+            <Style x:Key="Button" TargetType="{x:Type Button}">
                 <Setter Property="Template">
                     <Setter.Value>
                         <ControlTemplate TargetType="Button">
@@ -34,9 +34,9 @@
                                     <Image
                                         x:Name="buttonImage"
                                         Margin="40,10,40,30"
-                                        Source="\Resources\Images\car_search_icon.png" 
+                                        Source="{Binding IconPath}" 
                                         Stretch="Fill" />
-                                    <Label x:Name="label" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="15" Content="{util:Localization strCars}"/>
+                                    <Label x:Name="label" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="15" Content="{Binding Name}"/>
                                     <ContentPresenter
                                         Margin="{TemplateBinding Padding}"
                                         HorizontalAlignment="Center"
@@ -44,10 +44,10 @@
                                 </Grid>
                             </Border>
                             <ControlTemplate.Triggers>
-                                <!--NB This changes the Border above with name style of [border] -->
-                                <DataTrigger Binding="{Binding IsCarSelected}" Value="true">
+                                <!--NB This changes the Border above with name style of [border]-->
+                                <DataTrigger Binding="{Binding IsSelected}" Value="true">
                                     <Setter TargetName="border" Property="Background" Value="#fcd303" />
-                                    <Setter TargetName="buttonImage" Property="Source" Value="\Resources\Images\car_search_icon_blue.png" />
+                                    <Setter TargetName="buttonImage" Property="Source" Value="{Binding IconPathBlue}" />
                                 </DataTrigger>
                                 <MultiDataTrigger>
                                     <MultiDataTrigger.Conditions>
@@ -55,10 +55,10 @@
                                                 RelativeSource={
                                                 RelativeSource Mode=Self},
                                                 Path=IsMouseOver}" Value="True"/>
-                                        <Condition Binding="{Binding IsCarSelected}" Value="true"/>
+                                        <Condition Binding="{Binding IsSelected}" Value="true"/>
                                     </MultiDataTrigger.Conditions>
                                     <Setter TargetName="border" Property="Background" Value="#fcd303" />
-                                    <Setter TargetName="buttonImage" Property="Source" Value="\Resources\Images\car_search_icon_blue.png" />
+                                    <Setter TargetName="buttonImage" Property="Source" Value="{Binding IconPathBlue}" />
                                     <Setter TargetName="buttonImage" Property="Margin" Value="40,20,40,20" />
                                 </MultiDataTrigger>
                                 <MultiDataTrigger>
@@ -67,129 +67,11 @@
                                                 RelativeSource={
                                                 RelativeSource Mode=Self},
                                                 Path=IsMouseOver}" Value="True"/>
-                                        <Condition Binding="{Binding IsCarSelected}" Value="false"/>
+                                        <Condition Binding="{Binding IsSelected}" Value="false"/>
                                     </MultiDataTrigger.Conditions>
                                     <Setter TargetName="label" Property="Content" Value=""/>
                                     <Setter TargetName="border" Property="Background" Value="#fcd303" />
-                                    <Setter TargetName="buttonImage" Property="Source" Value="\Resources\Images\car_search_icon_blue.png" />
-                                    <Setter TargetName="buttonImage" Property="Margin" Value="40,20,40,20" />
-                                </MultiDataTrigger>
-                            </ControlTemplate.Triggers>
-                        </ControlTemplate>
-                    </Setter.Value>
-                </Setter>
-            </Style>
-
-            <Style x:Key="ElCarButton" TargetType="{x:Type Button}">
-                <Setter Property="Template">
-                    <Setter.Value>
-                        <ControlTemplate TargetType="Button">
-                            <Border
-                                x:Name="border"
-                                BorderThickness="0"
-                                Background="#fcc603"
-                                TextBlock.Foreground="Black">
-                                <Grid>
-                                    <Image
-                                        x:Name="buttonImage"
-                                        Margin="40,10,40,30"
-                                        Source="\Resources\Images\e-car_search_icon.png" 
-                                        Stretch="Fill" />
-                                    <Label  x:Name="label" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="15" Content="{util:Localization strECars}"/>
-                                    <ContentPresenter
-                                        Margin="{TemplateBinding Padding}"                                      
-                                        HorizontalAlignment="Center"
-                                        VerticalAlignment="Center" />
-                                </Grid>
-                            </Border>
-                            <ControlTemplate.Triggers>
-                                <!--NB This changes the Border above with name style of [border] -->
-                                <DataTrigger Binding="{Binding IsECarSelected}" Value="true">
-                                    <Setter TargetName="border" Property="Background" Value="#fcd303" />
-                                    <Setter TargetName="buttonImage" Property="Source" Value="\Resources\Images\e-car_search_icon_blue.png" />
-                                </DataTrigger>
-                                <MultiDataTrigger>
-                                    <MultiDataTrigger.Conditions>
-                                        <Condition Binding="{Binding
-                                                RelativeSource={
-                                                RelativeSource Mode=Self},
-                                                Path=IsMouseOver}" Value="True"/>
-                                        <Condition Binding="{Binding IsECarSelected}" Value="true"/>
-                                    </MultiDataTrigger.Conditions>
-                                    <Setter TargetName="border" Property="Background" Value="#fcd303" />
-                                    <Setter TargetName="buttonImage" Property="Source" Value="\Resources\Images\e-car_search_icon_blue.png" />
-                                    <Setter TargetName="buttonImage" Property="Margin" Value="40,20,40,20" />
-                                </MultiDataTrigger>
-                                <MultiDataTrigger>
-                                    <MultiDataTrigger.Conditions>
-                                        <Condition Binding="{Binding
-                                                RelativeSource={
-                                                RelativeSource Mode=Self},
-                                                Path=IsMouseOver}" Value="True"/>
-                                        <Condition Binding="{Binding IsECarSelected}" Value="false"/>
-                                    </MultiDataTrigger.Conditions>
-                                    <Setter TargetName="label" Property="Content" Value=""/>
-                                    <Setter TargetName="border" Property="Background" Value="#fcd303" />
-                                    <Setter TargetName="buttonImage" Property="Source" Value="\Resources\Images\e-car_search_icon_blue.png" />
-                                    <Setter TargetName="buttonImage" Property="Margin" Value="40,20,40,20" />
-                                </MultiDataTrigger>
-                            </ControlTemplate.Triggers>
-                        </ControlTemplate>
-                    </Setter.Value>
-                </Setter>
-            </Style>
-
-            <Style x:Key="FreightButton" TargetType="{x:Type Button}">
-                <Setter Property="Template">
-                    <Setter.Value>
-                        <ControlTemplate TargetType="Button">
-                            <Border
-                                x:Name="border"
-                                BorderThickness="0"
-                                Background="#fcc603"
-                                TextBlock.Foreground="Black">
-                                <Grid>
-                                    <Image
-                                        x:Name="buttonImage"
-                                        Margin="40,10,40,30"
-                                        Source="\Resources\Images\truck_search_icon.png" 
-                                        Stretch="Fill" />
-                                    <Label x:Name="label" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="15" Content="{util:Localization strCargo}"/>
-                                    <ContentPresenter
-                                        Margin="{TemplateBinding Padding}"
-                                        HorizontalAlignment="Center"
-                                        VerticalAlignment="Center" />
-                                </Grid>
-                            </Border>
-                            <ControlTemplate.Triggers>
-                                <!--NB This changes the Border above with name style of [border] -->
-                                <DataTrigger Binding="{Binding IsTruckSelected}" Value="true">
-                                    <Setter TargetName="border" Property="Background" Value="#fcd303" />
-                                    <Setter TargetName="buttonImage" Property="Source" Value="\Resources\Images\truck_search_icon_dark.png" />
-                                </DataTrigger>
-                                <MultiDataTrigger>
-                                    <MultiDataTrigger.Conditions>
-                                        <Condition Binding="{Binding
-                                                RelativeSource={
-                                                RelativeSource Mode=Self},
-                                                Path=IsMouseOver}" Value="True"/>
-                                        <Condition Binding="{Binding IsTruckSelected}" Value="true"/>
-                                    </MultiDataTrigger.Conditions>
-                                    <Setter TargetName="border" Property="Background" Value="#fcd303" />
-                                    <Setter TargetName="buttonImage" Property="Source" Value="\Resources\Images\truck_search_icon_dark.png" />
-                                    <Setter TargetName="buttonImage" Property="Margin" Value="40,20,40,20" />
-                                </MultiDataTrigger>
-                                <MultiDataTrigger>
-                                    <MultiDataTrigger.Conditions>
-                                        <Condition Binding="{Binding
-                                                RelativeSource={
-                                                RelativeSource Mode=Self},
-                                                Path=IsMouseOver}" Value="True"/>
-                                        <Condition Binding="{Binding IsTruckSelected}" Value="false"/>
-                                    </MultiDataTrigger.Conditions>
-                                    <Setter TargetName="label" Property="Content" Value=""/>
-                                    <Setter TargetName="border" Property="Background" Value="#fcd303" />
-                                    <Setter TargetName="buttonImage" Property="Source" Value="\Resources\Images\truck_search_icon_dark.png" />
+                                    <Setter TargetName="buttonImage" Property="Source" Value="{Binding IconPathBlue}" />
                                     <Setter TargetName="buttonImage" Property="Margin" Value="40,20,40,20" />
                                 </MultiDataTrigger>
                             </ControlTemplate.Triggers>
@@ -480,6 +362,16 @@
                         </ControlTemplate>
                     </Setter.Value>
                 </Setter>
+            </Style>
+
+            <Style x:Key="BorderStyle" TargetType="ListBoxItem">
+                <Style.Triggers>
+                    <Trigger Property="IsMouseOver" Value="True">
+                        <Trigger.Setters>
+                            <Setter Property="ItemsControl.BorderBrush" Value="#fcd303"/>
+                        </Trigger.Setters>
+                    </Trigger>
+                </Style.Triggers>
             </Style>
 
         </ResourceDictionary>

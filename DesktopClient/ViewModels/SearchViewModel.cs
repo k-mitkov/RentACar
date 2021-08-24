@@ -12,18 +12,16 @@ namespace DesktopClient.ViewModels
     class SearchViewModel : BaseViewModel
     {
         #region Declarations
-        public event Action<IEnumerable<Car>,Locations> SearchEvent;
+        public event Action<IEnumerable<CarPeriodRapper>> SearchEvent;
         private ButtonCommand buttonCommand;
-        private ButtonCommand carCommand;
-        private ButtonCommand eCarCommand;
-        private ButtonCommand truckCommand;
-        private bool isCarSelected;
-        private bool isECarSelected;
-        private bool isTruckSelected;
         private ObservableCollection<LocationRapper> locations;
         private List<Hours> hours;
+        private List<VehicleTypeButton> buttons;
         private LocationRapper selectedLocationFrom;
         private LocationRapper selectedLocationTo;
+        private VehicleTypeButton carButton;
+        private VehicleTypeButton eCarButton;
+        private VehicleTypeButton truckButton;
         #endregion
 
         #region Constructor
@@ -50,7 +48,8 @@ namespace DesktopClient.ViewModels
 
             hours = Hours.GetHours();
 
-            IsCarSelected = true;
+            GetButtons();
+
             SelectedLocationFrom = locations.First(l => l.Location == Locations.Sofia);
             SelectedLocationTo = locations.First(l => l.Location == Locations.Sofia);
             SelectedHourFrom = hours.First(h => h.Hour.Equals("11:00"));
@@ -73,80 +72,6 @@ namespace DesktopClient.ViewModels
             }
         }
 
-        public ButtonCommand CarCommand
-        {
-            get
-            {
-                if (carCommand == null)
-                {
-                    carCommand = new ButtonCommand(SelectCar, CanExecuteShow);
-                }
-                return carCommand;
-            }
-        }
-
-        public ButtonCommand ECarCommand
-        {
-            get
-            {
-                if (eCarCommand == null)
-                {
-                    eCarCommand = new ButtonCommand(SelectECar, CanExecuteShow);
-                }
-                return eCarCommand;
-            }
-        }
-
-        public ButtonCommand TruckCommand
-        {
-            get
-            {
-                if (truckCommand == null)
-                {
-                    truckCommand = new ButtonCommand(SelectTruck, CanExecuteShow);
-                }
-                return truckCommand;
-            }
-        }
-
-        public bool IsCarSelected
-        {
-            get
-            {
-                return isCarSelected;
-            }
-            set
-            {
-                isCarSelected = value;
-                OnPropertyChanged(nameof(IsCarSelected));
-            }
-        }
-
-        public bool IsECarSelected
-        {
-            get
-            {
-                return isECarSelected;
-            }
-            set
-            {
-                isECarSelected = value;
-                OnPropertyChanged(nameof(IsECarSelected));
-            }
-        }
-        public bool IsTruckSelected
-        {
-            get
-            {
-                return isTruckSelected;
-            }
-            set
-            {
-                isTruckSelected = value;
-                OnPropertyChanged(nameof(IsTruckSelected));
-            }
-        }
-
         public ObservableCollection<LocationRapper> LocationsList
         {
             get
@@ -160,11 +85,62 @@ namespace DesktopClient.ViewModels
             }
         }
 
-        public List<Hours> HoursList
+        public IEnumerable<Hours> HoursList
         {
             get
             {
                 return hours;
+            }
+        }
+
+        //public IEnumerable<Button> Buttons
+        //{
+        //    get
+        //    {
+        //        return buttons;
+        //    }
+        //    set
+        //    {
+        //        buttons = value.ToList();
+        //        OnPropertyChanged(nameof(Buttons));
+        //    }
+        //}
+
+        public VehicleTypeButton CarButton
+        {
+            get
+            {
+                return carButton;
+            }
+            set
+            {
+                carButton = value;
+                OnPropertyChanged(nameof(CarButton));
+            }
+        }
+        public VehicleTypeButton ECarButton
+        {
+            get
+            {
+                return eCarButton;
+            }
+            set
+            {
+                eCarButton = value;
+                OnPropertyChanged(nameof(ECarButton));
+            }
+        }
+
+        public VehicleTypeButton TruckButton
+        {
+            get
+            {
+                return truckButton;
+            }
+            set
+            {
+                truckButton = value;
+                OnPropertyChanged(nameof(TruckButton));
             }
         }
 
@@ -203,9 +179,9 @@ namespace DesktopClient.ViewModels
         #endregion
 
         #region Methods
-        private void OnSearch(IEnumerable<Car> cars, Locations locationTo)
+        private void OnSearch(IEnumerable<CarPeriodRapper> rappers)
         {
-            SearchEvent.Invoke(cars, locationTo);
+            SearchEvent.Invoke(rappers);
         }
 
         public bool CanExecuteShow(object o)
@@ -221,29 +197,26 @@ namespace DesktopClient.ViewModels
                 To = new DateTime(SelectedDateTo.Year, SelectedDateTo.Month, SelectedDateTo.Day, int.Parse(SelectedHourTo.Hour.Split(":").First()), 0, 0),
                 Location = SelectedLocationFrom.Location
             };
-            OnSearch(carService.GetCarsByPeriod(period), SelectedLocationTo.Location);
+            TypeVehicle type = buttons.Where(b => b.IsSelected == true).First().Type;
+
+            List<Car> cars = carService.GetCarsByPeriodAndType(period, type).ToList();
+            List<CarPeriodRapper> rappers=new List<CarPeriodRapper>();
+            foreach(Car car in cars)
+            {
+                rappers.Add(new CarPeriodRapper(car, period, SelectedLocationTo.Location));
+            }
+
+            OnSearch(rappers);
         }
 
-        private void SelectCar(object o)
+        public void GetButtons()
         {
-            IsCarSelected = true;
-            IsECarSelected = false;
-            IsTruckSelected = false;
+            buttons = VehicleTypeButton.GetButtons();
+            CarButton = buttons[0];
+            ECarButton = buttons[1];
+            TruckButton = buttons[2];
         }
 
-        private void SelectECar(object o)
-        {
-            IsCarSelected = false;
-            IsECarSelected = true;
-            IsTruckSelected = false;
-        }
-
-        private void SelectTruck(object o)
-        {
-            IsCarSelected = false;
-            IsECarSelected = false;
-            IsTruckSelected = true;
-        }
         #endregion
     }
 }

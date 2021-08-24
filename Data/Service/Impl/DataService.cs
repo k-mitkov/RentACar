@@ -78,11 +78,11 @@ namespace Data.Service.Impl
             }
         }
 
-        public IEnumerable<Car> CarsByPeriod(Period period)
+        public IEnumerable<Car> CarsByPeriodAndType(Period period, TypeVehicle type)
         {
             using (context = new DataContext())
             {
-                return context.Periods.Where((p) => p.From < period.From && p.To > period.To && p.Location == period.Location).Select((p) => p.Car).AsQueryable().ToList();
+                return context.Periods.Where((p) => p.From < period.From && p.To > period.To && p.Location == period.Location && p.Car.Type == type).Select((p) => p.Car).AsQueryable().ToList();
             }
         }
 

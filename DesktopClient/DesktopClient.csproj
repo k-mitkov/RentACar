@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <None Remove="Resources\Images\Alfa_Romeo_159.jpg" />
+    <None Remove="Resources\Images\Bmw_5Series.jpg" />
     <None Remove="Resources\Images\car_search_icon.png" />
     <None Remove="Resources\Images\car_search_icon_blue.png" />
     <None Remove="Resources\Images\date-icon.png" />
@@ -18,13 +19,19 @@
     <None Remove="Resources\Images\icon.png" />
     <None Remove="Resources\Images\location-icon.png" />
     <None Remove="Resources\Images\logo.png" />
+    <None Remove="Resources\Images\Mercedes_SClass.png" />
     <None Remove="Resources\Images\time-icon.png" />
+    <None Remove="Resources\Images\Toyota_Corolla.jpg" />
     <None Remove="Resources\Images\truck_search_icon.png" />
     <None Remove="Resources\Images\truck_search_icon_dark.png" />
+    <None Remove="Resources\Images\Vw_Passat.jpg" />
   </ItemGroup>
 
   <ItemGroup>
     <Content Include="Resources\Images\Alfa_Romeo_159.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Images\Bmw_5Series.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Images\car_search_icon.png">
@@ -57,13 +64,22 @@
     <Content Include="Resources\Images\logo.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Resources\Images\Mercedes_SClass.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resources\Images\time-icon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Images\Toyota_Corolla.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Images\truck_search_icon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Images\truck_search_icon_dark.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Images\Vw_Passat.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

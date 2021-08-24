@@ -63,14 +63,14 @@ namespace Test
 
             //var car = new Car()
             //{
-            //    Brand = "Alfa Romeo",
-            //    Model = "159",
+            //    Brand = "BMW",
+            //    Model = "5 Series",
             //    Capacity = 5,
-            //    Consumation = 8.5m,
-            //    Path = @"\Resources\Images\Alfa_Romeo_159.jpg",
-            //    Price = 50,
+            //    Consumation = 9.5m,
+            //    Path = @"\Resources\Images\Bmw_5Series.png",
+            //    Price = 100,
             //    Type = TypeVehicle.Car,
-            //    Year = 2006,
+            //    Year = 2018,
             //    Periods = periods
             //};
 
