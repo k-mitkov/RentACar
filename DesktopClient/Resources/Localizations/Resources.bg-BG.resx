@@ -159,4 +159,13 @@
   <data name="strVarna" xml:space="preserve">
     <value>Варна</value>
   </data>
+  <data name="strPricefor" xml:space="preserve">
+    <value>Цена за </value>
+  </data>
+  <data name="strDays" xml:space="preserve">
+    <value>дни</value>
+  </data>
+  <data name="strDays2" xml:space="preserve">
+    <value> дни:</value>
+  </data>
 </root>

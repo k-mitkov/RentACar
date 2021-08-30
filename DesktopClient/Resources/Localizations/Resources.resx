@@ -159,10 +159,43 @@
   <data name="strBurgas" xml:space="preserve">
     <value>Burgas</value>
   </data>
-  <data name="strDays" xml:space="preserve">
+  <data name="strDays:" xml:space="preserve">
     <value> days:</value>
   </data>
   <data name="strPricefor" xml:space="preserve">
     <value>Price for </value>
+  </data>
+  <data name="strRentalPeriod" xml:space="preserve">
+    <value>Rental period:</value>
+  </data>
+  <data name="strBackToResults" xml:space="preserve">
+    <value>Back To Results</value>
+  </data>
+  <data name="strBookNow" xml:space="preserve">
+    <value>Book Now</value>
+  </data>
+  <data name="strDateOfBirth:" xml:space="preserve">
+    <value>Date of birth :</value>
+  </data>
+  <data name="strDays" xml:space="preserve">
+    <value>days</value>
+  </data>
+  <data name="strEmail:" xml:space="preserve">
+    <value>Email:</value>
+  </data>
+  <data name="strFirstName:" xml:space="preserve">
+    <value>First name:</value>
+  </data>
+  <data name="strLastName:" xml:space="preserve">
+    <value>Last name:</value>
+  </data>
+  <data name="strPersonalData" xml:space="preserve">
+    <value>Personal Data</value>
+  </data>
+  <data name="strPhone:" xml:space="preserve">
+    <value>Phone:</value>
+  </data>
+  <data name="strTotalPrice" xml:space="preserve">
+    <value>Total price:</value>
   </data>
 </root>

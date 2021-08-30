@@ -66,14 +66,14 @@ namespace DesktopClient.ViewModels
                 var field = currentLanguage.Lenguage.GetType().GetField(currentLanguage.Lenguage.ToString());
                 var attributes = field.GetCustomAttributes(false);
 
-                DescriptionAttribute displayAttribute = null;
+                //DescriptionAttribute displayAttribute = null;
 
-                if (attributes.Any())
-                {
-                    displayAttribute = (DescriptionAttribute) attributes.ElementAt(0);
-                }
+                //if (attributes.Any())
+                //{
+                //    displayAttribute = (DescriptionAttribute) attributes.ElementAt(0);
+                //}
 
-                TranslationSource.Instance.CurrentCulture = new System.Globalization.CultureInfo(displayAttribute.Description);
+                TranslationSource.Instance.CurrentCulture = new System.Globalization.CultureInfo(attributes.Select(a=> (DescriptionAttribute) a).ElementAt(0).Description);
             }
         }
         #endregion

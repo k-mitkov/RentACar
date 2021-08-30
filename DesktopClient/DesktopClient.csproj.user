@@ -7,7 +7,13 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="Views\ClientDataView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\SearchView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\SelectedCarView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Views\SelectView.xaml.cs">
@@ -20,10 +26,16 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="Views\ClientDataView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Views\MainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\SearchView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\SelectedCarView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\SelectView.xaml">

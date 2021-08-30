@@ -17,6 +17,7 @@
     <None Remove="Resources\Images\flag-bg.jpg" />
     <None Remove="Resources\Images\flag-en.jpg" />
     <None Remove="Resources\Images\icon.png" />
+    <None Remove="Resources\Images\ico_calendar_big.png" />
     <None Remove="Resources\Images\location-icon.png" />
     <None Remove="Resources\Images\logo.png" />
     <None Remove="Resources\Images\Mercedes_SClass.png" />
@@ -56,6 +57,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Images\icon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Images\ico_calendar_big.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Images\location-icon.png">

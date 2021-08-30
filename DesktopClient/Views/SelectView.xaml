@@ -15,14 +15,14 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="0.95*" />
+            <ColumnDefinition Width="0.96*" />
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
         <Grid x:Name="RowGribName" Grid.Row="0"/>
         <Grid x:Name="ColGribName" Grid.Column="0"/>
 
-        <ListBox Grid.RowSpan="4" Grid.ColumnSpan="3" ItemsSource="{Binding Cars}" ItemContainerStyle="{DynamicResource BorderStyle}">
+        <ListBox Grid.RowSpan="4" Grid.ColumnSpan="3" ItemsSource="{Binding Cars}" ItemContainerStyle="{DynamicResource BorderStyle}" SelectedItem="{Binding SelectedCar}">
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal" Margin="5" Background="White">
@@ -32,21 +32,23 @@
                                 <RowDefinition Height="3*"/>
                             </Grid.RowDefinitions>
                             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                                <TextBlock HorizontalAlignment="Center" Text="{Binding Brand}" FontSize="20"/>
+                                <TextBlock HorizontalAlignment="Center" Text="{Binding Brand}" FontSize="20" Foreground="#03a5fc" FontWeight="Heavy"/>
                                 <TextBlock HorizontalAlignment="Center" Text=" " FontSize="20"/>
-                                <TextBlock HorizontalAlignment="Center" Text="{Binding Model}" FontSize="20"/>
+                                <TextBlock HorizontalAlignment="Center" Text="{Binding Model}" FontSize="20" Foreground="#03a5fc" FontWeight="Heavy"/>
                             </StackPanel>
                             <Image Grid.Row="1" Source="{Binding Path}" Height="{Binding ElementName=RowGribName, Path=ActualHeight}"/>
                         </Grid>
                         <StackPanel Width="{Binding ElementName=ColGribName, Path=ActualWidth}">
-                            <TextBlock Margin="20" VerticalAlignment="Top" HorizontalAlignment="Right" Foreground="White" Background="#03a5fc" FontSize="15" FontWeight="Heavy"  Text="{Binding Year}" />
+                            <StackPanel Margin="20" VerticalAlignment="Top" HorizontalAlignment="Right" Background="#03a5fc">
+                                <TextBlock  Margin="10,0" HorizontalAlignment="Center" Foreground="White" FontSize="15" FontWeight="Heavy" Text="{Binding Year}" />
+                            </StackPanel>
                         </StackPanel>
                         <StackPanel Background="#e3e3e3" Orientation="Vertical" Width="{Binding ElementName=ColGribName, Path=ActualWidth}">
                             <StackPanel VerticalAlignment="Center">
                                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                                     <TextBlock   FontSize="20" Text="{util:Localization strPricefor}"/>
                                     <TextBlock  FontSize="20" Text="{Binding Days}"/>
-                                    <TextBlock  FontSize="20" Text="{util:Localization strDays}"/>
+                                    <TextBlock  FontSize="20" Text="{util:Localization strDays:}"/>
                                 </StackPanel>
                                 <StackPanel Orientation="Horizontal"  HorizontalAlignment="Center" >
                                     <TextBlock FontSize="20" FontWeight="Heavy" Text="{Binding TotalPrice}"/>

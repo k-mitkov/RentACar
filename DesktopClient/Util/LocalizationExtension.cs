@@ -6,7 +6,7 @@ namespace DesktopClient.Util
     {
         public LocalizationExtension(string name) : base("[" + name + "]")
         {
-            Mode = BindingMode.OneWay;
+            Mode = BindingMode.Default;
             Source = TranslationSource.Instance;
         }
     }

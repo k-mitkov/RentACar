@@ -125,7 +125,7 @@
                             <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
 
-                        <DatePicker
+                        <DatePicker 
                             Grid.Column="0"
                             Margin="5"
                             FontSize="30"

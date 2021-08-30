@@ -61,6 +61,24 @@ namespace DesktopClient.Resources.Localizations {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Back To Results.
+        /// </summary>
+        public static string strBackToResults {
+            get {
+                return ResourceManager.GetString("strBackToResults", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Book Now.
+        /// </summary>
+        public static string strBookNow {
+            get {
+                return ResourceManager.GetString("strBookNow", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Български.
         /// </summary>
         public static string strBulgarian {
@@ -97,11 +115,29 @@ namespace DesktopClient.Resources.Localizations {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to  days:.
+        ///   Looks up a localized string similar to Date of birth :.
+        /// </summary>
+        public static string strDateOfBirth_ {
+            get {
+                return ResourceManager.GetString("strDateOfBirth:", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to days.
         /// </summary>
         public static string strDays {
             get {
                 return ResourceManager.GetString("strDays", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to  days:.
+        /// </summary>
+        public static string strDays_ {
+            get {
+                return ResourceManager.GetString("strDays:", resourceCulture);
             }
         }
         
@@ -124,11 +160,56 @@ namespace DesktopClient.Resources.Localizations {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Email:.
+        /// </summary>
+        public static string strEmail_ {
+            get {
+                return ResourceManager.GetString("strEmail:", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to English.
         /// </summary>
         public static string strEnglish {
             get {
                 return ResourceManager.GetString("strEnglish", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to First name:.
+        /// </summary>
+        public static string strFirstName_ {
+            get {
+                return ResourceManager.GetString("strFirstName:", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Last name:.
+        /// </summary>
+        public static string strLastName_ {
+            get {
+                return ResourceManager.GetString("strLastName:", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Personal Data.
+        /// </summary>
+        public static string strPersonalData {
+            get {
+                return ResourceManager.GetString("strPersonalData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Phone:.
+        /// </summary>
+        public static string strPhone_ {
+            get {
+                return ResourceManager.GetString("strPhone:", resourceCulture);
             }
         }
         
@@ -169,6 +250,15 @@ namespace DesktopClient.Resources.Localizations {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Rental period:.
+        /// </summary>
+        public static string strRentalPeriod {
+            get {
+                return ResourceManager.GetString("strRentalPeriod", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Search Now.
         /// </summary>
         public static string strSearchNow {
@@ -192,6 +282,15 @@ namespace DesktopClient.Resources.Localizations {
         public static string strSofia {
             get {
                 return ResourceManager.GetString("strSofia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Total price:.
+        /// </summary>
+        public static string strTotalPrice {
+            get {
+                return ResourceManager.GetString("strTotalPrice", resourceCulture);
             }
         }
         

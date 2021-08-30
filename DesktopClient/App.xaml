@@ -21,6 +21,14 @@
                 <views:SelectView/>
             </DataTemplate>
 
+            <DataTemplate DataType="{x:Type viewmodels:SelectedCarViewModel}">
+                <views:SelectedCarView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewmodels:ClientDataViewModel}">
+                <views:ClientDataView/>
+            </DataTemplate>
+
             <Style x:Key="Button" TargetType="{x:Type Button}">
                 <Setter Property="Template">
                     <Setter.Value>

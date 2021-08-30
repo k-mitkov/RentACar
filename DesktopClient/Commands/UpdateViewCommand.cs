@@ -12,8 +12,9 @@ namespace DesktopClient.Commands
     public class UpdateViewCommand : ICommand
     {
         #region Declarations
-        MainViewModel viewModel;
+        private MainViewModel viewModel;
         public event EventHandler CanExecuteChanged;
+        private SelectViewModel selectViewModel;
         #endregion
 
         #region Constructor
@@ -45,7 +46,8 @@ namespace DesktopClient.Commands
 
             if (rappers != null && rappers.ToList().Count>0)
             {
-                SelectViewModel selectViewModel = new SelectViewModel(rappers);
+                selectViewModel = new SelectViewModel(rappers);
+                selectViewModel.selectEvent += SelectHandler;
                 viewModel.SelectedViewModel = selectViewModel;
             }
             else
@@ -57,9 +59,24 @@ namespace DesktopClient.Commands
             
         }
 
-        public void SelectHandler()
+        public void SelectHandler(CarPeriodRapper car)
         {
-           
+            SelectedCarViewModel selectedCarViewModel = new SelectedCarViewModel(car);
+            selectedCarViewModel.BackEvent += BackToResultsHandler;
+            selectedCarViewModel.SelectEvent += SelectedCarHandler;
+            viewModel.SelectedViewModel = selectedCarViewModel;
+        }
+
+        public void BackToResultsHandler()
+        {
+            selectViewModel.SelectedCar = null;
+            viewModel.SelectedViewModel = selectViewModel;
+        }
+
+        public void SelectedCarHandler(CarPeriodRapper car)
+        {
+            ClientDataViewModel clientDataViewModel = new ClientDataViewModel();
+            viewModel.SelectedViewModel = clientDataViewModel;
         }
         #endregion
     }
