@@ -175,7 +175,7 @@
     <value>Book Now</value>
   </data>
   <data name="strDateOfBirth:" xml:space="preserve">
-    <value>Date of birth :</value>
+    <value>Date of birth:</value>
   </data>
   <data name="strDays" xml:space="preserve">
     <value>days</value>
@@ -197,5 +197,20 @@
   </data>
   <data name="strTotalPrice" xml:space="preserve">
     <value>Total price:</value>
+  </data>
+  <data name="strInvalidDateOfBirth" xml:space="preserve">
+    <value>sadsadsdas</value>
+  </data>
+  <data name="strInvalidLastName" xml:space="preserve">
+    <value>Please enter valid last name.</value>
+  </data>
+  <data name="strInvalidMail" xml:space="preserve">
+    <value>Please enter valid mail.</value>
+  </data>
+  <data name="strInvalidName" xml:space="preserve">
+    <value>Please enter valid name.</value>
+  </data>
+  <data name="strInvalidPhone" xml:space="preserve">
+    <value>Please enter valid phone.</value>
   </data>
 </root>

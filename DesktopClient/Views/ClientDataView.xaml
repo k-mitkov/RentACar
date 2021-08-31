@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:util="clr-namespace:DesktopClient.Util"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
              xmlns:local="clr-namespace:DesktopClient.Views"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
@@ -25,25 +26,37 @@
                Content="{util:Localization strPersonalData}" FontSize="20" Foreground="#03a5fc" FontWeight="Heavy"/>
         <StackPanel Grid.Row="1" Grid.Column="1" Margin="20,0">
             <Label Content="{util:Localization strEmail:}" FontSize="20"/>
-            <TextBox Text="{Binding Mail}" FontSize="20" MaxLength="64"/>
+            <TextBox Text="{Binding Mail, UpdateSourceTrigger=PropertyChanged}" FontSize="20" MaxLength="64"/>
+            <TextBlock FontSize="15" Style="{DynamicResource InvalidMail}"/>
         </StackPanel>
         <StackPanel Grid.Row="2" Grid.Column="1" Margin="20,0">
             <Label Content="{util:Localization strFirstName:}" FontSize="20"/>
-            <TextBox Text="{Binding Name}" FontSize="20" MaxLength="64"/>
+            <TextBox Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}" FontSize="20" MaxLength="64"/>
+            <TextBlock FontSize="15" Style="{DynamicResource InvalidName}"/>
         </StackPanel>
         <StackPanel Grid.Row="3" Grid.Column="1" Margin="20,0">
             <Label Content="{util:Localization strPhone:}" FontSize="20"/>
-            <TextBox Text="{Binding Phone}" FontSize="20" MaxLength="64"/>
+            <TextBox Text="{Binding Phone, UpdateSourceTrigger=PropertyChanged}" FontSize="20" MaxLength="64"/>
+            <TextBlock FontSize="15" Style="{DynamicResource InvalidPhone}"/>
         </StackPanel>
-        <StackPanel Grid.Row="1" Grid.Column="2" Margin="20,0">
-            <Label Content="{util:Localization strDateOfBirth:}" FontSize="20"/>
-            <DatePicker FontSize="20" SelectedDate="{Binding DateOfBirth}" Style="{DynamicResource DatePickerIconResizingStyle}"/>
-        </StackPanel>
+        <Grid Grid.Row="1" Grid.Column="2" Margin="20,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="2*"/>
+            </Grid.RowDefinitions>
+            <Label Grid.Row="0" Content="{util:Localization strDateOfBirth:}" FontSize="20"/>
+            <DatePicker Grid.Row="1" FontSize="20" SelectedDate="{Binding DateOfBirth, UpdateSourceTrigger=PropertyChanged}" Style="{DynamicResource DatePickerIconResizingStyle}" DisplayDateEnd="{x:Static sys:DateTime.Today}"/>
+            <TextBlock Grid.Row="2" FontSize="15" Style="{DynamicResource InvalidDateOfBirth}"/>
+        </Grid>
         <StackPanel Grid.Row="2" Grid.Column="2" Margin="20,0">
             <Label Content="{util:Localization strLastName:}" FontSize="20"/>
-            <TextBox Text="{Binding LastName}" FontSize="20" MaxLength="64"/>
+            <TextBox Text="{Binding LastName, UpdateSourceTrigger=PropertyChanged}" FontSize="20" MaxLength="64"/>
+            <TextBlock FontSize="15" Style="{DynamicResource InvalidLastName}"/>
         </StackPanel>
-        <Button Grid.Row="3" Grid.Column="2" Background="#03a5fc" BorderThickness="0" Command="{Binding BookCommand}"
+        <Button Grid.Row="4" Grid.Column="1" Background="#03a5fc" BorderThickness="0" Command="{Binding BackCommand}"
+                Content="{util:Localization strBackToResults}" FontSize="20" FontWeight="ExtraBold" Foreground="White" Margin="20,40"/>
+        <Button Grid.Row="4" Grid.Column="2" Background="#03a5fc" BorderThickness="0" Command="{Binding BookCommand}"
                 Content="{util:Localization strBookNow}" FontSize="20" FontWeight="ExtraBold" Foreground="White" Margin="20,40"/>
     </Grid>
 </UserControl>

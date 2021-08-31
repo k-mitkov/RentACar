@@ -75,8 +75,16 @@ namespace DesktopClient.Commands
 
         public void SelectedCarHandler(CarPeriodRapper car)
         {
-            ClientDataViewModel clientDataViewModel = new ClientDataViewModel();
+            ClientDataViewModel clientDataViewModel = new ClientDataViewModel(car);
+            clientDataViewModel.BookEvent += BookHandler;
+            clientDataViewModel.BackEvent += BackToResultsHandler;
             viewModel.SelectedViewModel = clientDataViewModel;
+        }
+
+        public void BookHandler()
+        {
+            SuccesfulReservedViewModel succesfulReservedViewModel = new SuccesfulReservedViewModel();
+            viewModel.SelectedViewModel = succesfulReservedViewModel;
         }
         #endregion
     }

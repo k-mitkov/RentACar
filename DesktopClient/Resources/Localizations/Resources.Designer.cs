@@ -115,7 +115,7 @@ namespace DesktopClient.Resources.Localizations {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Date of birth :.
+        ///   Looks up a localized string similar to Date of birth:.
         /// </summary>
         public static string strDateOfBirth_ {
             get {
@@ -183,6 +183,51 @@ namespace DesktopClient.Resources.Localizations {
         public static string strFirstName_ {
             get {
                 return ResourceManager.GetString("strFirstName:", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to sadsadsdas.
+        /// </summary>
+        public static string strInvalidDateOfBirth {
+            get {
+                return ResourceManager.GetString("strInvalidDateOfBirth", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please enter valid last name..
+        /// </summary>
+        public static string strInvalidLastName {
+            get {
+                return ResourceManager.GetString("strInvalidLastName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please enter valid mail..
+        /// </summary>
+        public static string strInvalidMail {
+            get {
+                return ResourceManager.GetString("strInvalidMail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please enter valid name..
+        /// </summary>
+        public static string strInvalidName {
+            get {
+                return ResourceManager.GetString("strInvalidName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please enter valid phone..
+        /// </summary>
+        public static string strInvalidPhone {
+            get {
+                return ResourceManager.GetString("strInvalidPhone", resourceCulture);
             }
         }
         

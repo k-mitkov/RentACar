@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.ComponentModel;
 using System.Globalization;
 using System.Resources;
 
@@ -6,6 +7,7 @@ namespace DesktopClient.Util
 {
     public class TranslationSource : INotifyPropertyChanged
     {
+        public event Action LanguageEvent;
         private static readonly TranslationSource instance = new TranslationSource();
 
         public static TranslationSource Instance
@@ -33,6 +35,7 @@ namespace DesktopClient.Util
                     if (@event != null)
                     {
                         @event.Invoke(this, new PropertyChangedEventArgs(string.Empty));
+                        LanguageEvent.Invoke();
                     }
                 }
             }

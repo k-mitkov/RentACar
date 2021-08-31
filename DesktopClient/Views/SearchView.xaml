@@ -6,6 +6,7 @@
     xmlns:local="clr-namespace:DesktopClient.Views"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:util="clr-namespace:DesktopClient.Util"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib"
     d:DesignHeight="450"
     d:DesignWidth="800"
     mc:Ignorable="d">
@@ -36,20 +37,12 @@
             <!--<ItemsControl ItemsSource="{Binding Buttons}" Grid.Row="0">
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
-                        <Grid Grid.Row="0">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*" />
-                                <ColumnDefinition Width="*" />
-                                <ColumnDefinition Width="*" />
-                            </Grid.ColumnDefinitions>
-                            <Button
-                                Grid.Column="{Binding Id}"
-                                Command="{Binding ButtonCommand}"
-                                Style="{DynamicResource Button}" />
-                        </Grid>
+                        <Button
+                             Command="{Binding ButtonCommand}"
+                             Style="{DynamicResource Button}" />
                     </DataTemplate>
-                    </ItemsControl.ItemTemplate>
-                </ItemsControl>-->
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>-->
             <Grid Grid.Row="0">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
@@ -130,7 +123,8 @@
                             Margin="5"
                             FontSize="30"
                             SelectedDate="{Binding SelectedDateFrom}"
-                            Style="{DynamicResource DatePickerIconResizingStyle}" />
+                            Style="{DynamicResource DatePickerIconResizingStyle}" 
+                            DisplayDateStart="{x:Static sys:DateTime.Today}"/>
 
 
                         <ComboBox
@@ -208,7 +202,8 @@
                             Margin="5"
                             FontSize="30"
                             SelectedDate="{Binding SelectedDateTo}"
-                            Style="{DynamicResource DatePickerIconResizingStyle}" />
+                            Style="{DynamicResource DatePickerIconResizingStyle}" 
+                            DisplayDateStart="{x:Static sys:DateTime.Today}"/>
 
                         <ComboBox
                             Grid.Column="1"

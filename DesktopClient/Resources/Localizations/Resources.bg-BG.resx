@@ -165,7 +165,37 @@
   <data name="strDays" xml:space="preserve">
     <value>дни</value>
   </data>
-  <data name="strDays2" xml:space="preserve">
+  <data name="strBackToResults" xml:space="preserve">
+    <value>Стъпка назад</value>
+  </data>
+  <data name="strBookNow" xml:space="preserve">
+    <value>Резервирай</value>
+  </data>
+  <data name="strDateOfBirth:" xml:space="preserve">
+    <value>Дата на раждане:</value>
+  </data>
+  <data name="strDays:" xml:space="preserve">
     <value> дни:</value>
+  </data>
+  <data name="strEmail:" xml:space="preserve">
+    <value>Имейл:</value>
+  </data>
+  <data name="strFirstName:" xml:space="preserve">
+    <value>Име:</value>
+  </data>
+  <data name="strLastName:" xml:space="preserve">
+    <value>Фамилия:</value>
+  </data>
+  <data name="strPersonalData" xml:space="preserve">
+    <value>Лични данни</value>
+  </data>
+  <data name="strPhone:" xml:space="preserve">
+    <value>Телефон:</value>
+  </data>
+  <data name="strRentalPeriod" xml:space="preserve">
+    <value>Период:</value>
+  </data>
+  <data name="strTotalPrice" xml:space="preserve">
+    <value>Крайна цена:</value>
   </data>
 </root>

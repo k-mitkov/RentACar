@@ -95,3 +95,5 @@ C:\Users\Administrator\source\repos\RentACar\DesktopClient\obj\Debug\netcoreapp3
 C:\Users\Administrator\source\repos\RentACar\DesktopClient\bin\Debug\netcoreapp3.1\Resources\Images\ico_calendar_big.png
 C:\Users\Administrator\source\repos\RentACar\DesktopClient\obj\Debug\netcoreapp3.1\Views\ClientDataView.g.cs
 C:\Users\Administrator\source\repos\RentACar\DesktopClient\obj\Debug\netcoreapp3.1\Views\ClientDataView.baml
+C:\Users\Administrator\source\repos\RentACar\DesktopClient\obj\Debug\netcoreapp3.1\Views\SuccesfulReservedView.g.cs
+C:\Users\Administrator\source\repos\RentACar\DesktopClient\obj\Debug\netcoreapp3.1\Views\SuccesfulReservedView.baml

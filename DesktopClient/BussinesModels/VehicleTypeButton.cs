@@ -3,6 +3,7 @@ using DesktopClient.Commands;
 using DesktopClient.Util;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Linq;
 
 namespace DesktopClient.BussinesModels
 {
@@ -18,6 +19,13 @@ namespace DesktopClient.BussinesModels
         public event PropertyChangedEventHandler PropertyChanged;
         #endregion
 
+        #region Constructor
+        public VehicleTypeButton()
+        {
+            TranslationSource.Instance.LanguageEvent += LanguageChangeHandler;
+        }
+        #endregion
+
         #region Proparties
         public int Id { get; set; }
 
@@ -25,25 +33,15 @@ namespace DesktopClient.BussinesModels
         {
             get
             {
-                return TranslationSource.Instance[name];
+                return name;
             }
             set
             {
-                switch (Type)
-                {
-                    case TypeVehicle.Car:
-                        name = "strCars";
-                        break;
-                    case TypeVehicle.Electric:
-                        name = "strECars";
-                        break;
-                    case TypeVehicle.Freight:
-                        name = "strCargo";
-                        break;
-                    default:
-                        name = "";
-                        break;
-                }
+                var field = Type.GetType().GetField(Type.ToString());
+                var attributes = field.GetCustomAttributes(false);
+
+                name = TranslationSource.Instance[attributes.Select(a => (DescriptionAttribute)a).ElementAt(0).Description];
+                OnPropertyChanged(nameof(Name));
             }
         }
         public string IconPath { get; set; }
@@ -166,6 +164,11 @@ namespace DesktopClient.BussinesModels
         protected void OnPropertyChanged(string propertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        public void LanguageChangeHandler()
+        {
+            Name = name;
         }
         #endregion
     }

@@ -1,6 +1,7 @@
 ﻿using Data.Enums;
 using DesktopClient.BussinesModels;
 using DesktopClient.Commands;
+using DesktopClient.Util;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -15,12 +16,17 @@ namespace DesktopClient.ViewModels
         public event Action<CarPeriodRapper> SelectEvent;
         private ButtonCommand backCommand;
         private ButtonCommand bookCommand;
+        private string locationFromStr;
+        private string locationToStr;
         #endregion
 
         #region Constructor
         public SelectedCarViewModel(CarPeriodRapper car)
         {
             this.car = car;
+            TranslationSource.Instance.LanguageEvent += LanguageChangeHandler;
+            locationFromStr = car.LocationFrom.LocationStr;
+            locationToStr = car.LocationTo.LocationStr;
         }
         #endregion
 
@@ -100,18 +106,28 @@ namespace DesktopClient.ViewModels
             }
         }
 
-        public Locations LocationFrom
+        public string LocationFrom
         {
             get
             {
-                return car.LocationFrom;
+                return locationFromStr;
+            }
+            set
+            {
+                locationFromStr = car.LocationFrom.LocationStr;
+                OnPropertyChanged(nameof(LocationFrom));
             }
         }
-        public Locations LocationTo
+        public string LocationTo
         {
             get
             {
-                return car.LocationTo;
+                return locationToStr;
+            }
+            set
+            {
+                locationToStr = car.LocationTo.LocationStr;
+                OnPropertyChanged(nameof(LocationTo));
             }
         }
         public decimal TotalPrice
@@ -155,7 +171,7 @@ namespace DesktopClient.ViewModels
         #endregion
 
         #region Methods
-        public bool CanExecuteShow(object o)
+        private bool CanExecuteShow(object o)
         {
             return true;
         }
@@ -168,6 +184,12 @@ namespace DesktopClient.ViewModels
         private void OnSelect(Object o)
         {
             SelectEvent.Invoke(car);
+        }
+
+        public void LanguageChangeHandler()
+        {
+            LocationFrom = locationFromStr;
+            LocationTo = locationToStr;
         }
         #endregion
     }

@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1;
 C:\Users\Administrator\source\repos\RentACar\DesktopClient\App.xaml
-5-383564460
+61786672298
 19-914498923
-241917201558
+26-615004719
 222722557434
-Views\ClientDataView.xaml;Views\MainWindow.xaml;Views\SearchView.xaml;Views\SelectedCarView.xaml;Views\SelectView.xaml;
+Views\ClientDataView.xaml;Views\MainWindow.xaml;Views\SearchView.xaml;Views\SelectedCarView.xaml;Views\SelectView.xaml;Views\SuccesfulReservedView.xaml;
 
 False
 

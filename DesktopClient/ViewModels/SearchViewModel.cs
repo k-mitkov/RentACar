@@ -29,22 +29,10 @@ namespace DesktopClient.ViewModels
         {
             locations = new ObservableCollection<LocationRapper>();
 
-            locations.Add(new LocationRapper()
-            {
-                Location = Locations.Sofia
-            });
-            locations.Add(new LocationRapper()
-            {
-                Location = Locations.Plovdiv
-            });
-            locations.Add(new LocationRapper()
-            {
-                Location = Locations.Varna
-            });
-            locations.Add(new LocationRapper()
-            {
-                Location = Locations.Burgas
-            });
+            locations.Add(new LocationRapper(Locations.Sofia));
+            locations.Add(new LocationRapper(Locations.Plovdiv));
+            locations.Add(new LocationRapper(Locations.Varna));
+            locations.Add(new LocationRapper(Locations.Burgas));
 
             hours = Hours.GetHours();
 
@@ -93,7 +81,7 @@ namespace DesktopClient.ViewModels
             }
         }
 
-        //public IEnumerable<Button> Buttons
+        //public IEnumerable<VehicleTypeButton> Buttons
         //{
         //    get
         //    {
@@ -176,6 +164,7 @@ namespace DesktopClient.ViewModels
         public DateTime SelectedDateFrom { get; set; }
 
         public DateTime SelectedDateTo { get; set; }
+
         #endregion
 
         #region Methods

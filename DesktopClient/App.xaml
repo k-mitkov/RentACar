@@ -29,6 +29,10 @@
                 <views:ClientDataView/>
             </DataTemplate>
 
+            <DataTemplate DataType="{x:Type viewmodels:SuccesfulReservedViewModel}">
+                <views:SuccesfulReservedView/>
+            </DataTemplate>
+
             <Style x:Key="Button" TargetType="{x:Type Button}">
                 <Setter Property="Template">
                     <Setter.Value>
@@ -382,6 +386,50 @@
                 </Style.Triggers>
             </Style>
 
+            <Style x:Key="InvalidMail" TargetType="TextBlock">
+                <Setter Property="Text" Value="{util:Localization strInvalidMail}"/>
+                <Style.Triggers>
+                    <DataTrigger Binding="{Binding Path=IsMailValid}" Value="true">
+                        <Setter Property="Text" Value=""/>
+                    </DataTrigger>
+                </Style.Triggers>
+            </Style>
+
+            <Style x:Key="InvalidName" TargetType="TextBlock">
+                <Setter Property="Text" Value="{util:Localization strInvalidName}"/>
+                <Style.Triggers>
+                    <DataTrigger Binding="{Binding Path=IsNameValid}" Value="true">
+                        <Setter Property="Text" Value=""/>
+                    </DataTrigger>
+                </Style.Triggers>
+            </Style>
+
+            <Style x:Key="InvalidLastName" TargetType="TextBlock">
+                <Setter Property="Text" Value="{util:Localization strInvalidLastName}"/>
+                <Style.Triggers>
+                    <DataTrigger Binding="{Binding Path=IsLastNameValid}" Value="true">
+                        <Setter Property="Text" Value=""/>
+                    </DataTrigger>
+                </Style.Triggers>
+            </Style>
+            
+            <Style x:Key="InvalidPhone" TargetType="TextBlock">
+                <Setter Property="Text" Value="{util:Localization strInvalidPhone}"/>
+                <Style.Triggers>
+                    <DataTrigger Binding="{Binding Path=IsPhoneValid}" Value="true">
+                        <Setter Property="Text" Value=""/>
+                    </DataTrigger>
+                </Style.Triggers>
+            </Style>
+
+            <Style x:Key="InvalidDateOfBirth" TargetType="TextBlock">
+                <Setter Property="Text" Value="{util:Localization strInvalidDateOfBirth}"/>
+                <Style.Triggers>
+                    <DataTrigger Binding="{Binding Path=IsDateOfBirthValid}" Value="true">
+                        <Setter Property="Text" Value=""/>
+                    </DataTrigger>
+                </Style.Triggers>
+            </Style>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

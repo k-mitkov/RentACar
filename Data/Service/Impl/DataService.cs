@@ -156,9 +156,9 @@ namespace Data.Service.Impl
                         context.Clients.Add(client);
                     }
 
-                    car = context.Cars.FirstOrDefault(c => c.Id == car.Id);
+                    car = context.Cars.Include("Periods").FirstOrDefault(c => c.Id == car.Id);
 
-                    var oldPeriod = context.Periods.FirstOrDefault((p) => p.From < period.From && p.To > period.To && p.Location == period.Location);
+                    var oldPeriod = context.Periods.FirstOrDefault((p) => p.From < period.From && p.To > period.To && p.Location == period.Location && p.CarId == car.Id);
 
                     period.Location = Locations.OnTrip;
                     period.Car = car;

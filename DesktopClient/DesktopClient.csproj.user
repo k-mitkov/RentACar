@@ -19,6 +19,9 @@
     <Compile Update="Views\SelectView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\SuccesfulReservedView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Update="Resources\Localizations\Resources.bg-BG.resx">
@@ -39,6 +42,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\SelectView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\SuccesfulReservedView.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

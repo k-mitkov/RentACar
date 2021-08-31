@@ -8,10 +8,23 @@ using System.Text;
 
 namespace DesktopClient.BussinesModels
 {
-    public class LocationRapper
+    public class LocationRapper : INotifyPropertyChanged
     {
         #region Declarations
         private const string path = @"\Resources\Images\location-icon.png";
+        private string locationStr;
+        public event PropertyChangedEventHandler PropertyChanged;
+        #endregion
+
+        #region Constructor
+        public LocationRapper(Locations location)
+        {
+            Location = location;
+            var field = Location.GetType().GetField(Location.ToString());
+            var attributes = field.GetCustomAttributes(false);
+            locationStr = TranslationSource.Instance[attributes.Select(a => (DescriptionAttribute)a).ElementAt(0).Description];
+            TranslationSource.Instance.LanguageEvent += LanguageChangeHandler;
+        }
         #endregion
 
         #region Proparties
@@ -21,16 +34,14 @@ namespace DesktopClient.BussinesModels
         {
             get
             {
+                return locationStr;
+            }
+            set
+            {
                 var field = Location.GetType().GetField(Location.ToString());
                 var attributes = field.GetCustomAttributes(false);
-
-                DescriptionAttribute displayAttribute = null;
-
-                if (attributes.Any())
-                {
-                    displayAttribute = (DescriptionAttribute)attributes.ElementAt(0);
-                }
-                return TranslationSource.Instance[displayAttribute.Description];
+                locationStr = TranslationSource.Instance[attributes.Select(a => (DescriptionAttribute)a).ElementAt(0).Description];
+                OnPropertyChanged(nameof(LocationStr));
             }
         }
         public string IconPath
@@ -39,6 +50,19 @@ namespace DesktopClient.BussinesModels
             {
                 return path;
             }
+        }
+
+        #endregion
+
+        #region Methods
+        public void LanguageChangeHandler()
+        {
+            LocationStr = locationStr;
+        }
+
+        protected void OnPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
         #endregion
     }

@@ -11,7 +11,7 @@ namespace DesktopClient.BussinesModels
         #region Declarations
         private Car car;
         private Period period;
-        private Locations locationTo;
+        private LocationRapper locationTo;
         #endregion
 
         #region Constructor
@@ -19,7 +19,7 @@ namespace DesktopClient.BussinesModels
         {
             this.car = car;
             this.period = period;
-            locationTo = location;
+            locationTo = new LocationRapper(location);
         }
         #endregion
 
@@ -80,14 +80,14 @@ namespace DesktopClient.BussinesModels
                 return period.To;
             }
         }
-        public Locations LocationFrom
+        public LocationRapper LocationFrom
         {
             get
             {
-                return period.Location;
+                return new LocationRapper(period.Location);
             }
         }
-        public Locations LocationTo
+        public LocationRapper LocationTo
         {
             get
             {
@@ -107,6 +107,23 @@ namespace DesktopClient.BussinesModels
             {
                 return (period.To - period.From).Days;
             }
+        }
+        #endregion
+
+        #region Methods
+        public Car GetCar()
+        {
+            return car;
+        }
+
+        public Period GetPeriod()
+        {
+            return period;
+        }
+
+        public Locations GetLocationTo()
+        {
+            return locationTo.Location;
         }
         #endregion
     }

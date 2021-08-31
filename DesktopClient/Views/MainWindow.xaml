@@ -9,6 +9,8 @@
         Icon="\Resources\Images\icon.png"
         MinHeight="768"
         MinWidth="1366"
+        MaxHeight="768"
+        MaxWidth="1366"
         Title="{util:Localization strRentACar}" Height="450" Width="800">
     <Grid>
         <Grid.RowDefinitions>
