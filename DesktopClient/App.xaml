@@ -9,9 +9,8 @@
     StartupUri="Views/MainWindow.xaml">
     <Application.Resources>
         <ResourceDictionary>
-            <!--<DataTemplate DataType="{x:Type viewmodels:MainViewModel}">
-                <views:MainWindow/>
-            </DataTemplate>-->
+            
+            <viewmodels:MainViewModel x:Key="MainViewModel"/>
 
             <DataTemplate DataType="{x:Type viewmodels:SearchViewModel}">
                 <views:SearchView/>
@@ -31,6 +30,10 @@
 
             <DataTemplate DataType="{x:Type viewmodels:SuccesfulReservedViewModel}">
                 <views:SuccesfulReservedView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewmodels:CarsNotFoundViewModel}">
+                <views:CarsNotFoundView/>
             </DataTemplate>
 
             <Style x:Key="Button" TargetType="{x:Type Button}">
@@ -429,6 +432,62 @@
                         <Setter Property="Text" Value=""/>
                     </DataTrigger>
                 </Style.Triggers>
+            </Style>
+
+            <Style x:Key="InvalidDates" TargetType="TextBlock">
+                <Setter Property="Text" Value=""/>
+                <Style.Triggers>
+                    <DataTrigger Binding="{Binding IsDateFromValid}" Value="false">
+                        <Setter Property="Text" Value="{util:Localization strInvalidDateFrom}"/>
+                    </DataTrigger>
+                    <MultiDataTrigger>
+                        <MultiDataTrigger.Conditions>
+                            <Condition Binding="{Binding IsDateFromValid}" Value="true"/>
+                            <Condition Binding="{Binding IsDateToAftarDateFrom}" Value="false"/>
+                        </MultiDataTrigger.Conditions>
+                        <Setter Property="Text" Value="{util:Localization strInvalidDates}"/>
+                    </MultiDataTrigger>
+                </Style.Triggers>
+            </Style>
+
+            <Style x:Key="SelectedImage" TargetType="Image">
+                <Setter Property="Source" Value="\Resources\Images\car_main.jpg"/>
+                <Style.Triggers>
+                    <DataTrigger Binding="{Binding CarButton.IsSelected}" Value="true">
+                        <Setter Property="Source" Value="\Resources\Images\car_main.jpg"/>
+                    </DataTrigger>
+                    <DataTrigger Binding="{Binding ECarButton.IsSelected}" Value="true">
+                        <Setter Property="Source" Value="\Resources\Images\ecar_main.jpg"/>
+                    </DataTrigger>
+                    <DataTrigger Binding="{Binding TruckButton.IsSelected}" Value="true">
+                        <Setter Property="Source" Value="\Resources\Images\cargo_main.jpg"/>
+                    </DataTrigger>
+                </Style.Triggers>
+            </Style>
+
+            <Style x:Key="ButtonBorder" TargetType="Button">
+                <Setter Property="BorderThickness" Value="0"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="Button">
+                            <Border
+                                x:Name="BBorder"
+                                BorderThickness="0"
+                                Background="#03a5fc"
+                                TextBlock.Foreground="White">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Trigger.Setters>
+                                        <Setter TargetName="BBorder" Property="BorderThickness" Value="5"/>
+                                        <Setter TargetName="BBorder" Property="BorderBrush" Value="#fcd303"/>
+                                    </Trigger.Setters>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
             </Style>
         </ResourceDictionary>
     </Application.Resources>

@@ -11,6 +11,7 @@
         MinWidth="1366"
         MaxHeight="768"
         MaxWidth="1366"
+        DataContext="{StaticResource MainViewModel}"
         Title="{util:Localization strRentACar}" Height="450" Width="800">
     <Grid>
         <Grid.RowDefinitions>
@@ -25,7 +26,7 @@
                 <ColumnDefinition Width="0.7*"/>
             </Grid.ColumnDefinitions>
 
-            <Button Grid.Column="0" Margin="20" BorderThickness="0" Background="#03a5fc" Command="{Binding UpdateViewCommand}">
+            <Button Grid.Column="0" Margin="20" Style="{DynamicResource ButtonBorder}" Command="{Binding UpdateViewCommand}">
                 <Image Source="\Resources\Images\logo.png"/>
             </Button>
 

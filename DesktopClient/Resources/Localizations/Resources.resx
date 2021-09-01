@@ -213,4 +213,28 @@
   <data name="strInvalidPhone" xml:space="preserve">
     <value>Please enter valid phone.</value>
   </data>
+  <data name="strInvalidDateFrom" xml:space="preserve">
+    <value>strInvalidDateFrom</value>
+  </data>
+  <data name="strInvalidDates" xml:space="preserve">
+    <value>strInvalidDates</value>
+  </data>
+  <data name="strCapacity:" xml:space="preserve">
+    <value>Capacity: </value>
+  </data>
+  <data name="strCarsNotFound" xml:space="preserve">
+    <value>strCarsNotFound</value>
+  </data>
+  <data name="strConsumation:" xml:space="preserve">
+    <value>   Consumation: </value>
+  </data>
+  <data name="strPerKm" xml:space="preserve">
+    <value>/100 km.</value>
+  </data>
+  <data name="strSeats" xml:space="preserve">
+    <value> seats.</value>
+  </data>
+  <data name="strSuccesfulReservation" xml:space="preserve">
+    <value>Succeful Reservation!</value>
+  </data>
 </root>

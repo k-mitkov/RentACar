@@ -9,18 +9,24 @@
   <ItemGroup>
     <None Remove="Resources\Images\Alfa_Romeo_159.jpg" />
     <None Remove="Resources\Images\Bmw_5Series.jpg" />
+    <None Remove="Resources\Images\cargo_main.jpg" />
+    <None Remove="Resources\Images\car_main.jpg" />
     <None Remove="Resources\Images\car_search_icon.png" />
     <None Remove="Resources\Images\car_search_icon_blue.png" />
     <None Remove="Resources\Images\date-icon.png" />
     <None Remove="Resources\Images\e-car_search_icon.png" />
     <None Remove="Resources\Images\e-car_search_icon_blue.png" />
+    <None Remove="Resources\Images\ecar_main.jpg" />
     <None Remove="Resources\Images\flag-bg.jpg" />
     <None Remove="Resources\Images\flag-en.jpg" />
     <None Remove="Resources\Images\icon.png" />
+    <None Remove="Resources\Images\icon_diesel.gif" />
+    <None Remove="Resources\Images\icon_seats.gif" />
     <None Remove="Resources\Images\ico_calendar_big.png" />
     <None Remove="Resources\Images\location-icon.png" />
     <None Remove="Resources\Images\logo.png" />
     <None Remove="Resources\Images\Mercedes_SClass.png" />
+    <None Remove="Resources\Images\notFound_icon.jpg" />
     <None Remove="Resources\Images\time-icon.png" />
     <None Remove="Resources\Images\Toyota_Corolla.jpg" />
     <None Remove="Resources\Images\truck_search_icon.png" />
@@ -33,6 +39,12 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Images\Bmw_5Series.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Images\cargo_main.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Images\car_main.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Images\car_search_icon.png">
@@ -50,6 +62,9 @@
     <Content Include="Resources\Images\e-car_search_icon_blue.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Resources\Images\ecar_main.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resources\Images\flag-bg.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -57,6 +72,12 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Images\icon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Images\icon_diesel.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Images\icon_seats.gif">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Images\ico_calendar_big.png">
@@ -69,6 +90,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Images\Mercedes_SClass.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Images\notFound_icon.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Images\time-icon.png">

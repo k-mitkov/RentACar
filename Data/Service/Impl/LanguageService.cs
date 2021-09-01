@@ -1,4 +1,5 @@
 ﻿using Data.Models;
+using DesktopClient.Util;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -21,7 +22,15 @@ namespace Data.Service.Impl
         #region Methods
         public IEnumerable<Language> GetLanguages()
         {
-            return data.GetLanguages();
+            try
+            {
+                return data.GetLanguages();
+            }
+            catch (Exception ex)
+            {
+                ExceptionLogger.LoggException(ex);
+                return null;
+            }
         }
         #endregion
     }

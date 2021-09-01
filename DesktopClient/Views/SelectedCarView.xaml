@@ -21,18 +21,32 @@
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="5*"/>
                 </Grid.RowDefinitions>
-                <DockPanel Margin="10">
-                    <StackPanel Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
-                        <TextBlock Text="{Binding Brand}" FontSize="30" Foreground="#03a5fc" FontWeight="Heavy"/>
-                        <TextBlock Text=" " FontSize="20"/>
-                        <TextBlock Text="{Binding Model}" FontSize="30" Foreground="#03a5fc" FontWeight="Heavy"/>
-                    </StackPanel>
-                    <StackPanel Grid.Column="1" Background="#03a5fc" HorizontalAlignment="Right" VerticalAlignment="Center">
-                        <TextBlock  Margin="10" Foreground="White" FontSize="15" FontWeight="Heavy" Text="{Binding Year}" />
-                    </StackPanel>
-                </DockPanel>
-
-                <Image Grid.Row="1" Source="{Binding Path}" Margin="10" Stretch="Fill"/>
+                <StackPanel>
+                    <DockPanel Margin="10">
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
+                            <TextBlock Text="{Binding Brand}" FontSize="30" Foreground="#03a5fc" FontWeight="Heavy"/>
+                            <TextBlock Text=" " FontSize="20"/>
+                            <TextBlock Text="{Binding Model}" FontSize="30" Foreground="#03a5fc" FontWeight="Heavy"/>
+                        </StackPanel>
+                        <StackPanel Background="#03a5fc" HorizontalAlignment="Right" VerticalAlignment="Center">
+                            <TextBlock  Margin="10" Foreground="White" FontSize="15" FontWeight="Heavy" Text="{Binding Year}" />
+                        </StackPanel>
+                    </DockPanel>
+                    <DockPanel Margin="5,0">
+                        <StackPanel Orientation="Horizontal" Margin="5,0">
+                            <Image HorizontalAlignment="Left" Height="20" Source="\Resources\Images\icon_seats.gif"/>
+                            <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Text="{Binding Capacity}" Foreground="#03a5fc"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="5,0">
+                            <Image HorizontalAlignment="Left" Height="20" Source="\Resources\Images\icon_diesel.gif"/>
+                            <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Text="{Binding Consumation}" Foreground="#03a5fc" Margin="10,0,0,0"/>
+                            <TextBlock Text="{util:Localization strPerKm}" Foreground="#03a5fc"/>
+                        </StackPanel>
+                    </DockPanel>
+                </StackPanel>
+                <StackPanel Grid.Row="1">
+                    <Image Source="{Binding Path}" Margin="10" Stretch="Fill"/>
+                </StackPanel>
             </Grid>
         </Border>
 
@@ -123,9 +137,11 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                 <Button Grid.Column="0" Margin="20,0" Background="#03a5fc" BorderThickness="0" Command="{Binding BackCommand}" 
-                        Content="{util:Localization strBackToResults}" FontSize="20" FontWeight="ExtraBold" Foreground="White" />
+                        Content="{util:Localization strBackToResults}" FontSize="20" FontWeight="ExtraBold" Foreground="White" 
+                        Style="{DynamicResource ButtonBorder}"/>
                 <Button Grid.Column="1" Margin="20,0" Background="#03a5fc" BorderThickness="0" Command="{Binding BookCommand}" 
-                        Content="{util:Localization strBookNow}" FontSize="20" FontWeight="ExtraBold" Foreground="White" />
+                        Content="{util:Localization strBookNow}" FontSize="20" FontWeight="ExtraBold" Foreground="White" 
+                        Style="{DynamicResource ButtonBorder}"/>
             </Grid>
         </Grid>
 

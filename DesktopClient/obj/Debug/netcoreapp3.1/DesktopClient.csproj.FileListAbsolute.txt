@@ -97,3 +97,11 @@ C:\Users\Administrator\source\repos\RentACar\DesktopClient\obj\Debug\netcoreapp3
 C:\Users\Administrator\source\repos\RentACar\DesktopClient\obj\Debug\netcoreapp3.1\Views\ClientDataView.baml
 C:\Users\Administrator\source\repos\RentACar\DesktopClient\obj\Debug\netcoreapp3.1\Views\SuccesfulReservedView.g.cs
 C:\Users\Administrator\source\repos\RentACar\DesktopClient\obj\Debug\netcoreapp3.1\Views\SuccesfulReservedView.baml
+C:\Users\Administrator\source\repos\RentACar\DesktopClient\bin\Debug\netcoreapp3.1\Resources\Images\car_main.jpg
+C:\Users\Administrator\source\repos\RentACar\DesktopClient\bin\Debug\netcoreapp3.1\Resources\Images\ecar_main.jpg
+C:\Users\Administrator\source\repos\RentACar\DesktopClient\bin\Debug\netcoreapp3.1\Resources\Images\cargo_main.jpg
+C:\Users\Administrator\source\repos\RentACar\DesktopClient\bin\Debug\netcoreapp3.1\Resources\Images\icon_diesel.gif
+C:\Users\Administrator\source\repos\RentACar\DesktopClient\bin\Debug\netcoreapp3.1\Resources\Images\icon_seats.gif
+C:\Users\Administrator\source\repos\RentACar\DesktopClient\obj\Debug\netcoreapp3.1\Views\CarsNotFoundView.g.cs
+C:\Users\Administrator\source\repos\RentACar\DesktopClient\obj\Debug\netcoreapp3.1\Views\CarsNotFoundView.baml
+C:\Users\Administrator\source\repos\RentACar\DesktopClient\bin\Debug\netcoreapp3.1\Resources\Images\notFound_icon.jpg

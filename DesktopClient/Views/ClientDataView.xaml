@@ -54,9 +54,9 @@
             <TextBox Text="{Binding LastName, UpdateSourceTrigger=PropertyChanged}" FontSize="20" MaxLength="64"/>
             <TextBlock FontSize="15" Style="{DynamicResource InvalidLastName}"/>
         </StackPanel>
-        <Button Grid.Row="4" Grid.Column="1" Background="#03a5fc" BorderThickness="0" Command="{Binding BackCommand}"
+        <Button Grid.Row="4" Grid.Column="1" Background="#03a5fc" BorderThickness="0" Command="{Binding BackCommand}" Style="{DynamicResource ButtonBorder}"
                 Content="{util:Localization strBackToResults}" FontSize="20" FontWeight="ExtraBold" Foreground="White" Margin="20,40"/>
-        <Button Grid.Row="4" Grid.Column="2" Background="#03a5fc" BorderThickness="0" Command="{Binding BookCommand}"
+        <Button Grid.Row="4" Grid.Column="2" Background="#03a5fc" BorderThickness="0" Command="{Binding BookCommand}" Style="{DynamicResource ButtonBorder}"
                 Content="{util:Localization strBookNow}" FontSize="20" FontWeight="ExtraBold" Foreground="White" Margin="20,40"/>
     </Grid>
 </UserControl>

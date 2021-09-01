@@ -198,4 +198,10 @@
   <data name="strTotalPrice" xml:space="preserve">
     <value>Крайна цена:</value>
   </data>
+  <data name="strInvalidDateFrom" xml:space="preserve">
+    <value />
+  </data>
+  <data name="strInvalidDates" xml:space="preserve">
+    <value />
+  </data>
 </root>

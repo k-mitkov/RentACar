@@ -1,5 +1,6 @@
 ﻿using Data.Enums;
 using Data.Models;
+using DesktopClient.Util;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -22,12 +23,27 @@ namespace Data.Service.Impl
         #region Methods
         public IEnumerable<Car> GetCarsByPeriodAndType(Period period, TypeVehicle type)
         {
-            return data.CarsByPeriodAndType(period, type);
+            try{
+                return data.CarsByPeriodAndType(period, type);
+            }
+            catch(Exception ex)
+            {
+                ExceptionLogger.LoggException(ex);
+                return null;
+            }
         }
 
         public bool ReserveCar(Car car, Period period, Client client, Locations location)
         {
-            return data.MakeReservation(car, period, client, location);
+            try
+            {
+                return data.MakeReservation(car, period, client, location);
+            }
+            catch (Exception ex)
+            {
+                ExceptionLogger.LoggException(ex);
+                return false;
+            }
         }
         #endregion
     }

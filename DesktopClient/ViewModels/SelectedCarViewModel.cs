@@ -56,7 +56,7 @@ namespace DesktopClient.ViewModels
         {
             get
             {
-                return car.Capacity;
+                return car.Consumation;
             }
         }
         public int Year

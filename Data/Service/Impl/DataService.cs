@@ -37,18 +37,12 @@ namespace Data.Service.Impl
         {
             using (context = new DataContext())
             {
-                try
-                {
-                    var car = context.Cars.Include("Periods").First();
-                    period.Car = car;
-                    period.CarId = car.Id;
-                    car.Periods.Add(period);
+                var car = context.Cars.Include("Periods").First();
+                period.Car = car;
+                period.CarId = car.Id;
+                car.Periods.Add(period);
 
-                    context.SaveChanges();
-                }
-                catch (Exception ex)
-                {  
-                }
+                context.SaveChanges();
             }
         }
 
@@ -143,73 +137,66 @@ namespace Data.Service.Impl
 
         public bool MakeReservation(Car car, Period period, Client client, Locations location)
         {
-            try
+            using (context = new DataContext()) using (var transaction = context.Database.BeginTransaction())
             {
-                using (context = new DataContext()) using (var transaction = context.Database.BeginTransaction())
+                if (context.Clients.FirstOrDefault(c => c.Mail.Equals(client.Mail)) != null)
                 {
-                    if (context.Clients.FirstOrDefault(c => c.Mail.Equals(client.Mail)) != null)
-                    {
-                        client = context.Clients.FirstOrDefault(c => c.Mail.Equals(client.Mail));
-                    }
-                    else
-                    {
-                        context.Clients.Add(client);
-                    }
-
-                    car = context.Cars.Include("Periods").FirstOrDefault(c => c.Id == car.Id);
-
-                    var oldPeriod = context.Periods.FirstOrDefault((p) => p.From < period.From && p.To > period.To && p.Location == period.Location && p.CarId == car.Id);
-
-                    period.Location = Locations.OnTrip;
-                    period.Car = car;
-                    period.CarId = car.Id;
-
-                    var prevPeriod = new Period()
-                    {
-                        From = oldPeriod.From,
-                        To = period.From,
-                        Location = oldPeriod.Location
-                    };
-                    prevPeriod.Car = car;
-                    prevPeriod.CarId = car.Id;
-
-                    period.Location = Locations.OnTrip;
-                    period.Car = car;
-                    period.CarId = car.Id;
-
-                    var aftarPeriod = new Period
-                    {
-                        From = period.To,
-                        To = oldPeriod.To,
-                        Location = location
-                    };
-                    aftarPeriod.Car = car;
-                    aftarPeriod.CarId = car.Id;
-
-                    car.Periods.Remove(oldPeriod);
-                    car.Periods.Add(prevPeriod);
-                    car.Periods.Add(period);
-                    car.Periods.Add(aftarPeriod);
-
-                    var reservation = new Reservation()
-                    {
-                        Car = car,
-                        Period = period,
-                        Client = client
-                    };
-
-                    context.Reservations.Add(reservation);
-
-                    context.SaveChanges();
-
-                    transaction.Commit();
+                    client = context.Clients.FirstOrDefault(c => c.Mail.Equals(client.Mail));
                 }
-                return true;
+                else
+                {
+                    context.Clients.Add(client);
+                }
+
+                car = context.Cars.Include("Periods").FirstOrDefault(c => c.Id == car.Id);
+
+                var oldPeriod = context.Periods.FirstOrDefault((p) => p.From < period.From && p.To > period.To && p.Location == period.Location && p.CarId == car.Id);
+
+                period.Location = Locations.OnTrip;
+                period.Car = car;
+                period.CarId = car.Id;
+
+                var prevPeriod = new Period()
+                {
+                    From = oldPeriod.From,
+                    To = period.From,
+                    Location = oldPeriod.Location
+                };
+                prevPeriod.Car = car;
+                prevPeriod.CarId = car.Id;
+
+                period.Location = Locations.OnTrip;
+                period.Car = car;
+                period.CarId = car.Id;
+
+                var aftarPeriod = new Period
+                {
+                    From = period.To,
+                    To = oldPeriod.To,
+                    Location = location
+                };
+                aftarPeriod.Car = car;
+                aftarPeriod.CarId = car.Id;
+
+                car.Periods.Remove(oldPeriod);
+                car.Periods.Add(prevPeriod);
+                car.Periods.Add(period);
+                car.Periods.Add(aftarPeriod);
+
+                var reservation = new Reservation()
+                {
+                    Car = car,
+                    Period = period,
+                    Client = client
+                };
+
+                context.Reservations.Add(reservation);
+
+                context.SaveChanges();
+
+                transaction.Commit();
             }
-            catch (Exception ex)
-            {
-                return false;
-            }
+            return true;
         }
         #endregion
     }

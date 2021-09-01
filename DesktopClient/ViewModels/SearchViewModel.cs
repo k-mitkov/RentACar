@@ -22,6 +22,8 @@ namespace DesktopClient.ViewModels
         private VehicleTypeButton carButton;
         private VehicleTypeButton eCarButton;
         private VehicleTypeButton truckButton;
+        private bool isDateFromValid;
+        private bool isDateToAftarDateFrom;
         #endregion
 
         #region Constructor
@@ -44,6 +46,8 @@ namespace DesktopClient.ViewModels
             SelectedHourTo = hours.First(h => h.Hour.Equals("11:00"));
             SelectedDateFrom = DateTime.Now;
             SelectedDateTo = DateTime.Now;
+            IsDateFromValid = true;
+            IsDateToAftarDateFrom = true;
         }
         #endregion
 
@@ -165,6 +169,31 @@ namespace DesktopClient.ViewModels
 
         public DateTime SelectedDateTo { get; set; }
 
+        public bool IsDateFromValid
+        {
+            get
+            {
+                return isDateFromValid;
+            }
+            set
+            {
+                isDateFromValid = value;
+                OnPropertyChanged(nameof(IsDateFromValid));
+            }
+        }
+
+        public bool IsDateToAftarDateFrom
+        {
+            get
+            {
+                return isDateToAftarDateFrom;
+            }
+            set
+            {
+                isDateToAftarDateFrom = value;
+                OnPropertyChanged(nameof(IsDateToAftarDateFrom));
+            }
+        }
         #endregion
 
         #region Methods
@@ -180,22 +209,27 @@ namespace DesktopClient.ViewModels
 
         public void Search(object o)
         {
-            Period period = new Period()
+            SelectedDateFrom = new DateTime(SelectedDateFrom.Year, SelectedDateFrom.Month, SelectedDateFrom.Day, int.Parse(SelectedHourFrom.Hour.Split(":").First()), 0, 0);
+            SelectedDateTo = new DateTime(SelectedDateTo.Year, SelectedDateTo.Month, SelectedDateTo.Day, int.Parse(SelectedHourTo.Hour.Split(":").First()), 0, 0);
+            if (Validate())
             {
-                From = new DateTime(SelectedDateFrom.Year, SelectedDateFrom.Month, SelectedDateFrom.Day, int.Parse(SelectedHourFrom.Hour.Split(":").First()), 0, 0),
-                To = new DateTime(SelectedDateTo.Year, SelectedDateTo.Month, SelectedDateTo.Day, int.Parse(SelectedHourTo.Hour.Split(":").First()), 0, 0),
-                Location = SelectedLocationFrom.Location
-            };
-            TypeVehicle type = buttons.Where(b => b.IsSelected == true).First().Type;
+                Period period = new Period()
+                {
+                    From = SelectedDateFrom,
+                    To = SelectedDateTo,
+                    Location = SelectedLocationFrom.Location
+                };
+                TypeVehicle type = buttons.Where(b => b.IsSelected == true).First().Type;
 
-            List<Car> cars = carService.GetCarsByPeriodAndType(period, type).ToList();
-            List<CarPeriodRapper> rappers=new List<CarPeriodRapper>();
-            foreach(Car car in cars)
-            {
-                rappers.Add(new CarPeriodRapper(car, period, SelectedLocationTo.Location));
+                List<Car> cars = carService.GetCarsByPeriodAndType(period, type).ToList();
+                List<CarPeriodRapper> rappers = new List<CarPeriodRapper>();
+                foreach (Car car in cars)
+                {
+                    rappers.Add(new CarPeriodRapper(car, period, SelectedLocationTo.Location));
+                }
+
+                OnSearch(rappers);
             }
-
-            OnSearch(rappers);
         }
 
         public void GetButtons()
@@ -206,6 +240,12 @@ namespace DesktopClient.ViewModels
             TruckButton = buttons[2];
         }
 
+        private bool Validate()
+        {
+            IsDateFromValid = SelectedDateFrom > DateTime.Now;
+            IsDateToAftarDateFrom = SelectedDateFrom < SelectedDateTo;
+            return IsDateFromValid && IsDateToAftarDateFrom;
+        }
         #endregion
     }
 }

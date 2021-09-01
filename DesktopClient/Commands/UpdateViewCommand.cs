@@ -52,9 +52,8 @@ namespace DesktopClient.Commands
             }
             else
             {
-                SearchViewModel searchViewModel = new SearchViewModel();
-                viewModel.SelectedViewModel = searchViewModel;
-                searchViewModel.SearchEvent += SearchHandler;
+                CarsNotFoundViewModel carNotFoundViewModel = new CarsNotFoundViewModel();
+                viewModel.SelectedViewModel = carNotFoundViewModel;
             }
             
         }

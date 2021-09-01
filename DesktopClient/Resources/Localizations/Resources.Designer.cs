@@ -97,6 +97,15 @@ namespace DesktopClient.Resources.Localizations {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Capacity: .
+        /// </summary>
+        public static string strCapacity_ {
+            get {
+                return ResourceManager.GetString("strCapacity:", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Cargo.
         /// </summary>
         public static string strCargo {
@@ -111,6 +120,24 @@ namespace DesktopClient.Resources.Localizations {
         public static string strCars {
             get {
                 return ResourceManager.GetString("strCars", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to strCarsNotFound.
+        /// </summary>
+        public static string strCarsNotFound {
+            get {
+                return ResourceManager.GetString("strCarsNotFound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to    Consumation: .
+        /// </summary>
+        public static string strConsumation_ {
+            get {
+                return ResourceManager.GetString("strConsumation:", resourceCulture);
             }
         }
         
@@ -187,11 +214,29 @@ namespace DesktopClient.Resources.Localizations {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to strInvalidDateFrom.
+        /// </summary>
+        public static string strInvalidDateFrom {
+            get {
+                return ResourceManager.GetString("strInvalidDateFrom", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to sadsadsdas.
         /// </summary>
         public static string strInvalidDateOfBirth {
             get {
                 return ResourceManager.GetString("strInvalidDateOfBirth", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to strInvalidDates.
+        /// </summary>
+        public static string strInvalidDates {
+            get {
+                return ResourceManager.GetString("strInvalidDates", resourceCulture);
             }
         }
         
@@ -237,6 +282,15 @@ namespace DesktopClient.Resources.Localizations {
         public static string strLastName_ {
             get {
                 return ResourceManager.GetString("strLastName:", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to /100 km..
+        /// </summary>
+        public static string strPerKm {
+            get {
+                return ResourceManager.GetString("strPerKm", resourceCulture);
             }
         }
         
@@ -313,6 +367,15 @@ namespace DesktopClient.Resources.Localizations {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to  seats..
+        /// </summary>
+        public static string strSeats {
+            get {
+                return ResourceManager.GetString("strSeats", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Select A Date.
         /// </summary>
         public static string strSelectDate {
@@ -327,6 +390,15 @@ namespace DesktopClient.Resources.Localizations {
         public static string strSofia {
             get {
                 return ResourceManager.GetString("strSofia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Succeful Reservation!.
+        /// </summary>
+        public static string strSuccesfulReservation {
+            get {
+                return ResourceManager.GetString("strSuccesfulReservation", resourceCulture);
             }
         }
         

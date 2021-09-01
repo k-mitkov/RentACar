@@ -10,17 +10,19 @@
     d:DesignHeight="450"
     d:DesignWidth="800"
     mc:Ignorable="d">
-    <Grid Background="#faf3a5">
+    <Grid Background="#e3e3e3">
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
             <RowDefinition Height="6*" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.5*" />
             <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="1.5*" />
         </Grid.ColumnDefinitions>
+
+        <Image Grid.Row="1" Grid.ColumnSpan="3" Stretch="Fill" Style="{DynamicResource SelectedImage}"/>
 
         <Grid
             Grid.Row="1"
@@ -29,11 +31,9 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="*" />
                 <RowDefinition Height="5*" />
-                <RowDefinition Height="*" />
+                <RowDefinition Height="1.2*" />
             </Grid.RowDefinitions>
 
-            
-            
             <!--<ItemsControl ItemsSource="{Binding Buttons}" Grid.Row="0">
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
@@ -233,9 +233,11 @@
                 </Grid>
             </Grid>
 
+            <TextBlock Grid.Row="2" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="15" Style="{DynamicResource InvalidDates}"/>
+            
             <Button
                 Grid.Row="2"
-                Margin="10"
+                Margin="10,25,10,10"
                 Background="#03a5fc"
                 BorderThickness="0"
                 Command="{Binding SearchCommand}"

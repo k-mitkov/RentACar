@@ -23,7 +23,6 @@ namespace DesktopClient.Views
     {
         public MainWindow()
         {
-            DataContext = new MainViewModel();
             InitializeComponent();
         }
     }

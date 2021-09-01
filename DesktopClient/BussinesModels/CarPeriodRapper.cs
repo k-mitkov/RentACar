@@ -49,7 +49,7 @@ namespace DesktopClient.BussinesModels
         {
             get
             {
-                return car.Capacity;
+                return car.Consumation;
             }
         }
         public int Year
@@ -105,6 +105,10 @@ namespace DesktopClient.BussinesModels
         {
             get
             {
+                if (!period.To.TimeOfDay.Equals(period.From.TimeOfDay))
+                {
+                    return (period.To - period.From).Days+1;
+                }
                 return (period.To - period.From).Days;
             }
         }

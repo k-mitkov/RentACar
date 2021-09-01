@@ -21,7 +21,6 @@
         </Grid.ColumnDefinitions>
         <Grid x:Name="RowGribName" Grid.Row="0"/>
         <Grid x:Name="ColGribName" Grid.Column="0"/>
-
         <ListBox Grid.RowSpan="4" Grid.ColumnSpan="3" ItemsSource="{Binding Cars}" ItemContainerStyle="{DynamicResource BorderStyle}" SelectedItem="{Binding SelectedCar}">
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
@@ -42,20 +41,34 @@
                             <StackPanel Margin="20" VerticalAlignment="Top" HorizontalAlignment="Right" Background="#03a5fc">
                                 <TextBlock  Margin="10,0" HorizontalAlignment="Center" Foreground="White" FontSize="15" FontWeight="Heavy" Text="{Binding Year}" />
                             </StackPanel>
+                            <StackPanel VerticalAlignment="Bottom" HorizontalAlignment="Left">
+                                <DockPanel>
+                                    <Image Height="20" Source="\Resources\Images\icon_seats.gif"/>
+                                    <TextBlock Text="{util:Localization strCapacity:}"/>
+                                    <TextBlock Text="{Binding Capacity}" Foreground="#03a5fc"/>
+                                    <TextBlock Text="{util:Localization strSeats}" Foreground="#03a5fc"/>
+                                </DockPanel>
+                                <DockPanel>
+                                    <Image Height="20" Source="\Resources\Images\icon_diesel.gif"/>
+                                    <TextBlock Text="{util:Localization strConsumation:}"/>
+                                    <TextBlock Text="{Binding Consumation}" Foreground="#03a5fc"/>
+                                    <TextBlock Text="{util:Localization strPerKm}" Foreground="#03a5fc"/>
+                                </DockPanel>
+                            </StackPanel>
                         </StackPanel>
-                        <StackPanel Background="#e3e3e3" Orientation="Vertical" Width="{Binding ElementName=ColGribName, Path=ActualWidth}">
+                        <Grid Width="{Binding ElementName=ColGribName, Path=ActualWidth}" Background="#e3e3e3">
                             <StackPanel VerticalAlignment="Center">
-                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                                    <TextBlock   FontSize="20" Text="{util:Localization strPricefor}"/>
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                    <TextBlock  FontSize="20" Text="{util:Localization strPricefor}"/>
                                     <TextBlock  FontSize="20" Text="{Binding Days}"/>
                                     <TextBlock  FontSize="20" Text="{util:Localization strDays:}"/>
                                 </StackPanel>
-                                <StackPanel Orientation="Horizontal"  HorizontalAlignment="Center" >
+                                <StackPanel Orientation="Horizontal"  HorizontalAlignment="Center" VerticalAlignment="Center">
                                     <TextBlock FontSize="20" FontWeight="Heavy" Text="{Binding TotalPrice}"/>
                                     <TextBlock  FontSize="20"  FontWeight="Heavy" Text="$"/>
                                 </StackPanel>
                             </StackPanel>
-                        </StackPanel>
+                        </Grid>
                     </StackPanel>
                 </DataTemplate>
             </ItemsControl.ItemTemplate>
