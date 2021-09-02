@@ -7,8 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Resources\Audio\car+start3.mp3" />
     <None Remove="Resources\Images\Alfa_Romeo_159.jpg" />
+    <None Remove="Resources\Images\Audi_A7.png" />
     <None Remove="Resources\Images\Bmw_5Series.jpg" />
+    <None Remove="Resources\Images\Bmw_5Series.png" />
     <None Remove="Resources\Images\cargo_main.jpg" />
     <None Remove="Resources\Images\car_main.jpg" />
     <None Remove="Resources\Images\car_search_icon.png" />
@@ -25,20 +28,34 @@
     <None Remove="Resources\Images\ico_calendar_big.png" />
     <None Remove="Resources\Images\location-icon.png" />
     <None Remove="Resources\Images\logo.png" />
+    <None Remove="Resources\Images\Mercedes-Sprinter.png" />
     <None Remove="Resources\Images\Mercedes_SClass.png" />
     <None Remove="Resources\Images\notFound_icon.jpg" />
+    <None Remove="Resources\Images\peugeot_208e.png" />
+    <None Remove="Resources\Images\Renault_Kangoo.png" />
+    <None Remove="Resources\Images\Renault_Master.png" />
+    <None Remove="Resources\Images\Renault_Trafic .png" />
+    <None Remove="Resources\Images\Renault_Trafic.png" />
+    <None Remove="Resources\Images\tesla_model-s.png" />
+    <None Remove="Resources\Images\tesla_model3.png" />
     <None Remove="Resources\Images\time-icon.png" />
     <None Remove="Resources\Images\Toyota_Corolla.jpg" />
     <None Remove="Resources\Images\truck_search_icon.png" />
     <None Remove="Resources\Images\truck_search_icon_dark.png" />
+    <None Remove="Resources\Images\VW_Caddy.png" />
+    <None Remove="Resources\Images\VW_ID.3.png" />
     <None Remove="Resources\Images\Vw_Passat.jpg" />
+    <None Remove="Resources\Images\Vw_Passat.png" />
   </ItemGroup>
 
   <ItemGroup>
     <Content Include="Resources\Images\Alfa_Romeo_159.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Images\Bmw_5Series.jpg">
+    <Content Include="Resources\Images\Audi_A7.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Images\Bmw_5Series.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Images\cargo_main.jpg">
@@ -89,10 +106,31 @@
     <Content Include="Resources\Images\logo.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Resources\Images\Mercedes-Sprinter.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resources\Images\Mercedes_SClass.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Images\notFound_icon.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Images\peugeot_208e.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Images\Renault_Kangoo.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Images\Renault_Master.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Images\Renault_Trafic.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Images\tesla_model-s.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Images\tesla_model3.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Images\time-icon.png">
@@ -107,7 +145,10 @@
     <Content Include="Resources\Images\truck_search_icon_dark.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Images\Vw_Passat.jpg">
+    <Content Include="Resources\Images\VW_ID.3.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Images\Vw_Passat.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
@@ -118,6 +159,12 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Data\Data.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Resources\Images\VW_Caddy.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
   <ItemGroup>
@@ -136,6 +183,12 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Resources\Audio\car+start3.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
 </Project>

@@ -1,6 +1,5 @@
 ﻿using Data.Enums;
 using System;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Data.Models
 {

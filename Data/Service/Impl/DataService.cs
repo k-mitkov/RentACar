@@ -1,10 +1,8 @@
 ﻿using Data.Enums;
 using Data.Models;
 using Microsoft.EntityFrameworkCore;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace Data.Service.Impl
 {
@@ -86,7 +84,6 @@ namespace Data.Service.Impl
             {
                 var car = context.Cars.Include("Periods").First();
                 car.Periods.Remove(context.Periods.FirstOrDefault(p => p.From == period.From && p.To == period.To));
-                //context.Periods.Remove(context.Periods.FirstOrDefault(p => p.From == period.From && p.To == period.To));
                 context.SaveChanges();
                 return true;
             }

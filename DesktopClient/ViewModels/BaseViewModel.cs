@@ -1,9 +1,6 @@
 ﻿using Data.Service;
 using Data.Service.Impl;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Text;
 
 namespace DesktopClient.ViewModels
 {

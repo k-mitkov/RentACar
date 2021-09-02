@@ -7,16 +7,19 @@ namespace DesktopClient.Util
 {
     public class TranslationSource : INotifyPropertyChanged
     {
+        #region Declarations
         public event Action LanguageEvent;
         private static readonly TranslationSource instance = new TranslationSource();
+        private readonly ResourceManager resManager = Resources.Localizations.Resources.ResourceManager;
+        public event PropertyChangedEventHandler PropertyChanged;
+        private CultureInfo currentCulture = null;
+        #endregion
 
+        #region Proparties
         public static TranslationSource Instance
         {
             get { return instance; }
         }
-
-        private readonly ResourceManager resManager = Resources.Localizations.Resources.ResourceManager;
-        private CultureInfo currentCulture = null;
 
         public string this[string key]
         {
@@ -40,8 +43,6 @@ namespace DesktopClient.Util
                 }
             }
         }
-
-        public event PropertyChangedEventHandler PropertyChanged;
+        #endregion
     }
-
 }

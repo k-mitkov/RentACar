@@ -1,11 +1,9 @@
-﻿using Data.Enums;
-using Data.Models;
+﻿using Data.Models;
 using DesktopClient.Commands;
 using DesktopClient.Util;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
-using System.Reflection;
 using System.Windows.Input;
 
 namespace DesktopClient.ViewModels
@@ -65,13 +63,6 @@ namespace DesktopClient.ViewModels
                 currentLanguage = value;
                 var field = currentLanguage.Lenguage.GetType().GetField(currentLanguage.Lenguage.ToString());
                 var attributes = field.GetCustomAttributes(false);
-
-                //DescriptionAttribute displayAttribute = null;
-
-                //if (attributes.Any())
-                //{
-                //    displayAttribute = (DescriptionAttribute) attributes.ElementAt(0);
-                //}
 
                 TranslationSource.Instance.CurrentCulture = new System.Globalization.CultureInfo(attributes.Select(a=> (DescriptionAttribute) a).ElementAt(0).Description);
             }

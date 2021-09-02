@@ -2,8 +2,6 @@
 using DesktopClient.BussinesModels;
 using DesktopClient.Commands;
 using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Text.RegularExpressions;
 
 namespace DesktopClient.ViewModels

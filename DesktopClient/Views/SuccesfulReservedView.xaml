@@ -9,7 +9,7 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
         <Border BorderBrush="#fcd303" BorderThickness="10" Background="#e3e3e3" Margin="20">
-            <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Text="{util:Localization strSuccesfulReservation}" FontSize="40"/>
+            <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Text="{util:Localization strSuccesfulReservation}" FontSize="40" FontWeight="ExtraBold" Foreground="#03a5fc"/>
         </Border>
     </Grid>
 </UserControl>

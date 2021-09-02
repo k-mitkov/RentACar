@@ -1,6 +1,4 @@
-﻿using Data.Enums;
-using Data.Models;
-using DesktopClient.BussinesModels;
+﻿using DesktopClient.BussinesModels;
 using DesktopClient.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -13,7 +11,6 @@ namespace DesktopClient.Commands
     {
         #region Declarations
         private MainViewModel viewModel;
-        public event EventHandler CanExecuteChanged;
         private SelectViewModel selectViewModel;
         #endregion
 
@@ -25,6 +22,20 @@ namespace DesktopClient.Commands
             SearchViewModel searchViewModel = new SearchViewModel();
             this.viewModel.SelectedViewModel = searchViewModel;
             searchViewModel.SearchEvent += SearchHandler;
+        }
+        #endregion
+
+        #region Proparties
+        public event EventHandler CanExecuteChanged
+        {
+            add
+            {
+                CommandManager.RequerySuggested += value;
+            }
+            remove
+            {
+                CommandManager.RequerySuggested -= value;
+            }
         }
         #endregion
 

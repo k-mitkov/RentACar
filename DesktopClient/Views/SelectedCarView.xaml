@@ -24,28 +24,28 @@
                 <StackPanel>
                     <DockPanel Margin="10">
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
-                            <TextBlock Text="{Binding Brand}" FontSize="30" Foreground="#03a5fc" FontWeight="Heavy"/>
+                            <TextBlock Text="{Binding Car.Brand}" FontSize="30" Foreground="#03a5fc" FontWeight="Heavy"/>
                             <TextBlock Text=" " FontSize="20"/>
-                            <TextBlock Text="{Binding Model}" FontSize="30" Foreground="#03a5fc" FontWeight="Heavy"/>
+                            <TextBlock Text="{Binding Car.Model}" FontSize="30" Foreground="#03a5fc" FontWeight="Heavy"/>
                         </StackPanel>
                         <StackPanel Background="#03a5fc" HorizontalAlignment="Right" VerticalAlignment="Center">
-                            <TextBlock  Margin="10" Foreground="White" FontSize="15" FontWeight="Heavy" Text="{Binding Year}" />
+                            <TextBlock  Margin="10" Foreground="White" FontSize="15" FontWeight="Heavy" Text="{Binding Car.Year}" />
                         </StackPanel>
                     </DockPanel>
                     <DockPanel Margin="5,0">
                         <StackPanel Orientation="Horizontal" Margin="5,0">
                             <Image HorizontalAlignment="Left" Height="20" Source="\Resources\Images\icon_seats.gif"/>
-                            <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Text="{Binding Capacity}" Foreground="#03a5fc"/>
+                            <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Text="{Binding Car.Capacity}" Foreground="#03a5fc"/>
                         </StackPanel>
                         <StackPanel Orientation="Horizontal" Margin="5,0">
                             <Image HorizontalAlignment="Left" Height="20" Source="\Resources\Images\icon_diesel.gif"/>
-                            <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Text="{Binding Consumation}" Foreground="#03a5fc" Margin="10,0,0,0"/>
+                            <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Text="{Binding Car.Consumation}" Foreground="#03a5fc" Margin="10,0,0,0"/>
                             <TextBlock Text="{util:Localization strPerKm}" Foreground="#03a5fc"/>
                         </StackPanel>
                     </DockPanel>
                 </StackPanel>
                 <StackPanel Grid.Row="1">
-                    <Image Source="{Binding Path}" Margin="10" Stretch="Fill"/>
+                    <Image Source="{Binding Car.Path}" Margin="10" Stretch="Fill"/>
                 </StackPanel>
             </Grid>
         </Border>
@@ -116,7 +116,7 @@
                         <Grid>
                             <Image Source="\Resources\Images\ico_calendar_big.png"/>
                             <StackPanel Margin="0,30,0,0" VerticalAlignment="Center">
-                                <TextBlock HorizontalAlignment="Center" FontSize="30" Text="{Binding Days}" FontWeight="Heavy"/>
+                                <TextBlock HorizontalAlignment="Center" FontSize="30" Text="{Binding Car.Days}" FontWeight="Heavy"/>
                                 <TextBlock HorizontalAlignment="Center" Text="{util:Localization strDays}" FontSize="20" FontWeight="Heavy"/>
                             </StackPanel>
                         </Grid>
@@ -125,7 +125,7 @@
                 <DockPanel Margin="20" Grid.Column="1" VerticalAlignment="Center">
                     <TextBlock HorizontalAlignment="Left" Text="{util:Localization strTotalPrice}" FontSize="20" Foreground="#03a5fc"/>
                     <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
-                        <TextBlock Text="{Binding TotalPrice}" FontSize="20" FontWeight="Heavy"/>
+                        <TextBlock Text="{Binding Car.TotalPrice}" FontSize="20" FontWeight="Heavy"/>
                         <TextBlock FontSize="20"  FontWeight="Heavy" Text=" $"/>
                     </StackPanel>
                 </DockPanel>
@@ -144,7 +144,5 @@
                         Style="{DynamicResource ButtonBorder}"/>
             </Grid>
         </Grid>
-
-        
     </Grid>
 </UserControl>

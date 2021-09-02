@@ -199,13 +199,13 @@
     <value>Total price:</value>
   </data>
   <data name="strInvalidDateOfBirth" xml:space="preserve">
-    <value>sadsadsdas</value>
+    <value>You must be 18 years old to rent a car.</value>
   </data>
   <data name="strInvalidLastName" xml:space="preserve">
     <value>Please enter valid last name.</value>
   </data>
   <data name="strInvalidMail" xml:space="preserve">
-    <value>Please enter valid mail.</value>
+    <value>Please enter valid еmail.</value>
   </data>
   <data name="strInvalidName" xml:space="preserve">
     <value>Please enter valid name.</value>
@@ -214,16 +214,16 @@
     <value>Please enter valid phone.</value>
   </data>
   <data name="strInvalidDateFrom" xml:space="preserve">
-    <value>strInvalidDateFrom</value>
+    <value>Date from can not be date from past.</value>
   </data>
   <data name="strInvalidDates" xml:space="preserve">
-    <value>strInvalidDates</value>
+    <value>Date to must be later then date from.</value>
   </data>
   <data name="strCapacity:" xml:space="preserve">
     <value>Capacity: </value>
   </data>
   <data name="strCarsNotFound" xml:space="preserve">
-    <value>strCarsNotFound</value>
+    <value>No available cars found!</value>
   </data>
   <data name="strConsumation:" xml:space="preserve">
     <value>   Consumation: </value>

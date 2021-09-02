@@ -199,9 +199,42 @@
     <value>Крайна цена:</value>
   </data>
   <data name="strInvalidDateFrom" xml:space="preserve">
-    <value />
+    <value>Датата на наемане не може да бъде вече минала дата.</value>
   </data>
   <data name="strInvalidDates" xml:space="preserve">
-    <value />
+    <value>Датата на връщане трябва да бъде след датата на наемане.</value>
+  </data>
+  <data name="strCapacity:" xml:space="preserve">
+    <value>Капацитет: </value>
+  </data>
+  <data name="strCarsNotFound" xml:space="preserve">
+    <value>Не са намерени свободни автомобили!</value>
+  </data>
+  <data name="strConsumation:" xml:space="preserve">
+    <value>   Разход: </value>
+  </data>
+  <data name="strInvalidDateOfBirth" xml:space="preserve">
+    <value>Трябва да имате навършени поне 18 години.</value>
+  </data>
+  <data name="strInvalidLastName" xml:space="preserve">
+    <value>Моля въведете валидна фамилия.</value>
+  </data>
+  <data name="strInvalidMail" xml:space="preserve">
+    <value>Моля въведете валиден имейл.</value>
+  </data>
+  <data name="strInvalidName" xml:space="preserve">
+    <value>Моля въведете валидено име.</value>
+  </data>
+  <data name="strInvalidPhone" xml:space="preserve">
+    <value>Моля въведете валиден телефонен номер.</value>
+  </data>
+  <data name="strPerKm" xml:space="preserve">
+    <value>/100 км.</value>
+  </data>
+  <data name="strSeats" xml:space="preserve">
+    <value> места.</value>
+  </data>
+  <data name="strSuccesfulReservation" xml:space="preserve">
+    <value>Успешна резервация!</value>
   </data>
 </root>

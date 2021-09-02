@@ -1,8 +1,6 @@
-﻿using Data.Models;
-using DesktopClient.BussinesModels;
+﻿using DesktopClient.BussinesModels;
 using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace DesktopClient.ViewModels
 {

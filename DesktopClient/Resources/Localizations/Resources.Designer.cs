@@ -124,7 +124,7 @@ namespace DesktopClient.Resources.Localizations {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to strCarsNotFound.
+        ///   Looks up a localized string similar to No available cars found!.
         /// </summary>
         public static string strCarsNotFound {
             get {
@@ -214,7 +214,7 @@ namespace DesktopClient.Resources.Localizations {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to strInvalidDateFrom.
+        ///   Looks up a localized string similar to Date from can not be date from past..
         /// </summary>
         public static string strInvalidDateFrom {
             get {
@@ -223,7 +223,7 @@ namespace DesktopClient.Resources.Localizations {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to sadsadsdas.
+        ///   Looks up a localized string similar to You must be 18 years old to rent a car..
         /// </summary>
         public static string strInvalidDateOfBirth {
             get {
@@ -232,7 +232,7 @@ namespace DesktopClient.Resources.Localizations {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to strInvalidDates.
+        ///   Looks up a localized string similar to Date to must be later then date from..
         /// </summary>
         public static string strInvalidDates {
             get {
@@ -250,7 +250,7 @@ namespace DesktopClient.Resources.Localizations {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Please enter valid mail..
+        ///   Looks up a localized string similar to Please enter valid еmail..
         /// </summary>
         public static string strInvalidMail {
             get {

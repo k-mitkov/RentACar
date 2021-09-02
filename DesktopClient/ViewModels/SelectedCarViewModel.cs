@@ -1,10 +1,7 @@
-﻿using Data.Enums;
-using DesktopClient.BussinesModels;
+﻿using DesktopClient.BussinesModels;
 using DesktopClient.Commands;
 using DesktopClient.Util;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace DesktopClient.ViewModels
 {
@@ -31,49 +28,19 @@ namespace DesktopClient.ViewModels
         #endregion
 
         #region Proparties
-        public string Brand
-        {
-            get
-            {
-                return car.Brand;
-            }
-        }
-        public string Model
-        {
-            get
-            {
-                return car.Model;
-            }
-        }
-        public int Capacity
-        {
-            get
-            {
-                return car.Capacity;
-            }
-        }
-        public decimal Consumation
-        {
-            get
-            {
-                return car.Consumation;
-            }
-        }
-        public int Year
-        {
-            get
-            {
-                return car.Year;
-            }
-        }
-        public string Path
-        {
-            get
-            {
-                return car.Path;
-            }
-        }
 
+        public CarPeriodRapper Car
+        {
+            get
+            {
+                return car;
+            }
+            set
+            {
+                car = value;
+            }
+        }
+        
         public string FromDate
         {
             get
@@ -130,21 +97,7 @@ namespace DesktopClient.ViewModels
                 OnPropertyChanged(nameof(LocationTo));
             }
         }
-        public decimal TotalPrice
-        {
-            get
-            {
-                return car.TotalPrice;
-            }
-        }
-        public int Days
-        {
-            get
-            {
-                return car.Days;
-            }
-        }
-
+        
         public ButtonCommand BackCommand
         {
             get
