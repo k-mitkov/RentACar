@@ -36,6 +36,10 @@
                 <views:CarsNotFoundView />
             </DataTemplate>
 
+            <DataTemplate DataType="{x:Type viewmodels:AddNewCarViewModel}">
+                <views:AddNewCarView />
+            </DataTemplate>
+
             <Style x:Key="Button" TargetType="{x:Type Button}">
                 <Setter Property="Template">
                     <Setter.Value>
@@ -89,34 +93,6 @@
                                     <Setter TargetName="buttonImage" Property="Margin" Value="40,20,40,20" />
                                 </MultiDataTrigger>
                             </ControlTemplate.Triggers>
-                        </ControlTemplate>
-                    </Setter.Value>
-                </Setter>
-            </Style>
-
-            <Style x:Key="DateButton" TargetType="{x:Type Button}">
-                <Setter Property="Template">
-                    <Setter.Value>
-                        <ControlTemplate TargetType="Button">
-                            <Border
-                                x:Name="border"
-                                Background="WhiteSmoke"
-                                BorderBrush="Gray"
-                                BorderThickness="1"
-                                TextBlock.Foreground="Black">
-                                <Grid>
-                                    <Image
-                                        x:Name="buttonImage"
-                                        Margin="5"
-                                        HorizontalAlignment="Right"
-                                        VerticalAlignment="Stretch"
-                                        Source="\Resources\Images\date-icon.png" />
-                                    <ContentPresenter
-                                        Margin="{TemplateBinding Padding}"
-                                        HorizontalAlignment="Center"
-                                        VerticalAlignment="Center" />
-                                </Grid>
-                            </Border>
                         </ControlTemplate>
                     </Setter.Value>
                 </Setter>
@@ -561,16 +537,6 @@
                 </Setter>
             </Style>
 
-            <Style x:Key="BorderStyle" TargetType="ListBoxItem">
-                <Style.Triggers>
-                    <Trigger Property="IsMouseOver" Value="True">
-                        <Trigger.Setters>
-                            <Setter Property="ItemsControl.BorderBrush" Value="#fcd303" />
-                        </Trigger.Setters>
-                    </Trigger>
-                </Style.Triggers>
-            </Style>
-
             <Style x:Key="InvalidMail" TargetType="TextBlock">
                 <Setter Property="Text" Value="{util:Localization strInvalidMail}" />
                 <Style.Triggers>
@@ -611,6 +577,69 @@
                 <Setter Property="Text" Value="{util:Localization strInvalidDateOfBirth}" />
                 <Style.Triggers>
                     <DataTrigger Binding="{Binding Path=IsDateOfBirthValid}" Value="true">
+                        <Setter Property="Text" Value="" />
+                    </DataTrigger>
+                </Style.Triggers>
+            </Style>
+
+            <Style x:Key="InvalidBrand" TargetType="TextBlock">
+                <Setter Property="Text" Value="{util:Localization strInvalidBrand}" />
+                <Style.Triggers>
+                    <DataTrigger Binding="{Binding Path=IsBrandValid}" Value="true">
+                        <Setter Property="Text" Value="" />
+                    </DataTrigger>
+                </Style.Triggers>
+            </Style>
+
+            <Style x:Key="InvalidModel" TargetType="TextBlock">
+                <Setter Property="Text" Value="{util:Localization strInvalidModel}" />
+                <Style.Triggers>
+                    <DataTrigger Binding="{Binding Path=IsModelValid}" Value="true">
+                        <Setter Property="Text" Value="" />
+                    </DataTrigger>
+                </Style.Triggers>
+            </Style>
+
+            <Style x:Key="InvalidYear" TargetType="TextBlock">
+                <Setter Property="Text" Value="{util:Localization strInvalidYear}" />
+                <Style.Triggers>
+                    <DataTrigger Binding="{Binding Path=IsYearValid}" Value="true">
+                        <Setter Property="Text" Value="" />
+                    </DataTrigger>
+                </Style.Triggers>
+            </Style>
+
+            <Style x:Key="InvalidConsumation" TargetType="TextBlock">
+                <Setter Property="Text" Value="{util:Localization strInvalidConsumation}" />
+                <Style.Triggers>
+                    <DataTrigger Binding="{Binding Path=IsConsumationValid}" Value="true">
+                        <Setter Property="Text" Value="" />
+                    </DataTrigger>
+                </Style.Triggers>
+            </Style>
+
+            <Style x:Key="InvalidCapacity" TargetType="TextBlock">
+                <Setter Property="Text" Value="{util:Localization strInvalidCapacity}" />
+                <Style.Triggers>
+                    <DataTrigger Binding="{Binding Path=IsCapacityValid}" Value="true">
+                        <Setter Property="Text" Value="" />
+                    </DataTrigger>
+                </Style.Triggers>
+            </Style>
+
+            <Style x:Key="InvalidPath" TargetType="TextBlock">
+                <Setter Property="Text" Value="{util:Localization strInvalidPath}" />
+                <Style.Triggers>
+                    <DataTrigger Binding="{Binding Path=IsPathValid}" Value="true">
+                        <Setter Property="Text" Value="" />
+                    </DataTrigger>
+                </Style.Triggers>
+            </Style>
+
+            <Style x:Key="InvalidPricePerDay" TargetType="TextBlock">
+                <Setter Property="Text" Value="{util:Localization strInvalidPrice}" />
+                <Style.Triggers>
+                    <DataTrigger Binding="{Binding Path=IsPriceValid}" Value="true">
                         <Setter Property="Text" Value="" />
                     </DataTrigger>
                 </Style.Triggers>

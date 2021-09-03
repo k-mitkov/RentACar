@@ -62,7 +62,7 @@ namespace DesktopClient.Views {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/DesktopClient;V1.0.0.0;component/views/carsnotfoundview.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/DesktopClient;component/views/carsnotfoundview.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Views\CarsNotFoundView.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

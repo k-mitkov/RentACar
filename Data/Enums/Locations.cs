@@ -12,6 +12,7 @@ namespace Data.Enums
         Varna,
         [Description("strBurgas")]
         Burgas,
+        [Description("")]
         OnTrip
     }
 }

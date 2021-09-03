@@ -17,6 +17,31 @@ namespace Data.Service.Impl
         {
             data = new DataService();
         }
+
+        public bool AddNewCar(Car car, Locations location)
+        {
+            try
+            {
+                var period1 = new Period()
+                {
+                    From = DateTime.Now,
+                    To = DateTime.MaxValue,
+                    Location = location
+                };
+
+                List<Period> periods = new List<Period>();
+                periods.Add(period1);
+                car.Periods = periods;
+                data.AddNewCar(car);
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                ExceptionLogger.LoggException(ex);
+                return false;
+            }
+        }
         #endregion
 
         #region Methods

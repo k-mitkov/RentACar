@@ -30,6 +30,8 @@
                 <Image Source="\Resources\Images\logo.png"/>
             </Button>
 
+            <Button Grid.Column="1" Command="{Binding AddCommand}" HorizontalAlignment="Right" Content="+" FontSize="40" FontWeight="ExtraBold" VerticalContentAlignment="Center" Background="#03a5fc" Margin="10" BorderThickness="0" Foreground="White" />
+
             <ComboBox  Grid.Column="2" Margin="20" VerticalContentAlignment="Center" ItemsSource="{Binding Languages}"  SelectedValue="{Binding SelectedLanguage}">
                 <ComboBox.ItemTemplate>
                     <DataTemplate>

@@ -237,4 +237,52 @@
   <data name="strSuccesfulReservation" xml:space="preserve">
     <value>Succeful Reservation!</value>
   </data>
+  <data name="strAdd" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="strAddNewCar" xml:space="preserve">
+    <value>Add New Car</value>
+  </data>
+  <data name="strBrand:" xml:space="preserve">
+    <value>Brand: </value>
+  </data>
+  <data name="strImagePath:" xml:space="preserve">
+    <value>Image Path:</value>
+  </data>
+  <data name="strInvalidBrand" xml:space="preserve">
+    <value>Please enter valid brand.</value>
+  </data>
+  <data name="strInvalidCapacity" xml:space="preserve">
+    <value>Please enter valid capacity.</value>
+  </data>
+  <data name="strInvalidConsumation" xml:space="preserve">
+    <value>Please enter valid consumation.</value>
+  </data>
+  <data name="strInvalidModel" xml:space="preserve">
+    <value>Please enter valid model.</value>
+  </data>
+  <data name="strInvalidPath" xml:space="preserve">
+    <value>Please enter valid path.</value>
+  </data>
+  <data name="strInvalidPrice" xml:space="preserve">
+    <value>Please enter valid price.</value>
+  </data>
+  <data name="strInvalidYear" xml:space="preserve">
+    <value>Please enter valid year.</value>
+  </data>
+  <data name="strLocation:" xml:space="preserve">
+    <value>Location:</value>
+  </data>
+  <data name="strModel:" xml:space="preserve">
+    <value>Model:</value>
+  </data>
+  <data name="strPricePerDay:" xml:space="preserve">
+    <value>Price per day:</value>
+  </data>
+  <data name="strType:" xml:space="preserve">
+    <value>Type:</value>
+  </data>
+  <data name="strYear:" xml:space="preserve">
+    <value>Year:</value>
+  </data>
 </root>

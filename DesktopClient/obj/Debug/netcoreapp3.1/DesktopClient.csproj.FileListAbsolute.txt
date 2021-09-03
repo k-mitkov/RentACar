@@ -116,3 +116,10 @@ C:\Users\Administrator\source\repos\RentACar\DesktopClient\bin\Debug\netcoreapp3
 C:\Users\Administrator\source\repos\RentACar\DesktopClient\bin\Debug\netcoreapp3.1\Resources\Images\VW_Caddy.png
 C:\Users\Administrator\source\repos\RentACar\DesktopClient\bin\Debug\netcoreapp3.1\Resources\Images\Renault_Trafic.png
 C:\Users\Administrator\source\repos\RentACar\DesktopClient\bin\Debug\netcoreapp3.1\Resources\Audio\car+start3.mp3
+C:\Users\Administrator\source\repos\RentACar\DesktopClient\bin\Debug\netcoreapp3.1\Resources\Images\BMW_X5.png
+C:\Users\Administrator\source\repos\RentACar\DesktopClient\bin\Debug\netcoreapp3.1\Resources\Images\peugeot_e-2008.png
+C:\Users\Administrator\source\repos\RentACar\DesktopClient\bin\Debug\netcoreapp3.1\Resources\Images\audi-q3.png
+C:\Users\Administrator\source\repos\RentACar\DesktopClient\obj\Debug\netcoreapp3.1\Views\AddNewCarView.g.cs
+C:\Users\Administrator\source\repos\RentACar\DesktopClient\obj\Debug\netcoreapp3.1\Views\AddNewCarView.baml
+C:\Users\Administrator\source\repos\RentACar\DesktopClient\bin\Debug\netcoreapp3.1\Resources\Images\browse-icon.jpg
+C:\Users\Administrator\source\repos\RentACar\DesktopClient\bin\Debug\netcoreapp3.1\Resources\Images\Hyundai-Santa-Fe.png

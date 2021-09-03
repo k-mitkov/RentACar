@@ -214,7 +214,7 @@
     <value>   Разход: </value>
   </data>
   <data name="strInvalidDateOfBirth" xml:space="preserve">
-    <value>Трябва да имате навършени поне 18 години.</value>
+    <value>Трябва да имате навършени 18 години.</value>
   </data>
   <data name="strInvalidLastName" xml:space="preserve">
     <value>Моля въведете валидна фамилия.</value>

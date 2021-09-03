@@ -96,6 +96,13 @@ namespace DesktopClient.Commands
             SuccesfulReservedViewModel succesfulReservedViewModel = new SuccesfulReservedViewModel();
             viewModel.SelectedViewModel = succesfulReservedViewModel;
         }
+
+        public void ShowAddNewCarView()
+        {
+            AddNewCarViewModel addNewCarViewModel = new AddNewCarViewModel();
+            viewModel.SelectedViewModel = addNewCarViewModel;
+        }
+
         #endregion
     }
 }

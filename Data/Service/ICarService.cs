@@ -9,5 +9,7 @@ namespace Data.Service
         IEnumerable<Car> GetCarsByPeriodAndType(Period period, TypeVehicle type);
 
         bool ReserveCar(Car car, Period period, Client client, Locations location);
+
+        bool AddNewCar(Car car, Locations location);
     }
 }

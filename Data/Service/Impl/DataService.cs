@@ -162,10 +162,6 @@ namespace Data.Service.Impl
                 prevPeriod.Car = car;
                 prevPeriod.CarId = car.Id;
 
-                period.Location = Locations.OnTrip;
-                period.Car = car;
-                period.CarId = car.Id;
-
                 var aftarPeriod = new Period
                 {
                     From = period.To,

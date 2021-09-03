@@ -54,7 +54,7 @@ namespace Test
             //{
             //    From = DateTime.Now,
             //    To = DateTime.MaxValue,
-            //    Location = Locations.Burgas
+            //    Location = Locations.Sofia
             //};
 
             //List<Period> periods = new List<Period>();
@@ -64,13 +64,13 @@ namespace Test
             //var car = new Car()
             //{
             //    Brand = "Audi",
-            //    Model = "A7",
+            //    Model = "Q3",
             //    Capacity = 5,
-            //    Consumation = 8m,
-            //    Path = @"\Resources\Images\Audi_A7.png",
-            //    Price = 90,
+            //    Consumation = 9m,
+            //    Path = @"\Resources\Images\audi-q3.png",
+            //    Price = 80,
             //    Type = TypeVehicle.Car,
-            //    Year = 2019,
+            //    Year = 2018,
             //    Periods = periods
             //};
 

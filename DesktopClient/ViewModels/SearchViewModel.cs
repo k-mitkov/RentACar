@@ -73,7 +73,6 @@ namespace DesktopClient.ViewModels
             set
             {
                 locations = value;
-                OnPropertyChanged(nameof(LocationsList));
             }
         }
 
@@ -85,18 +84,18 @@ namespace DesktopClient.ViewModels
             }
         }
 
-        //public IEnumerable<VehicleTypeButton> Buttons
-        //{
-        //    get
-        //    {
-        //        return buttons;
-        //    }
-        //    set
-        //    {
-        //        buttons = value.ToList();
-        //        OnPropertyChanged(nameof(Buttons));
-        //    }
-        //}
+        public IEnumerable<VehicleTypeButton> Buttons
+        {
+            get
+            {
+                return buttons;
+            }
+            set
+            {
+                buttons = value.ToList();
+                OnPropertyChanged(nameof(Buttons));
+            }
+        }
 
         public VehicleTypeButton CarButton
         {

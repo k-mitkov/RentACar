@@ -34,15 +34,22 @@
                 <RowDefinition Height="1.2*" />
             </Grid.RowDefinitions>
 
-            <!--<ItemsControl ItemsSource="{Binding Buttons}" Grid.Row="0">
+            <ItemsControl ItemsSource="{Binding Buttons}" Grid.Row="0">
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
                         <Button
-                             Command="{Binding ButtonCommand}"
-                             Style="{DynamicResource Button}" />
+                            Command="{Binding ButtonCommand}"
+                            Style="{DynamicResource Button}"
+                            Width="{Binding ElementName=ButtonSizeGrid, Path=ActualWidth}"/>
                     </DataTemplate>
                 </ItemsControl.ItemTemplate>
-            </ItemsControl>-->
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <VirtualizingStackPanel IsItemsHost="True" Orientation="Horizontal"/>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+            </ItemsControl>
+            
             <Grid Grid.Row="0">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
@@ -50,21 +57,7 @@
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
 
-                <Button
-                Grid.Column="0" 
-                DataContext="{Binding CarButton}"
-                Command="{Binding CarCommand}"
-                Style="{DynamicResource Button}" />
-                <Button
-                Grid.Column="1"
-                DataContext="{Binding ECarButton}"
-                Command="{Binding ECarCommand}"
-                Style="{DynamicResource Button}" />
-                <Button
-                Grid.Column="2"
-                DataContext="{Binding TruckButton}"
-                Command="{Binding TruckCommand}"
-                Style="{DynamicResource Button}" />
+                <Grid x:Name="ButtonSizeGrid" Grid.Column="0"/>
             </Grid>
 
 

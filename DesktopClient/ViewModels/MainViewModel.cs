@@ -14,6 +14,7 @@ namespace DesktopClient.ViewModels
         private BaseViewModel selectedViewModel;
         private Language currentLanguage;
         private IEnumerable<Language> languages;
+        private ButtonCommand addCommand;
         #endregion
 
         #region Constructor
@@ -24,6 +25,19 @@ namespace DesktopClient.ViewModels
         #endregion
 
         #region Properties
+
+        public ButtonCommand AddCommand
+        {
+            get
+            {
+                if (addCommand == null)
+                {
+                    addCommand = new ButtonCommand(Add, CanExecuteShow);
+                }
+                return addCommand;
+            }
+        }
+
         public BaseViewModel SelectedViewModel
         {
             get
@@ -37,7 +51,7 @@ namespace DesktopClient.ViewModels
             }
         }
 
-        public ICommand UpdateViewCommand { get; set; }
+        public UpdateViewCommand UpdateViewCommand { get; set; }
 
         public IEnumerable<Language> Languages
         {
@@ -67,6 +81,21 @@ namespace DesktopClient.ViewModels
                 TranslationSource.Instance.CurrentCulture = new System.Globalization.CultureInfo(attributes.Select(a=> (DescriptionAttribute) a).ElementAt(0).Description);
             }
         }
+
+        #endregion
+
+        #region Methods
+
+        public bool CanExecuteShow(object _)
+        {
+            return true;
+        }
+
+        private void Add(object _)
+        {
+            UpdateViewCommand.ShowAddNewCarView();
+        }
+
         #endregion
     }
 }

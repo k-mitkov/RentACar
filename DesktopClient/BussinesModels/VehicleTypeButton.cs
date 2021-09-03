@@ -7,16 +7,15 @@ using System.Linq;
 
 namespace DesktopClient.BussinesModels
 {
-    class VehicleTypeButton : INotifyPropertyChanged
+    public abstract class VehicleTypeButton : INotifyPropertyChanged
     { 
         #region Declarations 
-        private static List<VehicleTypeButton> buttons;
+        protected static List<VehicleTypeButton> buttons;
         private string name;
         private bool isSelected;
-        private ButtonCommand carCommand;
-        private ButtonCommand eCarCommand;
-        private ButtonCommand truckCommand;
+        private ButtonCommand buttonCommand;
         public event PropertyChangedEventHandler PropertyChanged;
+        private string iconPath;
         #endregion
 
         #region Constructor
@@ -44,7 +43,21 @@ namespace DesktopClient.BussinesModels
                 OnPropertyChanged(nameof(Name));
             }
         }
-        public string IconPath { get; set; }
+        public string IconPath
+        {
+            get
+            {
+                if(IsSelected == false)
+                {
+                    return iconPath;
+                }
+                return IconPathBlue;
+            }
+            set
+            {
+                iconPath = value;
+            }
+        }
         public string IconPathBlue { get; set; }
         public TypeVehicle Type { get; set; }
         public bool IsSelected
@@ -61,41 +74,18 @@ namespace DesktopClient.BussinesModels
 
         }
 
-        public ButtonCommand CarCommand
+        public ButtonCommand ButtonCommand
         {
             get
             {
-                if (carCommand == null)
+                if (buttonCommand == null)
                 {
-                    carCommand = new ButtonCommand(SelectCar, CanExecuteShow);
+                    buttonCommand = new ButtonCommand(SelectButton, CanExecuteShow);
                 }
-                return carCommand;
+                return buttonCommand;
             }
         }
 
-        public ButtonCommand ECarCommand
-        {
-            get
-            {
-                if (eCarCommand == null)
-                {
-                    eCarCommand = new ButtonCommand(SelectECar, CanExecuteShow);
-                }
-                return eCarCommand;
-            }
-        }
-
-        public ButtonCommand TruckCommand
-        {
-            get
-            {
-                if (truckCommand == null)
-                {
-                    truckCommand = new ButtonCommand(SelectTruck, CanExecuteShow);
-                }
-                return truckCommand;
-            }
-        }
         #endregion
 
         #region Methods
@@ -104,7 +94,7 @@ namespace DesktopClient.BussinesModels
             if(buttons == null)
             {
                 buttons = new List<VehicleTypeButton>();
-                buttons.Add(new VehicleTypeButton
+                buttons.Add(new CarButton
                 {
                     Id = 0,
                     IconPath = @"\Resources\Images\car_search_icon.png",
@@ -113,7 +103,7 @@ namespace DesktopClient.BussinesModels
                     Name = "",
                     IsSelected = true
                 });
-                buttons.Add(new VehicleTypeButton
+                buttons.Add(new ECarButton
                 {
                     Id = 1,
                     IconPath = @"\Resources\Images\e-car_search_icon.png",
@@ -122,7 +112,7 @@ namespace DesktopClient.BussinesModels
                     Name = "",
                     IsSelected = false
                 });
-                buttons.Add(new VehicleTypeButton
+                buttons.Add(new CargoButton
                 {
                     Id = 2,
                     IconPath = @"\Resources\Images\truck_search_icon.png",
@@ -135,26 +125,7 @@ namespace DesktopClient.BussinesModels
             return buttons;
         }
 
-        private void SelectCar(object o)
-        {
-            buttons[0].IsSelected = true;
-            buttons[1].IsSelected = false;
-            buttons[2].IsSelected = false;
-        }
-
-        private void SelectECar(object o)
-        {
-            buttons[0].IsSelected = false;
-            buttons[1].IsSelected = true;
-            buttons[2].IsSelected = false;
-        }
-
-        private void SelectTruck(object o)
-        {
-            buttons[0].IsSelected = false;
-            buttons[1].IsSelected = false;
-            buttons[2].IsSelected = true;
-        }
+        public abstract void SelectButton(object _);
 
         public bool CanExecuteShow(object o)
         {

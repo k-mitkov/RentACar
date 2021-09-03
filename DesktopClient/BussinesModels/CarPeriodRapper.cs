@@ -22,7 +22,7 @@ namespace DesktopClient.BussinesModels
         #endregion
 
         #region Proparties
-        public string Brand
+        public string Brand 
         {
             get
             {

@@ -17,9 +17,7 @@ namespace DesktopClient.BussinesModels
         public LocationRapper(Locations location)
         {
             Location = location;
-            var field = Location.GetType().GetField(Location.ToString());
-            var attributes = field.GetCustomAttributes(false);
-            locationStr = TranslationSource.Instance[attributes.Select(a => (DescriptionAttribute)a).ElementAt(0).Description];
+            locationStr = GetString();
             TranslationSource.Instance.LanguageEvent += LanguageChangeHandler;
         }
         #endregion
@@ -35,9 +33,7 @@ namespace DesktopClient.BussinesModels
             }
             set
             {
-                var field = Location.GetType().GetField(Location.ToString());
-                var attributes = field.GetCustomAttributes(false);
-                locationStr = TranslationSource.Instance[attributes.Select(a => (DescriptionAttribute)a).ElementAt(0).Description];
+                locationStr = GetString();
                 OnPropertyChanged(nameof(LocationStr));
             }
         }
@@ -60,6 +56,13 @@ namespace DesktopClient.BussinesModels
         protected void OnPropertyChanged(string propertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        private string GetString()
+        {
+            var field = Location.GetType().GetField(Location.ToString());
+            var attributes = field.GetCustomAttributes(false);
+            return TranslationSource.Instance[attributes.Select(a => (DescriptionAttribute)a).ElementAt(0).Description];
         }
         #endregion
     }

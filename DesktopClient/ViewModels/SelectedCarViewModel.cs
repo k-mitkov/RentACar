@@ -129,12 +129,12 @@ namespace DesktopClient.ViewModels
             return true;
         }
 
-        private void OnBackCommand(Object o)
+        private void OnBackCommand(object o)
         {
             BackEvent.Invoke();
         }
 
-        private void OnSelect(Object o)
+        private void OnSelect(object o)
         {
             SelectEvent.Invoke(car);
         }
