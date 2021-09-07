@@ -10,10 +10,16 @@
     <Compile Update="Views\AddNewCarView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\AdminHomeView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\CarsNotFoundView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Views\ClientDataView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\LoginView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Views\SearchView.xaml.cs">
@@ -38,10 +44,16 @@
     <Page Update="Views\AddNewCarView.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Views\AdminHomeView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Views\CarsNotFoundView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\ClientDataView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\LoginView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\MainWindow.xaml">

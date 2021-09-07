@@ -7,9 +7,19 @@ namespace DesktopClient.ViewModels
     public class BaseViewModel : INotifyPropertyChanged
     {
         #region Declarations
-        protected ICarService carService = new CarService();
-        protected ILanguageService languageService = new LanguageService();
+        protected ICarService carService;
+        protected ILanguageService languageService;
+        protected IAdministratorService administratorService;
         public event PropertyChangedEventHandler PropertyChanged;
+        #endregion
+
+        #region Constructor
+        public BaseViewModel()
+        {
+            carService = new CarService();
+            languageService = new LanguageService();
+            administratorService = new AdministratorService();
+        }
         #endregion
 
         #region Methods

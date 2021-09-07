@@ -8,6 +8,9 @@
 
   <ItemGroup>
     <None Remove="Resources\Audio\car+start3.mp3" />
+    <None Remove="Resources\Images\add-admin_icon.png" />
+    <None Remove="Resources\Images\add_car_icon.png" />
+    <None Remove="Resources\Images\admin_icon.png" />
     <None Remove="Resources\Images\Alfa_Romeo_159.jpg" />
     <None Remove="Resources\Images\audi-q3.png" />
     <None Remove="Resources\Images\Audi_A7.png" />
@@ -16,9 +19,12 @@
     <None Remove="Resources\Images\BMW_X5.png" />
     <None Remove="Resources\Images\browse-icon.jpg" />
     <None Remove="Resources\Images\cargo_main.jpg" />
+    <None Remove="Resources\Images\cars_icon.png" />
     <None Remove="Resources\Images\car_main.jpg" />
     <None Remove="Resources\Images\car_search_icon.png" />
     <None Remove="Resources\Images\car_search_icon_blue.png" />
+    <None Remove="Resources\Images\clients_icon.png" />
+    <None Remove="Resources\Images\collections_icon.png" />
     <None Remove="Resources\Images\date-icon.png" />
     <None Remove="Resources\Images\e-car_search_icon.png" />
     <None Remove="Resources\Images\e-car_search_icon_blue.png" />
@@ -32,6 +38,7 @@
     <None Remove="Resources\Images\ico_calendar_big.png" />
     <None Remove="Resources\Images\location-icon.png" />
     <None Remove="Resources\Images\logo.png" />
+    <None Remove="Resources\Images\logout_icon.png" />
     <None Remove="Resources\Images\Mercedes-Sprinter.png" />
     <None Remove="Resources\Images\Mercedes_SClass.png" />
     <None Remove="Resources\Images\notFound_icon.jpg" />
@@ -54,6 +61,15 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="Resources\Images\add-admin_icon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Images\add_car_icon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Images\admin_icon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resources\Images\Alfa_Romeo_159.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -75,6 +91,9 @@
     <Content Include="Resources\Images\cargo_main.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Resources\Images\cars_icon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resources\Images\car_main.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -82,6 +101,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Images\car_search_icon_blue.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Images\clients_icon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Images\date-icon.png">
@@ -121,6 +143,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Images\logo.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Images\logout_icon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Images\Mercedes-Sprinter.png">
@@ -207,6 +232,12 @@
 
   <ItemGroup>
     <Content Include="Resources\Audio\car+start3.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Resources\Images\collections_icon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

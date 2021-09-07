@@ -1,0 +1,61 @@
+﻿<UserControl x:Class="DesktopClient.Views.AdminHomeView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:util="clr-namespace:DesktopClient.Util"
+             xmlns:local="clr-namespace:DesktopClient.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid Background="#e3e3e3">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1.5*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="1.5*"/>
+        </Grid.ColumnDefinitions>
+        <Button Grid.Row="1" Grid.Column="1" Background="#03a5fc" Margin="5" Command="{Binding ButtonCommand}" CommandParameter="ADD_CAR">
+            <Grid>
+                <Image Margin="20" Source="\Resources\Images\add_car_icon.png"/>
+                <TextBlock Text="{util:Localization strAddNewCar}" Foreground="White" FontWeight="Heavy" VerticalAlignment="Bottom" HorizontalAlignment="Center" FontSize="20"/>
+            </Grid>
+        </Button>
+        <Button Grid.Row="1" Grid.Column="2" Background="#03a5fc" Margin="5" Command="{Binding ButtonCommand}" CommandParameter="VIEW_CARS">
+            <Grid>
+                <Image Margin="20" Source="\Resources\Images\cars_icon.png"/>
+                <TextBlock Text="{util:Localization strViewCars}" Foreground="White" FontWeight="Heavy" VerticalAlignment="Bottom" HorizontalAlignment="Center" FontSize="20"/>
+            </Grid>
+        </Button>
+        <Button Grid.Row="1" Grid.Column="3" Background="#03a5fc" Margin="5" Command="{Binding ButtonCommand}" CommandParameter="ADD_ADMIN">
+            <Grid>
+                <Image Margin="20" Source="\Resources\Images\add-admin_icon.png"/>
+                <TextBlock Text="{util:Localization strAddNewAdmin}" Foreground="White" FontWeight="Heavy" VerticalAlignment="Bottom" HorizontalAlignment="Center" FontSize="20"/>
+            </Grid>
+        </Button>
+        <Button Grid.Row="2" Grid.Column="1" Background="#03a5fc" Margin="5" Command="{Binding ButtonCommand}" CommandParameter="VIEW_RESERVATIONS">
+            <Grid>
+                <Image Margin="20" Source="\Resources\Images\collections_icon.png"/>
+                <TextBlock Text="{util:Localization strViewReservations}" Foreground="White" FontWeight="Heavy" VerticalAlignment="Bottom" HorizontalAlignment="Center" FontSize="20"/>
+            </Grid>
+        </Button>
+        <Button Grid.Row="2" Grid.Column="2" Background="#03a5fc" Margin="5" Command="{Binding ButtonCommand}" CommandParameter="VIEW_CLIENTS">
+            <Grid>
+                <Image Margin="20" Source="\Resources\Images\clients_icon.png"/>
+                <TextBlock Text="{util:Localization strViewClients}" Foreground="White" FontWeight="Heavy" VerticalAlignment="Bottom" HorizontalAlignment="Center" FontSize="20"/>
+            </Grid>
+        </Button>
+        <Button Grid.Row="2" Grid.Column="3" Background="#03a5fc" Margin="5" Command="{Binding ButtonCommand}" CommandParameter="LOGOUT">
+            <Grid>
+                <Image Margin="20" Source="\Resources\Images\logout_icon.png"/>
+                <TextBlock Text="{util:Localization strSingOut}" Foreground="White" FontWeight="Heavy" VerticalAlignment="Bottom" HorizontalAlignment="Center" FontSize="20"/>
+            </Grid>
+        </Button>
+    </Grid>
+</UserControl>

@@ -285,4 +285,31 @@
   <data name="strYear:" xml:space="preserve">
     <value>Year:</value>
   </data>
+  <data name="strLogin" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="strAddNewAdmin" xml:space="preserve">
+    <value>Add New Admin</value>
+  </data>
+  <data name="strPassword:" xml:space="preserve">
+    <value>Password:</value>
+  </data>
+  <data name="strSingIn" xml:space="preserve">
+    <value>Sing In</value>
+  </data>
+  <data name="strUsername:" xml:space="preserve">
+    <value>Username:</value>
+  </data>
+  <data name="strViewCars" xml:space="preserve">
+    <value>View Cars</value>
+  </data>
+  <data name="strViewReservations" xml:space="preserve">
+    <value>View Reservations</value>
+  </data>
+  <data name="strSingOut" xml:space="preserve">
+    <value>Sing Out</value>
+  </data>
+  <data name="strViewClients" xml:space="preserve">
+    <value>View Clients</value>
+  </data>
 </root>

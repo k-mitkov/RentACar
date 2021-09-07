@@ -70,6 +70,15 @@ namespace DesktopClient.Resources.Localizations {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Add New Admin.
+        /// </summary>
+        public static string strAddNewAdmin {
+            get {
+                return ResourceManager.GetString("strAddNewAdmin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Add New Car.
         /// </summary>
         public static string strAddNewCar {
@@ -394,11 +403,29 @@ namespace DesktopClient.Resources.Localizations {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Login.
+        /// </summary>
+        public static string strLogin {
+            get {
+                return ResourceManager.GetString("strLogin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Model:.
         /// </summary>
         public static string strModel_ {
             get {
                 return ResourceManager.GetString("strModel:", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Password:.
+        /// </summary>
+        public static string strPassword_ {
+            get {
+                return ResourceManager.GetString("strPassword:", resourceCulture);
             }
         }
         
@@ -511,6 +538,24 @@ namespace DesktopClient.Resources.Localizations {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Sing In.
+        /// </summary>
+        public static string strSingIn {
+            get {
+                return ResourceManager.GetString("strSingIn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sing Out.
+        /// </summary>
+        public static string strSingOut {
+            get {
+                return ResourceManager.GetString("strSingOut", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Sofia.
         /// </summary>
         public static string strSofia {
@@ -547,11 +592,47 @@ namespace DesktopClient.Resources.Localizations {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Username:.
+        /// </summary>
+        public static string strUsername_ {
+            get {
+                return ResourceManager.GetString("strUsername:", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Varna.
         /// </summary>
         public static string strVarna {
             get {
                 return ResourceManager.GetString("strVarna", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to View Cars.
+        /// </summary>
+        public static string strViewCars {
+            get {
+                return ResourceManager.GetString("strViewCars", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to View Clients.
+        /// </summary>
+        public static string strViewClients {
+            get {
+                return ResourceManager.GetString("strViewClients", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to View Reservations.
+        /// </summary>
+        public static string strViewReservations {
+            get {
+                return ResourceManager.GetString("strViewReservations", resourceCulture);
             }
         }
         

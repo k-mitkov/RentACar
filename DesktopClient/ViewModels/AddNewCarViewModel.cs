@@ -38,6 +38,7 @@ namespace DesktopClient.ViewModels
         private bool isPathValid;
         private bool isPriceValid;
         private readonly string path= @"\Resources\Images\";
+        public event Action AddCarEvent;
 
         #endregion
 
@@ -345,6 +346,8 @@ namespace DesktopClient.ViewModels
                 };
 
                 carService.AddNewCar(car, selectedLocation.Location);
+
+                OnAddCar();
             }
         }
 
@@ -398,6 +401,11 @@ namespace DesktopClient.ViewModels
             isConsumationValid = true;
             isPathValid = true;
             isPriceValid = true;
+        }
+
+        private void OnAddCar()
+        {
+            AddCarEvent.Invoke();
         }
 
         #endregion

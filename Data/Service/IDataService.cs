@@ -11,10 +11,12 @@ namespace Data.Service
         void AddNewCar(Car car);
         void AddNewPeriod(Period period);
         void AddNewClient(Client client);
+        void AddNewAdmin(Admin admin);
         void AddNewReservations(Reservation reservation);
         void AddNewLenguage(Language language);
         bool DeletePeriod(Period period);
         Client FindClientByMail(string mail);
+        Admin FindAdminByUsernameAndPassword(string username,string password);
         Car FindCar(int id);
         Period FindPeriod(Period period);
         IEnumerable<Car> GetCars();

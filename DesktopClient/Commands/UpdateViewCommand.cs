@@ -1,4 +1,5 @@
-﻿using DesktopClient.BussinesModels;
+﻿using Data.Models;
+using DesktopClient.BussinesModels;
 using DesktopClient.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -12,6 +13,13 @@ namespace DesktopClient.Commands
         #region Declarations
         private MainViewModel viewModel;
         private SelectViewModel selectViewModel;
+        private readonly string ADD_CAR;
+        private readonly string VIEW_CARS;
+        private readonly string ADD_ADMIN;
+        private readonly string VIEW_RESERVATIONS;
+        private readonly string VIEW_CLIENTS;
+        private readonly string LOGOUT;
+        private Admin admin;
         #endregion
 
         #region Constructor
@@ -19,9 +27,7 @@ namespace DesktopClient.Commands
         {
             this.viewModel = viewModel;
 
-            SearchViewModel searchViewModel = new SearchViewModel();
-            this.viewModel.SelectedViewModel = searchViewModel;
-            searchViewModel.SearchEvent += SearchHandler;
+            Execute(null);
         }
         #endregion
 
@@ -97,12 +103,61 @@ namespace DesktopClient.Commands
             viewModel.SelectedViewModel = succesfulReservedViewModel;
         }
 
-        public void ShowAddNewCarView()
+        public void ShowAdminPanel()
         {
-            AddNewCarViewModel addNewCarViewModel = new AddNewCarViewModel();
-            viewModel.SelectedViewModel = addNewCarViewModel;
+            if(admin == null)
+            {
+                LoginViewModel loginViewModel = new LoginViewModel();
+                loginViewModel.LoginEvent += LoginHandler;
+                viewModel.SelectedViewModel = loginViewModel;
+            }
+            else
+            {
+                AdminHomeViewModel adminHomeViewModel = new AdminHomeViewModel();
+                adminHomeViewModel.AdminEvent += AdminEventHandler;
+                viewModel.SelectedViewModel = adminHomeViewModel;
+            }
         }
 
+        public void LoginHandler(Admin admin)
+        {
+            this.admin = admin;
+            ShowAdminPanel();
+        }
+
+        public void AdminEventHandler(object o)
+        {
+            var s = o.ToString();
+            switch (s)
+            {
+                case nameof(ADD_CAR):
+                    AddNewCarViewModel addNewCarViewModel = new AddNewCarViewModel();
+                    viewModel.SelectedViewModel = addNewCarViewModel;
+                    break;
+                case nameof(VIEW_CARS):
+                    ViewCarsViewModel viewCarsViewModel = new ViewCarsViewModel();
+                    viewModel.SelectedViewModel = viewCarsViewModel;
+                    break;
+                case nameof(ADD_ADMIN):
+                    
+                    break;
+                case nameof(VIEW_RESERVATIONS):
+                    
+                    break;
+                case nameof(VIEW_CLIENTS):
+
+                    break;
+                case nameof(LOGOUT):
+                    admin = null;
+                    Execute(null);
+                    break;
+            }
+        }
+
+        public void AddCarHandler()
+        {
+            ShowAdminPanel();
+        }
         #endregion
     }
 }

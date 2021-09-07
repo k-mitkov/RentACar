@@ -18,6 +18,10 @@ namespace Data.Service.Impl
             data = new DataService();
         }
 
+        #endregion
+
+        #region Methods
+
         public bool AddNewCar(Car car, Locations location)
         {
             try
@@ -42,15 +46,26 @@ namespace Data.Service.Impl
                 return false;
             }
         }
-        #endregion
 
-        #region Methods
         public IEnumerable<Car> GetCarsByPeriodAndType(Period period, TypeVehicle type)
         {
             try{
                 return data.CarsByPeriodAndType(period, type);
             }
             catch(Exception ex)
+            {
+                ExceptionLogger.LoggException(ex);
+                return null;
+            }
+        }
+
+        public IEnumerable<Car> GetCars()
+        {
+            try
+            {
+                return data.GetCars();
+            }
+            catch (Exception ex)
             {
                 ExceptionLogger.LoggException(ex);
                 return null;
@@ -69,6 +84,7 @@ namespace Data.Service.Impl
                 return false;
             }
         }
+
         #endregion
     }
 }

@@ -5,6 +5,8 @@ using Data.Service.Impl;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
+using System.Text;
 
 namespace Test
 {
@@ -14,6 +16,23 @@ namespace Test
         {
             IDataService service = new DataService();
             ICarService carService = new CarService();
+
+            string password = "pass123";
+
+            byte[] data = Encoding.ASCII.GetBytes(password);
+            data = new SHA256Managed().ComputeHash(data);
+            password =  Encoding.ASCII.GetString(data);
+
+            var admin = new Admin()
+            {
+                Username = "kmitkov",
+                Password = password,
+                Mail = "krasi0m0@gmail.com",
+                FirstName = "Krasimir",
+                LastName = "Mitkov"
+            };
+
+            service.AddNewAdmin(admin);
 
             //Language language = new Language()
             //{

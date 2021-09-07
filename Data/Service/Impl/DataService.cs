@@ -31,6 +31,15 @@ namespace Data.Service.Impl
             }
         }
 
+        public void AddNewAdmin(Admin admin)
+        {
+            using (context = new DataContext())
+            {
+                context.Admins.Add(admin);
+                context.SaveChanges();
+            }
+        }
+
         public void AddNewPeriod(Period period)
         {
             using (context = new DataContext())
@@ -118,6 +127,14 @@ namespace Data.Service.Impl
             using (context = new DataContext())
             {
                 return context.Clients.FirstOrDefault(c => c.Mail.Equals(mail));
+            }
+        }
+
+        public Admin FindAdminByUsernameAndPassword(string username, string password)
+        {
+            using (context = new DataContext())
+            {
+                return context.Admins.FirstOrDefault(a => a.Username.Equals(username) && a.Password.Equals(password));
             }
         }
 

@@ -9,6 +9,7 @@ namespace Data
         public DbSet<Car> Cars { get; set; }
         public DbSet<Period> Periods { get; set; }
         public DbSet<Client> Clients { get; set; }
+        public DbSet<Admin> Admins { get; set; }
         public DbSet<Reservation> Reservations { get; set; }
         public DbSet<Language> Languages { get; set; }
         #endregion

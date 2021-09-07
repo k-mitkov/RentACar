@@ -20,6 +20,10 @@
                 <views:SelectView />
             </DataTemplate>
 
+            <DataTemplate DataType="{x:Type viewmodels:ViewCarsViewModel}">
+                <views:SelectView />
+            </DataTemplate>
+
             <DataTemplate DataType="{x:Type viewmodels:SelectedCarViewModel}">
                 <views:SelectedCarView />
             </DataTemplate>
@@ -38,6 +42,14 @@
 
             <DataTemplate DataType="{x:Type viewmodels:AddNewCarViewModel}">
                 <views:AddNewCarView />
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewmodels:AdminHomeViewModel}">
+                <views:AdminHomeView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewmodels:LoginViewModel}">
+                <views:LoginView/>
             </DataTemplate>
 
             <Style x:Key="Button" TargetType="{x:Type Button}">

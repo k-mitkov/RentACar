@@ -14,7 +14,7 @@ namespace DesktopClient.ViewModels
         private BaseViewModel selectedViewModel;
         private Language currentLanguage;
         private IEnumerable<Language> languages;
-        private ButtonCommand addCommand;
+        private ButtonCommand adminCommand;
         #endregion
 
         #region Constructor
@@ -26,15 +26,15 @@ namespace DesktopClient.ViewModels
 
         #region Properties
 
-        public ButtonCommand AddCommand
+        public ButtonCommand AdminCommand
         {
             get
             {
-                if (addCommand == null)
+                if (adminCommand == null)
                 {
-                    addCommand = new ButtonCommand(Add, CanExecuteShow);
+                    adminCommand = new ButtonCommand(Add, CanExecuteShow);
                 }
-                return addCommand;
+                return adminCommand;
             }
         }
 
@@ -93,7 +93,7 @@ namespace DesktopClient.ViewModels
 
         private void Add(object _)
         {
-            UpdateViewCommand.ShowAddNewCarView();
+            UpdateViewCommand.ShowAdminPanel();
         }
 
         #endregion
