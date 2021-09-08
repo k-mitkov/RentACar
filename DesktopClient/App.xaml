@@ -52,6 +52,10 @@
                 <views:LoginView/>
             </DataTemplate>
 
+            <DataTemplate DataType="{x:Type viewmodels:CarViewModel}">
+                <views:CarView/>
+            </DataTemplate>
+
             <Style x:Key="Button" TargetType="{x:Type Button}">
                 <Setter Property="Template">
                     <Setter.Value>

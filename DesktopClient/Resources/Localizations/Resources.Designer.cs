@@ -250,6 +250,15 @@ namespace DesktopClient.Resources.Localizations {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to From:.
+        /// </summary>
+        public static string strFrom_ {
+            get {
+                return ResourceManager.GetString("strFrom:", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Image Path:.
         /// </summary>
         public static string strImagePath_ {
@@ -570,6 +579,15 @@ namespace DesktopClient.Resources.Localizations {
         public static string strSuccesfulReservation {
             get {
                 return ResourceManager.GetString("strSuccesfulReservation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to To:.
+        /// </summary>
+        public static string strTo_ {
+            get {
+                return ResourceManager.GetString("strTo:", resourceCulture);
             }
         }
         

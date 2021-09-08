@@ -136,7 +136,7 @@ namespace DesktopClient.ViewModels
             {
 
                 year = value;
-                IsYearValid = year > 1950;
+                IsYearValid = year > 1950 && year <= DateTime.Now.Year;
                 OnPropertyChanged(nameof(Year));
             }
         }
@@ -181,7 +181,7 @@ namespace DesktopClient.ViewModels
             {
 
                 price = value;
-                IsPriceValid = Price > 0;
+                IsPriceValid = Price > 0 && Price < 1000;
                 OnPropertyChanged(nameof(Price));
             }
         }
@@ -332,7 +332,11 @@ namespace DesktopClient.ViewModels
         {
             if (Validate())
             {
-                string shortPath = path + imagePath.Split('\\').Last();
+                string fileName = imagePath.Split('\\').Last();
+
+                CopyImageIfMissing(fileName);
+
+                string shortPath = path + fileName;
 
                 Car car = new Car()
                 {
@@ -355,10 +359,10 @@ namespace DesktopClient.ViewModels
         {
             IsBrandValid = brand != null && brand.Length > 1;
             IsModelValid = model != null && model.Length > 1;
-            IsYearValid = year > 1950;
+            IsYearValid = year > 1950 && year <= DateTime.Now.Year;
             IsCapacityValid = capacity > 0;
             IsConsumationValid = consumation > 0.0m;
-            IsPriceValid = price > 0;
+            IsPriceValid = Price > 0 && Price < 1000;
             IsPathValid = imagePath != null && File.Exists(imagePath);
 
             return IsBrandValid && IsModelValid && IsYearValid && IsCapacityValid && IsConsumationValid &&IsPriceValid && IsPathValid;
@@ -406,6 +410,20 @@ namespace DesktopClient.ViewModels
         private void OnAddCar()
         {
             AddCarEvent.Invoke();
+        }
+
+        private void CopyImageIfMissing(string fileName)
+        {
+            string filePath = Directory.GetCurrentDirectory();
+            filePath = filePath.Split("\\bin")[0];
+            filePath += path;
+
+            filePath += fileName;
+
+            if (!imagePath.Equals(filePath))
+            {
+                File.Copy(imagePath, filePath);
+            }
         }
 
         #endregion

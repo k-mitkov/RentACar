@@ -134,3 +134,5 @@ C:\Users\Administrator\source\repos\RentACar\DesktopClient\obj\Debug\netcoreapp3
 C:\Users\Administrator\source\repos\RentACar\DesktopClient\bin\Debug\netcoreapp3.1\Resources\Images\admin_icon.png
 C:\Users\Administrator\source\repos\RentACar\DesktopClient\bin\Debug\netcoreapp3.1\Resources\Images\clients_icon.png
 C:\Users\Administrator\source\repos\RentACar\DesktopClient\bin\Debug\netcoreapp3.1\Resources\Images\logout_icon.png
+C:\Users\Administrator\source\repos\RentACar\DesktopClient\obj\Debug\netcoreapp3.1\Views\CarView.g.cs
+C:\Users\Administrator\source\repos\RentACar\DesktopClient\obj\Debug\netcoreapp3.1\Views\CarView.baml

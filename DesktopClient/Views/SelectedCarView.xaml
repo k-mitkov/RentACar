@@ -12,8 +12,6 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        
-        <Grid x:Name="ColWidth" Grid.Column="0" Margin="20"/>
 
         <Border BorderThickness="5" BorderBrush="#fcc603" Margin="10,10,0,10">
             <Grid>

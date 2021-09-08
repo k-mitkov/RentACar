@@ -1,0 +1,85 @@
+﻿<UserControl x:Class="DesktopClient.Views.CarView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:util="clr-namespace:DesktopClient.Util"
+             xmlns:local="clr-namespace:DesktopClient.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Border x:Name="Border" BorderThickness="5" BorderBrush="#fcc603" Margin="10,10,0,10">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="5*"/>
+                </Grid.RowDefinitions>
+                <StackPanel>
+                    <DockPanel Margin="10">
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
+                            <TextBlock Text="{Binding Car.Brand}" FontSize="30" Foreground="#03a5fc" FontWeight="Heavy"/>
+                            <TextBlock Text=" " FontSize="20"/>
+                            <TextBlock Text="{Binding Car.Model}" FontSize="30" Foreground="#03a5fc" FontWeight="Heavy"/>
+                        </StackPanel>
+                        <StackPanel Background="#03a5fc" HorizontalAlignment="Right" VerticalAlignment="Center">
+                            <TextBlock  Margin="10" Foreground="White" FontSize="15" FontWeight="Heavy" Text="{Binding Car.Year}" />
+                        </StackPanel>
+                    </DockPanel>
+                    <DockPanel Margin="5,0">
+                        <StackPanel Orientation="Horizontal" Margin="5,0">
+                            <Image HorizontalAlignment="Left" Height="20" Source="\Resources\Images\icon_seats.gif"/>
+                            <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Text="{Binding Car.Capacity}" Foreground="#03a5fc"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="5,0">
+                            <Image HorizontalAlignment="Left" Height="20" Source="\Resources\Images\icon_diesel.gif"/>
+                            <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Text="{Binding Car.Consumation}" Foreground="#03a5fc" Margin="10,0,0,0"/>
+                            <TextBlock Text="{util:Localization strPerKm}" Foreground="#03a5fc"/>
+                        </StackPanel>
+                    </DockPanel>
+                </StackPanel>
+                <StackPanel Grid.Row="1">
+                    <Image Source="{Binding Car.Path}" Margin="10" Stretch="Fill"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+        <ListBox Grid.Column="1" ItemsSource="{Binding Periods}" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <Grid Width="{Binding ElementName=Border, Path=ActualWidth}">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="0.5*"/>
+                        </Grid.ColumnDefinitions>
+                        <StackPanel Grid.Column="0">
+                            <TextBlock Text="{util:Localization strFrom:}" FontSize="15" Foreground="#03a5fc"/>
+                            <StackPanel Orientation="Horizontal">
+                                <Image Height="20" VerticalAlignment="Center" Source="\Resources\Images\date-icon.png" />
+                                <TextBlock Margin="5" FontSize="20" Text="{Binding From}" />
+                            </StackPanel>
+                        </StackPanel>
+                        <StackPanel Grid.Column="1">
+                            <TextBlock Text="{util:Localization strTo:}" FontSize="15" Foreground="#03a5fc"/>
+                            <StackPanel Orientation="Horizontal">
+                                <Image Height="20" VerticalAlignment="Center" Source="\Resources\Images\date-icon.png" />
+                                <TextBlock Margin="5" FontSize="20" Text="{Binding To}" />
+                            </StackPanel>
+                        </StackPanel>
+                        <StackPanel Grid.Column="2">
+                            <TextBlock Text="{util:Localization strLocation:}" FontSize="15" Foreground="#03a5fc"/>
+                            <StackPanel Orientation="Horizontal">
+                                <Image Height="20" VerticalAlignment="Center" Source="\Resources\Images\location-icon.png" />
+                                <TextBlock Margin="5" FontSize="20" Text="{Binding Location}" />
+                            </StackPanel>
+                        </StackPanel>
+                    </Grid>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ListBox>
+    </Grid>
+</UserControl>

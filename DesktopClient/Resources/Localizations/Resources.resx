@@ -312,4 +312,10 @@
   <data name="strViewClients" xml:space="preserve">
     <value>View Clients</value>
   </data>
+  <data name="strFrom:" xml:space="preserve">
+    <value>From:</value>
+  </data>
+  <data name="strTo:" xml:space="preserve">
+    <value>To:</value>
+  </data>
 </root>

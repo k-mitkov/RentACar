@@ -237,4 +237,85 @@
   <data name="strSuccesfulReservation" xml:space="preserve">
     <value>Успешна резервация!</value>
   </data>
+  <data name="strAdd" xml:space="preserve">
+    <value>Добави</value>
+  </data>
+  <data name="strAddNewCar" xml:space="preserve">
+    <value>Добави Нова Кола</value>
+  </data>
+  <data name="strBrand:" xml:space="preserve">
+    <value>Марка: </value>
+  </data>
+  <data name="strImagePath:" xml:space="preserve">
+    <value>Път на снимка:</value>
+  </data>
+  <data name="strInvalidBrand" xml:space="preserve">
+    <value>Моля въведете валидна марка.</value>
+  </data>
+  <data name="strInvalidCapacity" xml:space="preserve">
+    <value>Моля въведете валиден капацитет.</value>
+  </data>
+  <data name="strInvalidConsumation" xml:space="preserve">
+    <value>Моля въведете валиден разход.</value>
+  </data>
+  <data name="strInvalidModel" xml:space="preserve">
+    <value>Моля въведете валиден модел.</value>
+  </data>
+  <data name="strInvalidPath" xml:space="preserve">
+    <value>Моля въведете валиден адрес.</value>
+  </data>
+  <data name="strInvalidPrice" xml:space="preserve">
+    <value>Моля въведете валидна цена.</value>
+  </data>
+  <data name="strInvalidYear" xml:space="preserve">
+    <value>Моля въведете валидна година.</value>
+  </data>
+  <data name="strLocation:" xml:space="preserve">
+    <value>Локация:</value>
+  </data>
+  <data name="strModel:" xml:space="preserve">
+    <value>Модел:</value>
+  </data>
+  <data name="strPricePerDay:" xml:space="preserve">
+    <value>Цена за ден:</value>
+  </data>
+  <data name="strType:" xml:space="preserve">
+    <value>Тип:</value>
+  </data>
+  <data name="strYear:" xml:space="preserve">
+    <value>Година:</value>
+  </data>
+  <data name="strLogin" xml:space="preserve">
+    <value>Вход</value>
+  </data>
+  <data name="strAddNewAdmin" xml:space="preserve">
+    <value>Добави Нов Админ</value>
+  </data>
+  <data name="strPassword:" xml:space="preserve">
+    <value>Парола:</value>
+  </data>
+  <data name="strSingIn" xml:space="preserve">
+    <value>Вписване</value>
+  </data>
+  <data name="strUsername:" xml:space="preserve">
+    <value>Потребителско име:</value>
+  </data>
+  <data name="strViewCars" xml:space="preserve">
+    <value>Всички Коли</value>
+  </data>
+  <data name="strViewReservations" xml:space="preserve">
+    <value>Всички Ресервации</value>
+  </data>
+  <data name="strSingOut" xml:space="preserve">
+    <value>Изход</value>
+  </data>
+  <data name="strViewClients" xml:space="preserve">
+    <value>Всички Клиенти</value>
+  </data>
+  <data name="strFrom:" xml:space="preserve">
+    <value>От:</value>
+  </data>
+  <data name="strTo:" xml:space="preserve">
+    <value>До:</value>
+  </data>
 </root>

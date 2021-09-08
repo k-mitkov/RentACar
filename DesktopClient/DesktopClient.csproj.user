@@ -16,6 +16,9 @@
     <Compile Update="Views\CarsNotFoundView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\CarView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\ClientDataView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -48,6 +51,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\CarsNotFoundView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\CarView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\ClientDataView.xaml">

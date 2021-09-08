@@ -21,7 +21,7 @@
         </Grid.ColumnDefinitions>
         <Grid x:Name="RowGribName" Grid.Row="0"/>
         <Grid x:Name="ColGribName" Grid.Column="0"/>
-        <ListBox Grid.RowSpan="4" Grid.ColumnSpan="3" ItemsSource="{Binding Cars}" ItemContainerStyle="{DynamicResource BorderStyle}" SelectedItem="{Binding SelectedCar}">
+        <ListBox Grid.RowSpan="4" Grid.ColumnSpan="3" ScrollViewer.CanContentScroll="False" ItemsSource="{Binding Cars}" ItemContainerStyle="{DynamicResource BorderStyle}" SelectedItem="{Binding SelectedCar}" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal" Margin="5" Background="White">

@@ -132,10 +132,12 @@ namespace DesktopClient.Commands
             {
                 case nameof(ADD_CAR):
                     AddNewCarViewModel addNewCarViewModel = new AddNewCarViewModel();
+                    addNewCarViewModel.AddCarEvent += AddCarHandler;
                     viewModel.SelectedViewModel = addNewCarViewModel;
                     break;
                 case nameof(VIEW_CARS):
                     ViewCarsViewModel viewCarsViewModel = new ViewCarsViewModel();
+                    viewCarsViewModel.ViewEvent += AdminSelectHandler;
                     viewModel.SelectedViewModel = viewCarsViewModel;
                     break;
                 case nameof(ADD_ADMIN):
@@ -158,6 +160,13 @@ namespace DesktopClient.Commands
         {
             ShowAdminPanel();
         }
+
+        public void AdminSelectHandler(CarPeriodRapper car)
+        {
+            CarViewModel carViewModel = new CarViewModel(car);
+            viewModel.SelectedViewModel = carViewModel;
+        }
+
         #endregion
     }
 }
