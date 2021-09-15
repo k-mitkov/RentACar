@@ -1,8 +1,6 @@
 ﻿using Data.Models;
 using DesktopClient.Commands;
 using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Windows.Controls;
 
 namespace DesktopClient.ViewModels
@@ -85,8 +83,13 @@ namespace DesktopClient.ViewModels
 
         public void Login(object o)
         {
-            PasswordBox passwordBox = (PasswordBox)o;
-            Password = passwordBox.Password;
+            //PasswordBox passwordBox = (PasswordBox)o;
+            //Password = passwordBox.Password;
+            if (o == null)
+            {
+                return;
+            }
+            string pass = (string)o;
             Admin admin = administratorService.Login(Name, Password);
             if (admin != null)
             {

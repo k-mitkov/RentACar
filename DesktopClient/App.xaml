@@ -84,7 +84,6 @@
                                 </Grid>
                             </Border>
                             <ControlTemplate.Triggers>
-                                <!--  NB This changes the Border above with name style of [border]  -->
                                 <DataTrigger Binding="{Binding IsSelected}" Value="true">
                                     <Setter TargetName="border" Property="Background" Value="#fcd303" />
                                     <Setter TargetName="buttonImage" Property="Source" Value="{Binding IconPathBlue}" />
@@ -674,6 +673,15 @@
                         </MultiDataTrigger.Conditions>
                         <Setter Property="Text" Value="{util:Localization strInvalidDates}" />
                     </MultiDataTrigger>
+                </Style.Triggers>
+            </Style>
+
+            <Style x:Key="LogInFaild"  TargetType="TextBlock">
+                <Setter Property="Text" Value="{util:Localization strInvalidUsernameOrPassword}"/>
+                <Style.Triggers>
+                    <DataTrigger Binding="{Binding Path=IsInputValid}" Value="true">
+                        <Setter Property="Text" Value=""/>
+                    </DataTrigger>
                 </Style.Triggers>
             </Style>
 

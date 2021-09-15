@@ -136,3 +136,5 @@ C:\Users\Administrator\source\repos\RentACar\DesktopClient\bin\Debug\netcoreapp3
 C:\Users\Administrator\source\repos\RentACar\DesktopClient\bin\Debug\netcoreapp3.1\Resources\Images\logout_icon.png
 C:\Users\Administrator\source\repos\RentACar\DesktopClient\obj\Debug\netcoreapp3.1\Views\CarView.g.cs
 C:\Users\Administrator\source\repos\RentACar\DesktopClient\obj\Debug\netcoreapp3.1\Views\CarView.baml
+C:\Users\Administrator\source\repos\RentACar\DesktopClient\bin\Debug\netcoreapp3.1\Resources\Images\car-flat.png
+C:\Users\Administrator\source\repos\RentACar\DesktopClient\obj\Debug\netcoreapp3.1\DesktopClient.GeneratedMSBuildEditorConfig.editorconfig

@@ -318,4 +318,7 @@
   <data name="strTo:" xml:space="preserve">
     <value>To:</value>
   </data>
+  <data name="strInvalidUsernameOrPassword" xml:space="preserve">
+    <value>Invalid username or password</value>
+  </data>
 </root>

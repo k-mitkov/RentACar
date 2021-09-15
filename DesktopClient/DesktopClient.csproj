@@ -18,6 +18,7 @@
     <None Remove="Resources\Images\Bmw_5Series.png" />
     <None Remove="Resources\Images\BMW_X5.png" />
     <None Remove="Resources\Images\browse-icon.jpg" />
+    <None Remove="Resources\Images\car-flat.png" />
     <None Remove="Resources\Images\cargo_main.jpg" />
     <None Remove="Resources\Images\cars_icon.png" />
     <None Remove="Resources\Images\car_main.jpg" />
@@ -86,6 +87,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Images\browse-icon.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Images\car-flat.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Images\cargo_main.jpg">

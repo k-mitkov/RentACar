@@ -29,7 +29,7 @@
             </Grid.RowDefinitions>
 
             <Border CornerRadius="30" Background="#fcd303" Grid.RowSpan="5"/>
-            
+
             <TextBlock Grid.Row="0" Text="{util:Localization strLogin}" FontSize="40" VerticalAlignment="Bottom" HorizontalAlignment="Center" FontWeight="ExtraBold" Foreground="#03a5fc"/>
 
             <StackPanel Grid.Row="1" Margin="20,0" VerticalAlignment="Bottom">
@@ -49,7 +49,7 @@
                     <RowDefinition Height="0.2*"/>
                 </Grid.RowDefinitions>
                 <TextBlock Grid.Row="0" FontSize="20" Style="{DynamicResource LogInFaild}"/>
-                <Button Grid.Row="1" Content="{util:Localization strSingIn}" FontSize="20" CommandParameter="{Binding ElementName=passwordText}" Command="{Binding Path=LoginCommand}" Background="#03a5fc" Foreground="White" FontWeight="ExtraBold"/>
+                <Button Grid.Row="1" Content="{util:Localization strSingIn}" FontSize="20" CommandParameter="{Binding ElementName=passwordText, Path=Password}" Command="{Binding Path=LoginCommand}" Background="#03a5fc" Foreground="White" FontWeight="ExtraBold"/>
             </Grid>
         </Grid>
     </Grid>

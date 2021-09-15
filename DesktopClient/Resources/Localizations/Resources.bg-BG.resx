@@ -318,4 +318,7 @@
   <data name="strTo:" xml:space="preserve">
     <value>До:</value>
   </data>
+  <data name="strInvalidUsernameOrPassword" xml:space="preserve">
+    <value>Невалидно потребителско име или парола</value>
+  </data>
 </root>

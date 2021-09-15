@@ -385,6 +385,15 @@ namespace DesktopClient.Resources.Localizations {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Invalid username or password.
+        /// </summary>
+        public static string strInvalidUsernameOrPassword {
+            get {
+                return ResourceManager.GetString("strInvalidUsernameOrPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Please enter valid year..
         /// </summary>
         public static string strInvalidYear {

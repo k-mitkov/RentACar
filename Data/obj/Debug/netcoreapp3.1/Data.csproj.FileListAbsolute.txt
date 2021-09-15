@@ -10,3 +10,4 @@ C:\Users\Administrator\source\repos\RentACar\Data\obj\Debug\netcoreapp3.1\Data.c
 C:\Users\Administrator\source\repos\RentACar\Data\obj\Debug\netcoreapp3.1\Data.dll
 C:\Users\Administrator\source\repos\RentACar\Data\obj\Debug\netcoreapp3.1\Data.pdb
 C:\Users\Administrator\source\repos\RentACar\Data\obj\Debug\netcoreapp3.1\Data.genruntimeconfig.cache
+C:\Users\Administrator\source\repos\RentACar\Data\obj\Debug\netcoreapp3.1\Data.GeneratedMSBuildEditorConfig.editorconfig
