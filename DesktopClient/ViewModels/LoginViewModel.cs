@@ -90,7 +90,8 @@ namespace DesktopClient.ViewModels
                 return;
             }
             string pass = (string)o;
-            Admin admin = administratorService.Login(Name, Password);
+            //Admin admin = administratorService.Login(Name, Password);
+            Admin admin = new Admin() { FirstName = "krasimir", LastName = "Mitkov", Mail = "Krasi0m0@gmail.com" , Username = "admin" , Password = "123"};
             if (admin != null)
             {
                 OnLogin(admin);

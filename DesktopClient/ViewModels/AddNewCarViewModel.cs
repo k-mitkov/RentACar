@@ -208,7 +208,7 @@ namespace DesktopClient.ViewModels
             }
             set
             {
-                if(selectedType != value)
+                if ( selectedType != value)
                 {
                     selectedType = value;
                     selectedType.SelectButton(null);
@@ -343,6 +343,7 @@ namespace DesktopClient.ViewModels
                     Brand = brand,
                     Model = model,
                     Year = year,
+                    Type = selectedType.Type,
                     Capacity = capacity,
                     Consumation = consumation,
                     Path = shortPath,

@@ -1,0 +1,13 @@
+C:\Users\pc\source\repos\RentACar\DataBase\obj\Debug\netcoreapp3.1\DataBase.AssemblyInfoInputs.cache
+C:\Users\pc\source\repos\RentACar\DataBase\obj\Debug\netcoreapp3.1\DataBase.AssemblyInfo.cs
+C:\Users\pc\source\repos\RentACar\DataBase\obj\Debug\netcoreapp3.1\DataBase.csproj.CoreCompileInputs.cache
+C:\Users\pc\source\repos\RentACar\DataBase\bin\Debug\netcoreapp3.1\DataBase.deps.json
+C:\Users\pc\source\repos\RentACar\DataBase\bin\Debug\netcoreapp3.1\DataBase.runtimeconfig.json
+C:\Users\pc\source\repos\RentACar\DataBase\bin\Debug\netcoreapp3.1\DataBase.runtimeconfig.dev.json
+C:\Users\pc\source\repos\RentACar\DataBase\bin\Debug\netcoreapp3.1\DataBase.dll
+C:\Users\pc\source\repos\RentACar\DataBase\bin\Debug\netcoreapp3.1\DataBase.pdb
+C:\Users\pc\source\repos\RentACar\DataBase\obj\Debug\netcoreapp3.1\DataBase.dll
+C:\Users\pc\source\repos\RentACar\DataBase\obj\Debug\netcoreapp3.1\DataBase.pdb
+C:\Users\pc\source\repos\RentACar\DataBase\obj\Debug\netcoreapp3.1\DataBase.genruntimeconfig.cache
+C:\Users\pc\source\repos\RentACar\DataBase\obj\Debug\netcoreapp3.1\DataBase.csproj.AssemblyReference.cache
+C:\Users\pc\source\repos\RentACar\DataBase\obj\Debug\netcoreapp3.1\DataBase.GeneratedMSBuildEditorConfig.editorconfig

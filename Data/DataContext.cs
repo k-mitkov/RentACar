@@ -17,7 +17,7 @@ namespace Data
         #region Methods
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server = localhost; Database = RentACar; User = sa; Password = Micr0!nvest; Trusted_Connection = true; Integrated Security=False");
+            optionsBuilder.UseSqlServer("Server = localhost\\SQLEXPRESS; Database = RentACar; Trusted_Connection = true;");
             base.OnConfiguring(optionsBuilder);
         }
 

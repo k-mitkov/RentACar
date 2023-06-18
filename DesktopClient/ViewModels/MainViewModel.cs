@@ -1,4 +1,5 @@
-﻿using Data.Models;
+﻿using Data.Enums;
+using Data.Models;
 using DesktopClient.Commands;
 using DesktopClient.Util;
 using System.Collections.Generic;
@@ -60,6 +61,8 @@ namespace DesktopClient.ViewModels
                 if (languages == null)
                 {
                     languages = languageService.GetLanguages();
+                    //languages = new List<Language>() { new Language() { Lenguage = LenguageEnum.English},
+                    //                                    new Language() { Lenguage = LenguageEnum.Български } };
                 }
                 SelectedLanguage = languages.ToList().FirstOrDefault();
                 return languages;
